@@ -18,9 +18,9 @@ const DashboardAdmin = () => {
     const [openSidebars, setOpenSidebars] = useState(false);
 
 
-    const labels = ['January', 'January', 'January', 'January', 'January', 'January', 'January', 'January', 'January', 'January',];
+    const labels = ['22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222'];
 
-    const databar = {
+    const databarmulti = {
         labels,
         datasets: [
             {
@@ -37,6 +37,17 @@ const DashboardAdmin = () => {
                 label: 'Dataset 2',
                 data: [65, 59, 80, 81, 56, 55, 40],
                 backgroundColor: 'rgba(200, 162, 235, 0.5)',
+            },
+        ],
+
+    };
+    const databar = {
+        labels,
+        datasets: [
+            {
+                label: 'Dataset 1',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
             },
         ],
 
@@ -159,41 +170,155 @@ const DashboardAdmin = () => {
                             className="mx-auto text-left md:max-w-screen-lg lg:max-w-screen-lg"
                         >
                             <div className="flex p-3 mb-10">
-                                <span className="font-semibold text-xl uppercase">
+                                <span className="font-semibold text-4xl ">
                                     Quality of Service
                                 </span>
                             </div>
                         </div>
-                        {/* input filter */}
+                        <div className='border w-full mb-14'></div>
+                        {/* input data */}
+                        <div className='px-3 py-5 text-xl font-semibold'>Tambah Data Pengukuran Quality Of Service</div>
                         <form>
-                            <div className="flex flex-wrap mx-0 mb-2">
+                            <div className="flex flex-wrap mx-3 px-3 py-5 border rounded-lg">
+                                <div className="flex flex-col gap-10 w-full pb-5 pt-0  md:w-1/2 px-3 mb-6 md:mb-0 ">
+                                    {/* pengguna */}
+                                    <div>
+                                        <label
+                                            htmlFor="pengguna"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                        >Pengguna</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="pengguna"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            required
+                                        />
+                                    </div>
 
-                                <div className="w-full md:w-1/3 p-3 mb-6 md:mb-0">
-                                    <label
-                                        htmlFor="fileqos"
-                                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                    >Pilih File</label
-                                    >
-                                    <input
-                                        type="file"
-                                        id="fileqos"
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                        placeholder="name@flowbite.com"
-                                        required
-                                    />
+                                    {/* ISP */}
+                                    <div>
+                                        <label
+                                            htmlFor="isp"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                        >Penyedia Jasa Internet</label
+                                        >
+                                        <select
+                                            id="isp"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            required
+                                        >
+                                            <option>LifeMedia</option>
+                                            <option>IndiHome</option>
+                                        </select>
+                                    </div>
+                                    {/* Jenis Produk*/}
+                                    <div>
+                                        <label
+                                            htmlFor="jenisproduk"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                        >Jenis Produk</label
+                                        >
+                                        <select
+                                            id="jenisproduk"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            required
+                                        >
+                                            <option>Internet 20Mbps</option>
+                                            <option>Internet 10Mbps</option>
+                                        </select>
+                                    </div>
+                                    {/* Lokasi */}
+                                    <div>
+                                        <label
+                                            htmlFor="lokasi"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                        >Lokasi</label
+                                        >
+                                        <select
+                                            id="lokasi"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            required
+                                        >
+                                            <option>Sleman</option>
+                                            <option>Yogyakarta</option>
+                                        </select>
+                                    </div>
+
                                 </div>
-                                <div className="w-full md:w-1/3 p-3 mb-4 mt-8 md:mb-0">
+                                <div className=" flex flex-col gap-4 w-full pb-5 pt-0  md:w-1/2 px-3 mb-6 md:mb-0">
+                                    {/* file throughput */}
+                                    <div>
+                                        <label
+                                            htmlFor="filethroughput"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                        >Pilih File Throughput</label
+                                        >
+                                        <input
+                                            type="file"
+                                            id="filethroughput"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+
+                                            required
+                                        />
+                                    </div>
+                                    {/* file delay */}
+                                    <div>
+                                        <label
+                                            htmlFor="filedelay"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                        >Pilih File Delay</label
+                                        >
+                                        <input
+                                            type="file"
+                                            id="filedelay"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            required
+                                        />
+                                    </div>
+                                    {/* file jitter */}
+                                    <div>
+                                        <label
+                                            htmlFor="filejitter"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                        >Pilih File Jitter</label
+                                        >
+                                        <input
+                                            type="file"
+                                            id="filejitter"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            required
+                                        />
+                                    </div>
+                                    {/* file packet loss */}
+                                    <div>
+                                        <label
+                                            htmlFor="filepacketloss"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                        >Pilih File Jitter</label
+                                        >
+                                        <input
+                                            type="file"
+                                            id="filepacketloss"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                <div className="w-full p-3 my-2 md:mb-0">
                                     <button
                                         type="submit"
                                         className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                     >
-                                        Pilih
+                                        Unggah
                                     </button>
                                 </div>
                             </div>
                         </form>
-                        {/* tabel */}
-
+                        {/*  */}
+                        <div className='border w-full my-14'></div>
+                        {/* tabel data semua*/}
+                        <div className='px-3 py-5 text-xl font-semibold mt-6'>Daftar Pengukuran Quality Of Service</div>
                         <div className="w-full p-5 px-3 mb-6 md:mb-0">
                             <Table >
                                 <Table.Head>
@@ -208,9 +333,6 @@ const DashboardAdmin = () => {
                                     </Table.HeadCell>
                                     <Table.HeadCell>
                                         Jenis Produk
-                                    </Table.HeadCell>
-                                    <Table.HeadCell>
-                                        Detail
                                     </Table.HeadCell>
                                     <Table.HeadCell>
                                         Aksi
@@ -232,49 +354,408 @@ const DashboardAdmin = () => {
                                             Internet 20Mbps
                                         </Table.Cell>
                                         <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            Button
+                                            <div className='flex gap-6'>
+                                                <div>
+                                                    <button type="button" class="focus:outline-none text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                                                        Detail
+                                                    </button>
+
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="focus:outline-none text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
+                                                        Hapus
+                                                    </button>
+
+                                                </div>
+                                            </div>
+
                                         </Table.Cell>
-                                        <Table.HeadCell>
-                                            Hapus
-                                        </Table.HeadCell>
+
+                                    </Table.Row>
+                                    <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                            Person 1
+                                        </Table.Cell>
+                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                            Lifemedia
+                                        </Table.Cell>
+                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                            Sleman
+                                        </Table.Cell>
+                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                            Internet 20Mbps
+                                        </Table.Cell>
+                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                            <div className='flex gap-6'>
+                                                <div>
+                                                    <button type="button" class="focus:outline-none text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                                                        Detail
+                                                    </button>
+
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="focus:outline-none text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
+                                                        Hapus
+                                                    </button>
+
+                                                </div>
+                                            </div>
+
+                                        </Table.Cell>
+
                                     </Table.Row>
                                 </Table.Body>
                             </Table>
                         </div>
-
-                        <div className='text-2xl'> detail </div>
-                        <div className='text-2xl'> throughput </div>
                         {/*  */}
+                        <div className='border w-full my-14'></div>
+                        {/* tabel detail */}
+                        <div className='px-3 py-5 text-xl font-semibold mt-6'>Detail Data Pengukuran Quality Of Service</div>
+                        {/* identitas */}
+                        <div className='px-3 py-3 text-lg font-medium '>Identitas</div>
                         <div className="w-full p-5 px-3 mb-6 md:mb-0">
                             <Table >
                                 <Table.Head>
                                     <Table.HeadCell>
-                                        Datetime
+                                        Nama
                                     </Table.HeadCell>
                                     <Table.HeadCell>
-                                        Nilai
+                                        Provider
                                     </Table.HeadCell>
-
+                                    <Table.HeadCell>
+                                        Lokasi
+                                    </Table.HeadCell>
+                                    <Table.HeadCell>
+                                        Jenis Produk
+                                    </Table.HeadCell>
                                 </Table.Head>
                                 <Table.Body className="divide-y">
                                     <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                         <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            datetime
+                                            Person 1
                                         </Table.Cell>
                                         <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            22/2/2222
+                                            Lifemedia
                                         </Table.Cell>
-
+                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                            Sleman
+                                        </Table.Cell>
+                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                            Internet 20Mbps
+                                        </Table.Cell>
                                     </Table.Row>
                                 </Table.Body>
                             </Table>
                         </div>
+                        {/* detail trhoughput */}
+                        <div className='px-3 py-3 text-lg font-medium '>Throughput</div>
+                        <div className="w-full p-5 px-3 md:mb-0">
+                            <div className='overflow-y-scroll h-48 border rounded-lg'>
+                                <Table >
+                                    <Table.Head>
+                                        <Table.HeadCell>
+                                            Datetime
+                                        </Table.HeadCell>
+                                        <Table.HeadCell>
+                                            Nilai
+                                        </Table.HeadCell>
+
+                                    </Table.Head>
+                                    <Table.Body>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+
+                                    </Table.Body>
+                                </Table>
+                            </div>
+                        </div>
+                        {/* detail trhoughput */}
+                        <div className='px-3 py-3 text-lg font-medium '>Delay</div>
+                        <div className="w-full p-5 px-3 md:mb-0">
+                            <div className='overflow-y-scroll h-48 border rounded-lg'>
+                                <Table >
+                                    <Table.Head>
+                                        <Table.HeadCell>
+                                            Datetime
+                                        </Table.HeadCell>
+                                        <Table.HeadCell>
+                                            Nilai
+                                        </Table.HeadCell>
+
+                                    </Table.Head>
+                                    <Table.Body>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+
+                                    </Table.Body>
+                                </Table>
+                            </div>
+                        </div>
+                        {/* detail Jitter */}
+                        <div className='px-3 py-3 text-lg font-medium '>Jitter</div>
+                        <div className="w-full p-5 px-3 md:mb-0">
+                            <div className='overflow-y-scroll h-48 border rounded-lg'>
+                                <Table >
+                                    <Table.Head>
+                                        <Table.HeadCell>
+                                            Datetime
+                                        </Table.HeadCell>
+                                        <Table.HeadCell>
+                                            Nilai
+                                        </Table.HeadCell>
+
+                                    </Table.Head>
+                                    <Table.Body>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+
+                                    </Table.Body>
+                                </Table>
+                            </div>
+                        </div>
+                        {/* detail Packet Loss */}
+                        <div className='px-3 py-3 text-lg font-medium '>Packet Loss</div>
+                        <div className="w-full p-5 px-3 md:mb-0">
+                            <div className='overflow-y-scroll h-48 border rounded-lg'>
+                                <Table >
+                                    <Table.Head>
+                                        <Table.HeadCell>
+                                            Datetime
+                                        </Table.HeadCell>
+                                        <Table.HeadCell>
+                                            Nilai
+                                        </Table.HeadCell>
+
+                                    </Table.Head>
+                                    <Table.Body>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                22/02/2222
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                19.8
+                                            </Table.Cell>
+                                        </Table.Row>
+
+                                    </Table.Body>
+                                </Table>
+                            </div>
+                        </div>
 
                         {/*  chart */}
-                        <div className='px-3 mt-20'>
+                        <div className='px-3'>
                             <div className='flex flex-col rounded-lg border p-3 '>
-                                <div className='p-3 text-2xl font-semibold'> Throughput</div>
-                                <div className="flex flex-wrap mx-0 mt-5 ">
+                                <div className="flex flex-wrap mx-0 ">
                                     <div className="w-full md:w-full p-3 mb-6 md:mb-0">
                                         <div className='border h-96 p-4 rounded-lg flex flex-row w-full items-center justify-center'>
                                             <Bar data={databar} options={{ maintainAspectRatio: false, }} />
