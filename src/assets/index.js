@@ -14,10 +14,12 @@ import logoLifeMedia from './images/logoLifeMedia.webp';
 
 
 import imageHeroSection from './images/imageHeroSection.webp';
-
 import imageKumpulanParam from './images/KumpulanParam.png';
 
+
+import imageThroughput from './images/I-Throughput.png';
 import imageDelayBad from './images/New-Delay-Bad.gif';
+
 
 
 // import iconDelay from './icons/iconDelay.svg';
@@ -25,4 +27,4 @@ import imageDelayBad from './images/New-Delay-Bad.gif';
 // import iconPacketLoss from './icons/iconPacketLoss.svg';
 // import iconThroughput from './icons/iconThroughput.svg';
 
-export { logoMoniqq, logoMyRepublic, logoBiznet, logoIndiHome, logoFirstMedia, logoLifeMedia, imageHeroSection, imageDelayBad, imageKumpulanParam };
+export { logoMoniqq, logoMyRepublic, logoBiznet, logoIndiHome, logoFirstMedia, logoLifeMedia, imageHeroSection, imageDelayBad, imageKumpulanParam, imageThroughput };

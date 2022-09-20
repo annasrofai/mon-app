@@ -64,33 +64,44 @@ const BelajarQOS = () => {
                 <div className='w-full md:w-3/4 flex flex-col '>
                     <h4 className='text-3xl font-bold my-5'>Performa Internet</h4>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Anda sebagai pengguna internet pasti menginginkan kualitas koneksi yang <strong>cepat, andal, dan konsisten. </strong>
-
+                        Anda sebagai pengguna internet pasti menginginkan kualitas koneksi yang
+                        <span className='font-semibold'> cepat</span>,
+                        <span className='font-semibold'> andal</span>, dan
+                        <span className='font-semibold'> konsisten</span>.
                     </p>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Setiap orang pasti menginginkan pengalaman menggunakan internet (<i>browsing</i>, <i>gaming</i>, dan <i>streaming</i>) yang <strong>menyenangkan</strong> (optimal).
+                        Setiap orang pasti menginginkan pengalaman menggunakan internet (<i>browsing</i>, <i>gaming</i>, dan <i>streaming</i>) yang
+                        <span className='font-semibold'> menyenangkan </span>
+                        (optimal).
                     </p>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Performa internet Anda dapat dipahami melalui beberapa <strong>parameter</strong> <i>quality of service</i>.
-                        Luaran dari parameter ini juga bergantung dengan <strong> syarat dan ketentuan </strong> dari Penyedia Jasa Internet (ISP).
+                        Performa internet dapat dipahami melalui beberapa
+                        <span className='font-semibold'> parameter </span>
+                        <i>Quality of Service</i>.
+                        Sebagai catatan, luaran dari parameter ini juga bergantung dengan <strong> syarat dan ketentuan </strong> dari Penyedia Jasa Internet (ISP).
                     </p>
                     <p className='text-base font-regular mb-8 leading-relaxed text-gray-700'>
-                        Memahami kedua hal tersebut dapat menambah pengetahuan Anda secara menyeluruh.
+                        Memahami kedua hal tersebut dapat menambah pengetahuan Anda tentang internet secara menyeluruh.
                     </p>
 
                     <h5 className='text-xl font-bold mb-5'>Parameter Quality of Service</h5>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Kualitas koneksi (Quality of Service) dapat diukur dengan beberapa parameter, seperti Throughput, Delay, Jitter, dan Packet Loss.
+                        Performa atau kualitas koneksi internet (<i>Quality of Service</i>) dapat diukur dengan beberapa parameter, seperti
+                        <span className='font-semibold italic'> Throughput</span>,
+                        <span className='font-semibold italic'> Delay/Latency</span>,
+                        <span className='font-semibold italic'> Jitter</span>, dan
+                        <span className='font-semibold italic'> Packet Loss</span>.
+
                     </p>
                     <ul className="list-disc mx-5 mb-16">
                         <li className='mb-2'>
-                            Parameter Throughput dan Delay digunakan untuk mengukur “kecepatan”
+                            <span className='italic'>Throughput </span>dan<span className='italic'> Delay/Latency </span> digunakan untuk mengukur <span className=' font-semibold '> “kecepatan”</span>.
                         </li>
                         <li className='mb-2'>
-                            Parameter Packet Loss digunakan untuk mengukur “keandalan”
+                            <span className='italic'>Packet Loss </span>digunakan untuk mengukur<span className=' font-semibold '> "keandalan”</span>.
                         </li>
                         <li className='mb-2'>
-                            Parameter Jitter digunakan untuk mengukur seberapa “konsistensi”
+                            <span className='italic'>Jitter </span> digunakan untuk mengukur <span className=' font-semibold '> "konsistensi”</span>.
                         </li>
                     </ul>
 
@@ -224,7 +235,7 @@ const BelajarQOS = () => {
 
             </div>
 
-        </div>
+        </div >
     )
 }
 
