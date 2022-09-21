@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Navbar, Button } from 'flowbite-react'
+import { Navbar, Button, Table } from 'flowbite-react'
 import { Link } from 'react-router-dom'
 import { logoMoniqq, imageThroughput, imageDelayBad } from '../../assets'
 import { Doughnut, Bar, Line } from 'react-chartjs-2';
@@ -30,7 +30,7 @@ const BelajarThroughput = () => {
 
     };
     return (
-        <div className='flex flex-col div h-screen  '>
+        <div className='flex flex-col div h-screen scroll-smooth  '>
             <header className="container p-0">
                 <Navbar
                     fluid={true}
@@ -81,59 +81,136 @@ const BelajarThroughput = () => {
                 </Navbar>
 
             </header>
+            <div className='container mt-12'>
+                <h4 className='text-3xl font-bold my-10'>Memahami <i>Throughput</i> dan <i>Bandwidth</i></h4>
 
-            <div className='container w-full flex flex-wrap justify-around mt-16'>
+            </div>
+
+            <div className='container w-full flex flex-wrap justify-around '>
                 <div className='w-full md:w-3/4 flex flex-col '>
-                    <h4 className='text-3xl font-bold my-5'>Throughput</h4>
-                    <h5 className='text-xl font-bold mb-5'>Apa itu Throughput?</h5>
+
+                    <h5 id='apa-itu-throughput' className='text-xl font-bold mb-5'>
+                        Apa itu
+                        <span className='italic'> Throughput</span>
+                        ?
+                    </h5>
                     <p className='text-base font-regular mb-5 leading-relaxed text-gray-700'>
-                        Mungkin Anda kurang familiar dengan istilah Throughput.
+                        Mungkin Anda
+                        <span className='font-semibold'> kurang familiar </span>
+                        dengan istilah
+                        <span className='font-semibold italic'> Throughput</span>
+                        .
                         Throughput mungkin masih menjadi istilah yang asing, khususnya bagi orang awam (di luar dunia IT).
                     </p>
 
-                    <h5 className='text-xl font-bold mb-5'>Bagaimana dengan istilah Bandwidth?</h5>
+                    <h5 id='apa-itu-bandwidth' className='text-xl font-bold mb-5'>
+                        Bagaimana dengan istilah
+                        <span className='italic'> Bandwidth</span>
+                        ?
+                    </h5>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Istilah bandwidth mungkin lebih familiar bagi Anda.
+                        Istilah
+                        <span className='font-semibold italic'> Bandwidth </span>
+                        mungkin lebih
+                        <span className='font-semibold'> familiar </span>
+                        bagi Anda.
                         Pasti Anda pernah mendengar kata Bandwidth saat hendak belangganan internet.
                     </p>
 
-                    <h5 className='text-xl font-bold mb-5'>Jadi, apa arti kedua istilah tersebut? Mari kita ulas bersama.</h5>
+                    <h5 id='arti-throughput-bandwidth' className='text-xl font-bold mb-5'>Jadi, apa arti kedua istilah tersebut? Mari kita ulas bersama.</h5>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Bandwidth dan Throughput adalah parameter yang digunakan untuk mengukur performa laju sebuah jaringan internet.
-                        Keduanya dapat dinyatakan dalam satuan bps (bit/second) atau Bps (byte/second).
+                        <span className='italic'>Bandwidth </span>
+                        dan
+                        <span className='italic'> Throughput </span>
+                        adalah
+                        <span className='font-semibold'> parameter </span>
+                        yang digunakan untuk mengukur performa
+                        <span className='font-semibold'> laju </span>
+                        dari jaringan internet.
+                        Keduanya dapat dinyatakan dalam
+                        <span className='font-semibold'> satuan bps </span>
+                        (bit/second) atau
+                        <span className='font-semibold'> Bps </span>
+                        (byte/second).
                     </p>
-                    <div class="border-l-4 border-blue-500 pl-4 text-base font-regular mt-3 mb-6 leading-relaxed italic rounded">
-                        Throughput merupakan jumlah data yang ditransfer dari sumber ke tujuan dalam jangka waktu tertentu,
-                        sedangkan Bandwidth merupakan kapasitas transfer maksimum yang dapat dilakukan oleh jaringan.
+                    <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-3 mb-6 leading-relaxed italic rounded">
+                        <span className='font-semibold '> Throughput </span>
+                        merupakan
+                        <span className='font-semibold '> jumlah data </span>
+                        yang ditransfer dari sumber ke tujuan dalam jangka
+                        <span className='font-semibold '> waktu tertentu</span>,
+                        sedangkan
+                        <span className='font-semibold '> Bandwidth </span>
+                        merupakan
+                        <span className='font-semibold '> kapasitas </span>
+                        transfer
+                        <span className='font-semibold '> maksimal </span>
+                        yang dapat dilakukan oleh jaringan.
                     </div>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Throughput dan bandwidth adalah dua konsep yang berbeda, tetapi masih saling terkait (mirip).
+                        <span className='italic'>Bandwidth </span>
+                        dan
+                        <span className='italic'> Throughput </span>
+                        adalah dua konsep yang
+                        <span className='font-semibold'> berbeda</span>,
+                        tetapi masih
+                        <span className='font-semibold'> saling terkait</span>.
                     </p>
-                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Dengan memahami kedua istilah tersebut, Anda akan dapat memahami kualitas koneksi Anda secara komprehensif.
+                    <p className='text-base font-regular mb-5 leading-relaxed text-gray-700'>
+                        Dengan memahami kedua istilah tersebut, Anda akan dapat memahami kualitas koneksi Anda secara
+                        <span className='font-semibold'> komprehensif</span>
+                        .
                     </p>
 
-                    <h5 className='text-xl font-bold mb-5'>Salah Paham</h5>
+                    <h5 id='kesalahpahaman' className='text-xl font-bold mb-5'>Salah Paham</h5>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
                         Sering terjadi kesalahpahaman terkait dua istilah ini.
                     </p>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Bandwidth sering digunakan untuk mengukur laju suatu jaringan pada setiap saat.
-                        Padahal, bandwidth merujuk pada kemampuan/kapasitas maksimal suatu jaringan dalam transfer data.
+                        <span className='italic font-semibold'>Bandwidth </span>
+                        sering digunakan untuk
+                        <span className='font-semibold'> mengukur laju </span>
+                        suatu jaringan internet pada
+                        <span className='font-semibold'> setiap saat</span>
+                        .
+                        <span className='font-semibold'> Padahal</span>
+                        ,
+                        <span className='italic'> Bandwidth </span>
+                        merujuk pada kemampuan atau
+                        <span className='font-semibold'> kapasitas maksimal </span>
+                        suatu jaringan internet dalam mengirimkan atau transfer data.
                     </p>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Untuk mengukur jumlah data yang ditransfer dalam waktu tertentu seharusnya menggunakan Throughput.
+                        Untuk mengukur jumlah data yang ditransfer dalam waktu tertentu,
+                        <span className='font-semibold'> seharusnya </span>
+                        menggunakan
+                        <span className='italic font-semibold'> Throughput</span>
+                        .
                     </p>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Anda akan sering menjumpai Penyedia Jasa Internet mengiklankan jasa internetnya berdasarkan besaran bandwidth yang tersedia.
-                        Itu merupakan teknik pemasaran / gimmick marketing dari Penyedia Jasa Internet saja.
+                        Anda akan sering menjumpai
+                        <span className='font-semibold'> Penyedia Jasa Internet </span>
+                        (ISP)
+                        <span className='font-semibold'> mempromosikan </span>
+                        produk internetnya
+                        <span className='font-semibold'> berdasarkan besaran</span>
+                        <span className='italic font-semibold'> Bandwidth </span>
+                        yang tersedia.
+                        Hal tersebut merupakan teknik pemasaran atau
+                        <span className='font-semibold italic'> gimmick marketing </span>
+                        dari Penyedia Jasa Internet saja.
                     </p>
-                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Hal yang perlu diluruskan adalah besaran transfer data tidak akan selalu sama pada setiap saat seperti yang ditawarkan ISP.
+                    <p className='text-base font-regular mb-5 leading-relaxed text-gray-700'>
+                        <span className='font-semibold'>Hal yang perlu diluruskan </span>
+                        adalah nilai atau luaran transfer data
+                        <span className='font-semibold'> tidak akan selalu sama </span>
+                        pada setiap saat seperti yang ditawarkan ISP (Berdasarkan Bandwidth).
+                    </p>
+                    {/* <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
                         Besaran nilai throughput akan selalu lebih kecil atau sama dengan besar bandwidth.
-                    </p>
+                    </p> */}
 
-                    <h5 className='text-xl font-bold mb-5'>Illustrasi</h5>
+                    <h5 id='illustrasi-throughput-bandwidth' className='text-xl font-bold mb-5'>Illustrasi Throughput vs Bandwidth</h5>
                     <div>
                         <img
                             src={imageThroughput}
@@ -141,38 +218,145 @@ const BelajarThroughput = () => {
                             alt="Img Throughpt"
                         />
                     </div>
-                    <div>
-                        <img
-                            src={imageDelayBad}
-                            className="h-full w-full "
-                            alt="Img Throughpt"
-                        />
-                    </div>
-                    <div>
-                        <img
-                            src={imageDelayBad}
-                            className="h-full w-full "
-                            alt="Img Throughpt"
-                        />
+
+                    <h6 id='analogi-throughput-bandwidth' className='text-lg font-bold mb-5'>Analogi</h6>
+                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        Analogi yang dapat digunakan untuk menggambarkan
+                        <span className='font-semibold'> hubungan </span>
+                        antara keduanya adalah hubungan
+                        <span className='font-semibold'> pipa </span>
+                        dengan
+                        <span className='font-semibold'> air</span>
+                        .
+                        <span className='italic'> Bandwidth </span>
+                        sebagai pipa, sedangkan
+                        <span className='italic'> Throughput </span>
+                        sebagai air.
+                    </p>
+                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        Jika pipa atau
+                        <span className='italic'> Bandwidth </span>
+                        <span className='font-semibold'>semakin besar</span>
+                        , maka air atau
+                        <span className='italic'> Throughput </span>
+                        (data) yang dapat mengalir pada satu waktu juga
+                        <span className='font-semibold'> semakin besar</span>
+                        .
+                    </p>
+                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        Dengan kata lain, besar
+                        <span className='font-semibold italic'> Bandwidth </span>
+                        menentukan berapa banyak data yang dapat dikirim dan diterima perangkat pada satu waktu
+                        (
+                        <span className='font-semibold'>Batas Maksimal</span>
+                        ),
+                        sedangkan
+                        <span className='font-semibold italic'> Throughput </span>
+                        memberi tahu Anda jumlah data yang benar-benar
+                        <span className='font-semibold'> ditransmisikan</span>.                        .
+                    </p>
+                    <h6 id='contoh-throughput-bandwidth' className='text-lg font-bold mb-5'>Contoh</h6>
+                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        Sebagai contoh, Anda saat ini sedang berlangganan sebuah produk internet dengan kapasitas
+                        <span className='italic'> Bandwidth </span>
+                        sebesar 10Mbps.
+                    </p>
+                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        Lalu Anda ingin mengunduh sebuah
+                        <span className='italic'> file </span>
+                        di internet.
+                    </p>
+                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        Ketika Anda mengunduh
+                        <span className='italic'> file </span>
+                        tersebut,
+                        <span className='italic'> browser </span>
+                        Anda menunjukkan kecepatan sebesar 9,2Mbps.
+                        Nilai 9.2Mbps inilah yang dimaksud dengan nilai
+                        <span className='italic'> Throughput</span>
+                        .
+                    </p>
+
+                    <h5 id='standar-nilai-throughput' className='text-xl font-bold mb-5'>Standar Nilai <i>Throughput</i></h5>
+                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        Berdasarkan penelitian Mister X et.al. Nilai throughput yang. percuma jika nilai bandwidth besar tapi throughputnya tetap kecil.
+                    </p>
+
+                    <div className='flex mt-2 mb-10 justify-center'>
+                        <Table hoverable={true}>
+                            <Table.Head>
+                                <Table.HeadCell>
+                                    Nilai
+                                </Table.HeadCell>
+                                <Table.HeadCell>
+                                    Index
+                                </Table.HeadCell>
+                                <Table.HeadCell>
+                                    Category
+                                </Table.HeadCell>
+
+                            </Table.Head>
+                            <Table.Body className="divide-y">
+                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                        &#60;0%&#62; &ge;asda &le;
+
+
+                                    </Table.Cell>
+                                    <Table.Cell>
+                                        3
+                                    </Table.Cell>
+                                    <Table.Cell>
+                                        Good
+                                    </Table.Cell>
+                                </Table.Row>
+                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                        0%
+                                    </Table.Cell>
+                                    <Table.Cell>
+                                        3
+                                    </Table.Cell>
+                                    <Table.Cell>
+                                        Good
+                                    </Table.Cell>
+                                </Table.Row>
+                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                        0%
+                                    </Table.Cell>
+                                    <Table.Cell>
+                                        3
+                                    </Table.Cell>
+                                    <Table.Cell>
+                                        Good
+                                    </Table.Cell>
+                                </Table.Row>
+                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                        0%
+                                    </Table.Cell>
+                                    <Table.Cell>
+                                        3
+                                    </Table.Cell>
+                                    <Table.Cell>
+                                        Good
+                                    </Table.Cell>
+                                </Table.Row>
+                            </Table.Body>
+                        </Table>
                     </div>
 
+
+                    <h5 id='pengaruh-throughput-bandwidth' className='text-xl font-bold mb-5'>Pengaruh <i>Throughput</i> dan <i>Bandwidth</i></h5>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Analogi yang dapat digunakan untuk menggambarkan hubungan antara keduanya adalah hubungan pipa dengan air.
-                        Bandwidth sebagai pipa dan throughput sebagai air.
-                        Jika pipa atau bandwidth semakin besar, maka air atau data yang dapat mengalir pada satu waktu juga semakin besar.
-                    </p>
-                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Dengan kata lain, besar bandwidth menentukan berapa banyak data yang dapat dikirim dan diterima perangkat pada satu waktu (Batas Maksimal),
-                        sedangkan throughput memberi tahu Anda jumlah data yang benar-benar ditransmisikan.
-                    </p>
-                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Sebagai contoh, Anda berlangganan internet dengan bandwidth sebesar 10Mbps dan ingin mengunduh sebuah file di internet.
                         Ketika Anda mengunduh file tersebut, browser anda menunjukkan kecepatan sebesar 9,2Mbps.
                         Nilai 9.2Mbps inilah yang dimaksud dengan nilai throughput.
                     </p>
 
 
-                    <h5 className='text-xl font-bold mb-5'>Pengukuran</h5>
+
+                    <h5 id='pengukuran-throughput' className='text-xl font-bold mb-5'>Pengukuran <i>Throughput</i></h5>
                     {/* input filter */}
                     <div>
                         <form  >
@@ -233,8 +417,8 @@ const BelajarThroughput = () => {
                             </div>
                         </form>
                     </div>
-                    {/* chart */}
 
+                    {/* chart */}
                     <div className=' p-3 border rounded-lg m-3'>
                         <div className="flex flex-wrap mx-0 mb-2">
                             <div className="w-full md:w-full p-3 mb-1 md:mb-0">
@@ -298,18 +482,117 @@ const BelajarThroughput = () => {
                             </div>
                         </div>
                     </div>
-
-
-                    <div className='my-20'>
-
+                    <div className='my-10'>
                     </div>
 
 
-
                 </div>
-                <aside className='invisible md:visible w-1/4 flex flex-col'>
-                    <div className='sticky top-36'>
-                        <div className='hidden min-h-[calc(100vh-9rem-113px)] overflow-auto pb-4 lg:block border'> </div>
+                <aside className='w-1/4 flex flex-col'>
+                    <div className='sticky top-14 px-5'>
+                        <div className='px-4 flex-col hidden overflow-auto lg:block border-l-2 border-blue-50 '>
+                            <h6 className='mb-3 text-gray-900 dark:text-gray-100 font-semibold text-lg'>Daftar Isi</h6>
+                            <a href='/belajarqos/throughput/#apa-itu-throughput'
+                                className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                            > Apa itu Throughput?
+                            </a>
+                            <a href='/belajarqos/throughput/#apa-itu-bandwidth'
+                                className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                            > Apa itu Bandwidth?
+                            </a>
+                            <a href='/belajarqos/throughput/#arti-throughput-bandwidth'
+                                className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                            > Arti Bandwidth & Throughput
+                            </a>
+                            <a href='/belajarqos/throughput/#kesalahpahaman'
+                                className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                            > Kesalahpahaman
+                            </a>
+                            <a href='/belajarqos/throughput/#illustrasi-throughput-bandwidth'
+                                className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                            > Illustrasi
+                            </a>
+                            <div>
+                                <a href='/belajarqos/throughput/#analogi-throughput-bandwidth'
+                                    className=' ml-4 mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                > Analogi
+                                </a>
+                                <a href='/belajarqos/throughput/#contoh-throughput-bandwidth'
+                                    className=' ml-4 mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                > Contoh
+                                </a>
+                            </div>
+                            <a href='/belajarqos/throughput/#standar-nilai-throughput'
+                                className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                            >Standar Throughput
+                            </a>
+                            <a href='/belajarqos/throughput/#pengaruh-throughput-bandwidth'
+                                className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                            > Pengaruh Throughput & Bandwidth
+                            </a>
+
+                            <a href='/belajarqos/throughput/#pengukuran-throughput'
+                                className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                            > Pengukuran Throughput
+                            </a>
+                            <h6 className='mt-5 mb-3 text-gray-900 dark:text-gray-100 font-semibold text-base'>Parameter Lain</h6>
+                            <Link to='/belajarqos/delay'>
+                                <div
+                                    className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                > Delay/Latency
+                                </div>
+                            </Link>
+                            <Link to='/belajarqos/jitter'>
+                                <div
+                                    className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                > Jitter
+                                </div>
+                            </Link>
+                            <Link to='/belajarqos/packetloss'>
+                                <div
+                                    className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                > Packet Loss
+                                </div>
+                            </Link>
+                        </div>
 
                     </div>
                 </aside>

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Navbar, Button } from 'flowbite-react'
+import { Navbar, Button, Flowbite, DarkThemeToggle } from 'flowbite-react'
 import { Link } from 'react-router-dom'
 import { logoMoniqq } from '../../assets'
 
@@ -8,7 +8,7 @@ const BelajarQOS = () => {
         document.title = "MONIQQ - Belajar Internet";
     }, []);
     return (
-        <div className='flex flex-col div h-screen  '>
+        <div className='flex flex-col div dark:bg-gray-900  '>
             <header className="container p-0">
                 <Navbar
                     fluid={true}
@@ -24,13 +24,17 @@ const BelajarQOS = () => {
                             />
                         </Link>
                     </div>
-                    <div className="flex md:order-2">
+                    <div className="flex md:order-2 gap-2">
                         <Link to="/login">
                             <Button>
                                 Login
                             </Button>
                         </Link>
+                        <Flowbite>
+                            <DarkThemeToggle />
+                        </Flowbite>
                         <Navbar.Toggle />
+
                     </div>
                     <Navbar.Collapse>
                         <ul
@@ -62,7 +66,7 @@ const BelajarQOS = () => {
 
             <div className='container flex flex-col items-center justify-center mt-16'>
                 <div className='w-full md:w-3/4 flex flex-col '>
-                    <h4 className='text-3xl font-bold my-5'>Performa Internet</h4>
+                    <h4 className='text-3xl font-bold my-5 dark:text-green-100'>Performa Internet</h4>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
                         Anda sebagai pengguna internet pasti menginginkan kualitas koneksi yang
                         <span className='font-semibold'> cepat</span>,
@@ -137,7 +141,7 @@ const BelajarQOS = () => {
                                 </Link>
                             </div>
                             <div className="w-full p-3 md:w-1/2  mb-6 md:mb-0">
-                                <Link to="/belajarqos/throughput">
+                                <Link to="/belajarqos/delay">
                                     <div className="mb-6 max-w-sm rounded-sm border border-gray-200 bg-white shadow-lg transform transition duration-500 hover:scale-110">
                                         <div className="flex items-center relative mb-10">
                                             <div className="border-t border-gray-200 z-20 w-full"></div>
@@ -169,7 +173,7 @@ const BelajarQOS = () => {
                         </div>
                         <div className="flex flex-wrap mx-0 ">
                             <div className="w-full p-3 md:w-1/2  mb-6 md:mb-0">
-                                <Link to="/belajarqos/throughput">
+                                <Link to="/belajarqos/jitter">
                                     <div className="mb-6 max-w-sm rounded-sm border border-gray-200 bg-white shadow-lg transform transition duration-500 hover:scale-110">
                                         <div className="flex items-center relative mb-10">
                                             <div className="border-t border-gray-200 z-20 w-full"></div>
@@ -198,7 +202,7 @@ const BelajarQOS = () => {
                                 </Link>
                             </div>
                             <div className="w-full p-3 md:w-1/2  mb-2 md:mb-0">
-                                <Link to="/belajarqos/throughput">
+                                <Link to="/belajarqos/packetloss">
                                     <div className="mb-6 max-w-sm rounded-lg border border-gray-200 bg-white shadow-lg transform transition duration-500 hover:scale-110">
                                         <div className="flex  items-center relative mb-10">
                                             <div className="border-t border-gray-200 z-20 w-full"></div>

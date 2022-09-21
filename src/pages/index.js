@@ -4,5 +4,8 @@ import DashboardISP from "./DashboardISP";
 import DashboardAdmin from "./DashboardAdmin";
 import BelajarQOS from "./BelajarQOS";
 import BelajarThroughput from "./BelajarThroughput";
+import BelajarDelay from "./BelajarDelay";
+import BelajarJitter from "./BelajarJitter";
+import BelajarPacketLoss from "./BelajarPacketLoss";
 
-export { Home, BelajarQOS, Login, DashboardAdmin, DashboardISP, BelajarThroughput }
+export { Home, BelajarQOS, Login, DashboardAdmin, DashboardISP, BelajarThroughput, BelajarDelay, BelajarJitter, BelajarPacketLoss }

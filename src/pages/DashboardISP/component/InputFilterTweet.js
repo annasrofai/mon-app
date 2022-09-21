@@ -2,8 +2,21 @@ import React from 'react'
 import { useState } from 'react'
 import { ispApi } from '../../../api'
 
+const yesterday = new Date();
+yesterday.setDate(yesterday.getDate() - 1);
+function padTo2Digits(num) {
+    return num.toString().padStart(2, '0');
+}
+function formatDate(date) {
+    return [
+        date.getFullYear(),
+        padTo2Digits(date.getMonth() + 1),
+        padTo2Digits(date.getDate()),
+    ].join('-');
+}
+const kemarin = formatDate(yesterday);
 
-const InputFilterTweet = ({ setFilteredTweet, setSentimenSum, setSentimenDaily, setKataNegatif, setKataPositif }) => {
+const InputFilterTweet = ({ setFilteredTweet, setSentimenSum, setSentimenDaily, setKataNegatif, setKataPositif, setTanggalAkhirLaporan, setTanggalMulaiLaporan }) => {
     const [startDate, setStartDate] = useState("")
     const [endDate, setEndDate] = useState("")
     // const [hitungan, setHitungan] = useState("")
@@ -32,8 +45,12 @@ const InputFilterTweet = ({ setFilteredTweet, setSentimenSum, setSentimenDaily, 
             fetchTweets({ startDate, endDate });
             fetchSentimen({ startDate, endDate });
             fetchKata({ startDate, endDate });
+            setTanggalMulaiLaporan(startDate);
+            setTanggalAkhirLaporan(endDate);
         }
     }
+
+
     return (
         <div>
             <form onSubmit={handleSubmit} >
@@ -48,7 +65,8 @@ const InputFilterTweet = ({ setFilteredTweet, setSentimenSum, setSentimenDaily, 
                             type="date"
                             id="tanggalmulai"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="name@flowbite.com"
+                            max={endDate}
+                            min=""
                             required
                             value={startDate}
                             onChange={(e) => setStartDate(e.target.value)}
@@ -64,7 +82,9 @@ const InputFilterTweet = ({ setFilteredTweet, setSentimenSum, setSentimenDaily, 
                             type="date"
                             id="tanggalakhir"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="name@flowbite.com"
+
+                            min={startDate}
+                            max={kemarin}
                             required
                             value={endDate}
                             onChange={(e) => setEndDate(e.target.value)}

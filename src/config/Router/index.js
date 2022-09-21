@@ -1,11 +1,17 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes, } from 'react-router-dom'
-import { DashboardAdmin, DashboardISP, Home, Login, BelajarQOS, BelajarThroughput } from '../../pages'
+import { DashboardAdmin, DashboardISP, Home, Login, BelajarQOS, BelajarThroughput, BelajarDelay, BelajarJitter, BelajarPacketLoss } from '../../pages'
 
 const Routess = () => {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path='/belajarqos/packetloss' element={<BelajarPacketLoss />}>
+                </Route>
+                <Route path='/belajarqos/jitter' element={<BelajarJitter />}>
+                </Route>
+                <Route path='/belajarqos/delay' element={<BelajarDelay />}>
+                </Route>
                 <Route path='/belajarqos/throughput' element={<BelajarThroughput />}>
                 </Route>
                 <Route path='/belajarqos' element={<BelajarQOS />}>

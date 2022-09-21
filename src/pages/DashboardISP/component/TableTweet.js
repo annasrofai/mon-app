@@ -50,7 +50,7 @@ const TableTweet = ({ columns, rows }) => {
     }
     return (
         <div >
-            <Table >
+            <Table hoverable={true} >
                 <Table.Head >
                     {columns.map((column) => {
                         const sortIcon = () => {
@@ -112,8 +112,8 @@ const TableTweet = ({ columns, rows }) => {
                     </Table.Row>
                     {calculatedRows.map((row) => {
                         return (
-                            <Table.Row key={row.id}>
-                                {/* <Table.Row key={row.id} className={row.sentimen === 'positif' ? 'bg-emerald-50' : 'bg-rose-50'}></Table.Row> */}
+
+                            <Table.Row key={row.id} className={row.sentimen !== 'positif' ? row.sentimen === 'negatif' ? 'bg-rose-50' : 'bg-white' : 'bg-emerald-50'}>
                                 {columns.map((column) => {
                                     if (column.format) {
                                         return <Table.Cell key={column.accessor}>{column.format(row[column.accessor])}</Table.Cell>

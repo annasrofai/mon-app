@@ -15,6 +15,7 @@ const Home = () => {
                 <Navbar
                     fluid={true}
                     rounded={true}
+                    className="dark:bg-gray-900"
 
                 >
                     <div>
@@ -59,6 +60,11 @@ const Home = () => {
                         </ul>
                     </Navbar.Collapse>
                 </Navbar>
+
+            </header>
+            <header className='container p-3'>
+
+
 
             </header>
 

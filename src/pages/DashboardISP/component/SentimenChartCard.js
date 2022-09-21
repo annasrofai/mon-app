@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useCallback } from 'react'
 
 import { Doughnut, Line } from 'react-chartjs-2';
 import { Chart, Filler, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js'
@@ -47,23 +47,59 @@ const SentimenChartCard = ({ sentimenDaily, sentimenSum }) => {
             }
         ]
     };
+
+    const refDonut = useRef(null);
+    const downloadImageDonut = useCallback(() => {
+        const link = document.createElement("a");
+        link.download = "chart-donut.png"
+        link.href = refDonut.current.toBase64Image();
+        link.click();
+    }, [])
+
+    const refLine = useRef(null);
+    const downloadImageLine = useCallback(() => {
+        const link = document.createElement("a");
+        link.download = "chart-line.png"
+        link.href = refLine.current.toBase64Image();
+        link.click();
+    }, [])
+
+
     return (
         <div>
             <div className="flex mx-0 flex-row-reverse md:flex-row flex-wrap ">
                 <div className="w-full pb-5 pt-0 md:w-1/3 px-3 mb-6 md:mb-0">
-                    <div className='text-lg py-3 font-medium'>
-                        Presentase Sentimen
+                    <div className='text-lg py-3 font-medium flex justify-between items-center'>
+                        <div>
+                            Presentase
+                        </div>
+                        <div>
+                            <button onClick={downloadImageDonut} type="button" className="focus:outline-none text-white
+                             bg-green-400 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg 
+                             text-xs px-3 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                                Download
+                            </button>
+                        </div>
                     </div>
                     <div className='border h-96 p-4 rounded-lg flex  w-full items-center justify-center'>
-                        <Doughnut data={datadonut} />
+                        <Doughnut ref={refDonut} data={datadonut} />
                     </div>
                 </div>
                 <div className="w-full pb-5 pt-0 md:w-2/3 px-3 mb-6 md:mb-0">
-                    <div className='text-lg py-3 font-medium'>
-                        Tren Sentimen
+                    <div className='text-lg py-3 font-medium flex justify-between items-center'>
+                        <div>
+                            Tren
+                        </div>
+                        <div>
+                            <button onClick={downloadImageLine} type="button" className="focus:outline-none text-white
+                             bg-green-400 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg 
+                             text-xs px-3 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                                Download
+                            </button>
+                        </div>
                     </div>
                     <div className='border h-96 p-4 rounded-lg flex  w-full items-center justify-center'>
-                        <Line data={dataline} options={{ maintainAspectRatio: false }} />
+                        <Line ref={refLine} data={dataline} options={{ maintainAspectRatio: false }} />
                     </div>
                 </div>
 
