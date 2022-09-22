@@ -6,6 +6,9 @@ import { Doughnut, Bar, Line } from 'react-chartjs-2';
 import { Chart, Filler, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement, BarElement } from 'chart.js'
 Chart.register(ArcElement, Tooltip, Legend, Filler, CategoryScale, LinearScale, PointElement, LineElement, BarElement);
 const BelajarThroughput = () => {
+    useEffect(() => {
+        document.title = "Belajar Throughput & Bandwidth - MONIQQ";
+    }, []);
     const labels = ['22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222'];
     const databarmulti = {
         labels,
@@ -278,6 +281,12 @@ const BelajarThroughput = () => {
                     </p>
 
                     <h5 id='standar-nilai-throughput' className='text-xl font-bold mb-5'>Standar Nilai <i>Throughput</i></h5>
+                    <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-3 mb-6 leading-relaxed italic rounded">
+                        <span className='font-semibold '> Semakin besar </span>
+                        nilai Throughput, maka
+                        <span className='font-semibold '> semakin baik</span>
+                        .
+                    </div>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
                         Berdasarkan penelitian Mister X et.al. Nilai throughput yang. percuma jika nilai bandwidth besar tapi throughputnya tetap kecil.
                     </p>
@@ -347,12 +356,36 @@ const BelajarThroughput = () => {
                         </Table>
                     </div>
 
-
                     <h5 id='pengaruh-throughput-bandwidth' className='text-xl font-bold mb-5'>Pengaruh <i>Throughput</i> dan <i>Bandwidth</i></h5>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Ketika Anda mengunduh file tersebut, browser anda menunjukkan kecepatan sebesar 9,2Mbps.
-                        Nilai 9.2Mbps inilah yang dimaksud dengan nilai throughput.
+                        Nilai throughput dan bandwidth tentu akan mempengaruhi aktivitas Anda di Internet, seperti browsing, streaming, dan gaming.
                     </p>
+                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        Bandwidth yang besar memungkinkan anda untuk melakukan banyak aktivitas di internet secara bersamaan, seperti browsing sambil streaming video.
+                        Bandwidth yang besar juga mendukung akses internet yang dilakukan oleh banyak perangkat.
+                    </p>
+                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        Throughput yang besar akan membuat seluruh aktivitas anda di internet akan berjalan dengan lancar.
+                    </p>
+                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        Jika nilai bandwidth kecil, terdapat kemungkinan terjadi kemacetan dalam transfer data.
+                        Hal ini juga akan berpengaruh terhadap nilai throughput, nilainya akan menjadi kecil.
+                    </p>
+                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        Gejala-gejala yang timbul adalah sebagai berikut.
+                    </p>
+                    <ul className="list-disc mx-7 mb-6 text-gray-700">
+                        <li className='mb-2'>
+                            Lambat dalam memuat situs web, game, dan atau aplikasi online.
+                        </li>
+                        <li className='mb-2'>
+                            Lambat dalam mengunduh dan mengunggah file.
+                        </li>
+                        <li className='mb-2'>
+                            Lambat dalam memuat streaming video/audio (buffering).
+                        </li>
+
+                    </ul>
 
 
 

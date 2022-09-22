@@ -1,8 +1,7 @@
 import React, { useRef } from 'react'
 import { logoMoniqq } from '../../assets';
 import { useState } from "react";
-import { Table } from 'flowbite-react';
-import { Doughnut, Line } from 'react-chartjs-2';
+
 import { Chart, Filler, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js'
 import { useEffect } from 'react';
 import TableTweet from './component/TableTweet';
@@ -22,49 +21,49 @@ Chart.register(ArcElement, Tooltip, Legend, Filler, CategoryScale, LinearScale, 
 const DashboardISP = () => {
     // untuk ubah title
     useEffect(() => {
-        document.title = "MONIQQ - Dashboard ISP";
+        document.title = "Dashboard ISP - MONIQQ";
     }, []);
 
 
     // state untuk open sidebar
     const [openSidebars, setOpenSidebars] = useState(false);
     // contoh data donat
-    const datadonut = {
-        labels: [
-            'Positif',
-            'Negatif',
+    // const datadonut = {
+    //     labels: [
+    //         'Positif',
+    //         'Negatif',
 
-        ],
-        datasets: [{
-            label: 'My First Dataset',
-            data: [300, 50],
-            backgroundColor: [
-                'rgba(0,200,132,0.8)',
-                'rgba(255, 99, 132, 0.8)',
-            ],
-            hoverOffset: 4
-        }]
-    };
-    // contoh data line
-    const dataline = {
-        labels: ["Jan", "Feb", "Mar", "Feb", "Mar", "Feb", "Mar", "Feb", "Mar"],
-        datasets: [
-            {
-                label: "Positif",
-                data: [33, 53, 85, 53, 85, 53, 85, 53, 85,],
-                fill: false,
-                backgroundColor: "rgba(0,200,132,0.8)",
-                borderColor: "rgba(0,200,132,0.8)"
-            },
-            {
-                label: "Negatif",
-                data: [33, 25, 35, 25, 35, 25, 35, 25, 35,],
-                fill: false,
-                backgroundColor: 'rgba(255, 99, 132, 0.8)',
-                borderColor: 'rgba(255, 99, 132, 0.8)',
-            }
-        ]
-    };
+    //     ],
+    //     datasets: [{
+    //         label: 'My First Dataset',
+    //         data: [300, 50],
+    //         backgroundColor: [
+    //             'rgba(0,200,132,0.8)',
+    //             'rgba(255, 99, 132, 0.8)',
+    //         ],
+    //         hoverOffset: 4
+    //     }]
+    // };
+    // // contoh data line
+    // const dataline = {
+    //     labels: ["Jan", "Feb", "Mar", "Feb", "Mar", "Feb", "Mar", "Feb", "Mar"],
+    //     datasets: [
+    //         {
+    //             label: "Positif",
+    //             data: [33, 53, 85, 53, 85, 53, 85, 53, 85,],
+    //             fill: false,
+    //             backgroundColor: "rgba(0,200,132,0.8)",
+    //             borderColor: "rgba(0,200,132,0.8)"
+    //         },
+    //         {
+    //             label: "Negatif",
+    //             data: [33, 25, 35, 25, 35, 25, 35, 25, 35,],
+    //             fill: false,
+    //             backgroundColor: 'rgba(255, 99, 132, 0.8)',
+    //             borderColor: 'rgba(255, 99, 132, 0.8)',
+    //         }
+    //     ]
+    // };
     const [filteredTweet, setFilteredTweet] = useState([])
     const [kataNegatif, setKataNegatif] = useState([])
     const [kataPositif, setKataPositif] = useState([])
@@ -73,24 +72,24 @@ const DashboardISP = () => {
     const [tanggalMulaiLaporan, setTanggalMulaiLaporan] = useState("")
     const [tanggalAkhirLaporan, setTanggalAkhirLaporan] = useState("")
     // contoh kolom
-    const columns = [
-        { accessor: 'name', label: 'Name' },
-        { accessor: 'age', label: 'Age' },
-        { accessor: 'is_manager', label: 'Manager', format: (value) => (value ? '✔️' : '✖️') },
-        { accessor: 'start_date', label: 'Start Date' },
-    ]
+    // const columns = [
+    //     { accessor: 'name', label: 'Name' },
+    //     { accessor: 'age', label: 'Age' },
+    //     { accessor: 'is_manager', label: 'Manager', format: (value) => (value ? '✔️' : '✖️') },
+    //     { accessor: 'start_date', label: 'Start Date' },
+    // ]
 
-    // contoh data table tweet
-    const rows = [
-        { id: 1, name: 'Liz Lemon', age: 36, is_manager: true, start_date: '02-28-1999' },
-        { id: 2, name: 'Jack Donaghy', age: 40, is_manager: true, start_date: '03-05-1997' },
-        { id: 3, name: 'Tracy Morgan', age: 39, is_manager: false, start_date: '07-12-2002' },
-        { id: 4, name: 'Jenna Maroney', age: 40, is_manager: false, start_date: '02-28-1999' },
-        { id: 5, name: 'Kenneth Parcell', age: Infinity, is_manager: false, start_date: '01-01-1970' },
-        { id: 6, name: 'Pete Hornberger', age: 42, is_manager: true, start_date: '04-01-2000' },
-        { id: 7, name: 'Frank Rossitano', age: 36, is_manager: false, start_date: '06-09-2004' },
-        { id: 8, name: null, age: null, is_manager: null, start_date: null },
-    ]
+    // // contoh data table tweet
+    // const rows = [
+    //     { id: 1, name: 'Liz Lemon', age: 36, is_manager: true, start_date: '02-28-1999' },
+    //     { id: 2, name: 'Jack Donaghy', age: 40, is_manager: true, start_date: '03-05-1997' },
+    //     { id: 3, name: 'Tracy Morgan', age: 39, is_manager: false, start_date: '07-12-2002' },
+    //     { id: 4, name: 'Jenna Maroney', age: 40, is_manager: false, start_date: '02-28-1999' },
+    //     { id: 5, name: 'Kenneth Parcell', age: Infinity, is_manager: false, start_date: '01-01-1970' },
+    //     { id: 6, name: 'Pete Hornberger', age: 42, is_manager: true, start_date: '04-01-2000' },
+    //     { id: 7, name: 'Frank Rossitano', age: 36, is_manager: false, start_date: '06-09-2004' },
+    //     { id: 8, name: null, age: null, is_manager: null, start_date: null },
+    // ]
     const colKata = [
         { accessor: 'kata', label: 'Kata' },
         { accessor: 'frekuensi', label: 'Frekuensi' },
