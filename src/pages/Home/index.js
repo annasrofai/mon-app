@@ -5,7 +5,7 @@ import { Navbar, Button } from 'flowbite-react'
 const Home = () => {
     // untuk ubah title
     useEffect(() => {
-        document.title = "MONIQQ - Home";
+        document.title = "Home - MONIQQ";
     }, []);
 
     return (
@@ -62,15 +62,11 @@ const Home = () => {
                 </Navbar>
 
             </header>
-            <header className='container p-3'>
 
-
-
-            </header>
 
             <section className="relative">
                 <div
-                    className="container flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-20"
+                    className="container flex flex-col-reverse lg:flex-row items-center gap-12 my-14"
                 >
 
                     <div className="flex flex-1 flex-col items-center lg:items-start">
@@ -81,7 +77,7 @@ const Home = () => {
                         </h1>
                         <p className="text-lg font-light text-center lg:text-left mb-6 leading-relaxed">
                             Gunakan situs ini untuk memahami kualitas koneksi dalam jaringan
-                            internet serta bagaimana hal tersebut mempengaruhi pengalaman
+                            internet rumahan serta bagaimana hal tersebut mempengaruhi pengalaman
                             <i> browsing</i>,<i> gaming</i>, dan <i> streaming</i> Anda.
                         </p>
 
@@ -107,10 +103,10 @@ const Home = () => {
                     </div>
 
                     <div
-                        className="flex flex-1 flex-col justify-center items-center mt-5 mb-10 md:mb-16"
+                        className="flex flex-1 flex-col justify-center items-center my-8 "
                     >
                         <img
-                            className="w-5/6 h-5/6"
+                            className="w-5/6 h-5/6 animate-bounce "
                             src={imageHeroSection}
                             alt=""
                         />
@@ -118,7 +114,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className='container'>
+            {/* <section className='container'>
                 <div
                     className=" container lg:p-20 mt-6 overflow-hidden p-12 relative"
                 >
@@ -139,7 +135,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
 
             <footer

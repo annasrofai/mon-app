@@ -10,23 +10,23 @@ const BelajarPacketLoss = () => {
     useEffect(() => {
         document.title = "Belajar Packet Loss - MONIQQ";
     }, []);
-    const labels = ['22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222'];
+    const labels = ['Person1', 'person2', 'person3'];
     const databarmulti = {
         labels,
         datasets: [
             {
-                label: 'Person 1',
-                data: [18, 12, 13, 14, 17, 11, 10],
+                label: 'Maximal',
+                data: [18, 23, 25,],
                 backgroundColor: 'rgba(53, 90, 232, 0.5)',
             },
             {
-                label: 'Person 2',
-                data: [15, 20, 19, 19.1, 12, 19, 18],
+                label: 'Minimal',
+                data: [15, 12, 12],
                 backgroundColor: 'rgba(53, 162, 235, 0.5)',
             },
             {
-                label: 'Person 3',
-                data: [15, 10, 11, 11, 12, 12, 18],
+                label: 'Rata-Rata',
+                data: [17, 18, 18],
                 backgroundColor: 'rgba(53, 162, 200, 0.5)',
             },
 
@@ -97,18 +97,37 @@ const BelajarPacketLoss = () => {
                         <span className='italic'> Packet Loss</span>
                         ?
                     </h5>
-                    <p className='text-base font-regular mb-5 leading-relaxed text-gray-700'>
-                        Packet loss adalah jumlah atau presentase paket data yang hilang saat terjadi transfer data.
-                        Dalam internet, data dikirimkan dalam bentuk paket=paket data.
-                        Jika terdapat satu atau lebih paket data yang gagal dalam perjalanan,
-                        maka paket yang hilang tersebut perlu dikirim ulang.
-                        Hal ini mengakibatkan waktu perjalanan paket bertambah dan paket-paket berikutnya juga tertunda.
-                    </p>
+                    <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-3 mb-6 leading-relaxed italic rounded">
+                        <span className='font-semibold '>Packet loss </span>
+                        adalah jumlah atau presentase
+                        <span className='font-semibold '> paket data yang hilang </span>
+                        saat transmisi data.
+                    </div>
+
 
                     <h5 id='illustrasi-packetloss' className='text-xl font-bold mb-5'>
                         Illustrasi
                         <span className='italic'> Packet Loss</span>
                     </h5>
+                    <p className='text-base font-regular mb-5 leading-relaxed text-gray-700'>
+                        Dalam internet, data dikirimkan dalam bentuk paket-paket data.
+                    </p>
+                    <p className='text-base font-regular mb-5 leading-relaxed text-gray-700'>
+                        Jika terdapat satu atau lebih paket data yang gagal dalam perjalanan,
+                        maka paket yang hilang tersebut perlu dikirim ulang.
+                    </p>
+                    <p className='text-base font-regular mb-5 leading-relaxed text-gray-700'>
+                        Hal tersebut mengakibatkan waktu perjalanan paket (
+                        <span className='italic'>Delay</span>
+                        ) bertambah dan paket-paket berikutnya juga tertunda.
+                    </p>
+                    <div>
+                        <img
+                            src={imagePacketLoss}
+                            className="h-full w-full "
+                            alt="imagePacketLoss"
+                        />
+                    </div>
 
                     <h5 id='standar-nilai-packetloss' className='text-xl font-bold mb-5'>Standar Nilai <i>Packet Loss</i></h5>
                     <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-3 mb-6 leading-relaxed italic rounded">
@@ -117,13 +136,7 @@ const BelajarPacketLoss = () => {
                         <span className='font-semibold '> semakin baik</span>
                         .
                     </div>
-                    <div>
-                        <img
-                            src={imagePacketLoss}
-                            className="h-full w-full "
-                            alt="imagePacketLoss"
-                        />
-                    </div>
+
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
                         Berdasarkan penelitian Mister X et.al. Nilai throughput yang. percuma jika nilai bandwidth besar tapi throughputnya tetap kecil.
                     </p>
@@ -195,24 +208,35 @@ const BelajarPacketLoss = () => {
 
                     <h5 id='pengaruh-packetloss' className='text-xl font-bold mb-5'>Pengaruh <i>Packet Loss</i></h5>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Nilai xxx tentu akan mempengaruhi aktivitas Anda di Internet, seperti browsing, streaming, dan gaming.
+                        Nilai Packet Loss memiliki pengaruh terhadap seluruh aktivitas Anda di Internet, seperti browsing, streaming, dan gaming.
                     </p>
 
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Gejala-gejala yang timbul adalah sebagai berikut.
+                        Jika nilai Packet Loss tinggi, maka Anda akan meraskan Gejala-gejala sebagai berikut.
                     </p>
                     <ul className="list-disc mx-7 mb-6 text-gray-700">
                         <li className='mb-2'>
-                            Lambat dalam memuat situs web, game, dan atau aplikasi online.
+                            Keterlambatan respons dalam game saat menekan tombol (Nge-lag).
                         </li>
                         <li className='mb-2'>
-                            Lambat dalam mengunduh dan mengunggah file.
+                            Visual Stuttering (glitch)
+                        </li>
+                        <li className='mb-2'>
+                            Reconnecting atau bahkan terputus dari game.
+                        </li>
+                        <li className='mb-2'>
+                            Keterlambatan suara atau video saat melakukan panggilan online.
+                        </li>
+                        <li className='mb-2'>
+                            Suara atau video yang tidak jelas saat melakukan panggilan online.
+                        </li>
+                        <li className='mb-2'>
+                            Lambat dalam memuat situs web, game, dan atau aplikasi online.
                         </li>
                         <li className='mb-2'>
                             Lambat dalam memuat streaming video/audio (buffering).
                         </li>
                     </ul>
-
 
                     <h5 id='pengukuran-jitter' className='text-xl font-bold mb-5'>Pengukuran <i>Jitter</i></h5>
                     {/* input filter */}

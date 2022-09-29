@@ -10,23 +10,23 @@ const BelajarJitter = () => {
     useEffect(() => {
         document.title = "Belajar Jitter - MONIQQ";
     }, []);
-    const labels = ['22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222'];
+    const labels = ['Person1', 'person2', 'person3'];
     const databarmulti = {
         labels,
         datasets: [
             {
-                label: 'Person 1',
-                data: [18, 12, 13, 14, 17, 11, 10],
+                label: 'Maximal',
+                data: [18, 23, 25,],
                 backgroundColor: 'rgba(53, 90, 232, 0.5)',
             },
             {
-                label: 'Person 2',
-                data: [15, 20, 19, 19.1, 12, 19, 18],
+                label: 'Minimal',
+                data: [15, 12, 12],
                 backgroundColor: 'rgba(53, 162, 235, 0.5)',
             },
             {
-                label: 'Person 3',
-                data: [15, 10, 11, 11, 12, 12, 18],
+                label: 'Rata-Rata',
+                data: [17, 18, 18],
                 backgroundColor: 'rgba(53, 162, 200, 0.5)',
             },
 
@@ -98,14 +98,33 @@ const BelajarJitter = () => {
                         ?
                     </h5>
                     <p className='text-base font-regular mb-5 leading-relaxed text-gray-700'>
-                        Jitter adalah varians / variasi dari nilai latency. Jitter juga dinyatakan dengan milliseconds (ms).
-                        Jaringan yang andal, memiliki nilai latency yang konsisten.
-                        Jika latency setiap paket data yang dikirim nilainya stabil, maka nilai jitter akan minimal.
-                        Namun, jika terjadi lonjakan nilai latency pada saat tertentu, maka nilai jitter akan membesar.
+                        <span className='font-semibold italic'>Jitter </span>
+                        adalah varians atau
+                        <span className='font-semibold'> variasi </span>
+                        dari nilai
+                        <span className='font-semibold italic'> Delay</span>
+                        .
+                        <span className='italic'> Jitter </span>
+                        juga dinyatakan dengan milliseconds (ms).
+
                     </p>
                     <p className='text-base font-regular mb-5 leading-relaxed text-gray-700'>
-                        <i>Delay</i> dalam jaringan internet dinyatakan dengan satuan milliseconds (ms).
+
+                        Jaringan yang andal, memiliki nilai
+                        <span className='italic'> Delay </span>
+                        yang konsisten.
+                        Jika
+                        <span className='italic'> Delay </span>
+                        setiap paket data yang dikirim nilainya stabil, maka nilai
+                        <span className='italic'> Jitter </span>
+                        akan minimal.
+                        Namun, jika terjadi lonjakan nilai
+                        <span className='italic'> Delay </span>
+                        pada saat tertentu, maka nilai
+                        <span className='italic'> Jitter </span>
+                        akan membesar.
                     </p>
+
 
                     <h5 id='illustrasi-jitter' className='text-xl font-bold mb-5'>
                         Illustrasi
@@ -118,7 +137,9 @@ const BelajarJitter = () => {
                     </p>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
                         Terdapat 5 paket data yang akan dikirimkan menuju tujuan masing-masing dalam Jaringan A dan Jaringan B.
-                        Nilai dari delay tiap-tiap paket adalah sebagai berikut.
+                        Nilai dari
+                        <span className='italic'> Delay </span>
+                        tiap-tiap paket adalah sebagai berikut.
                     </p>
                     <div className='flex mt-2 mb-10 justify-center'>
                         <Table hoverable={true}>
@@ -177,9 +198,17 @@ const BelajarJitter = () => {
                         </Table>
                     </div>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Berdasarkan tabel di atas, Pada Jaringan A, nilai dari delay sangat konsisten.
-                        Namun, pada jaringan B, dua dari lima paket memiliki delay jauh di atas normal.
-                        Dengan hasil tersebut jaringan A jitter berinilai minimal, sedangkan pada jaringan B Jitter bernilai besar.
+                        Berdasarkan tabel di atas, Pada Jaringan A, nilai dari
+                        <span className='italic'> Delay </span>
+                        sangat konsisten.
+                        Namun, pada Jaringan B, dua dari lima paket memiliki
+                        <span className='italic'> Delay </span>
+                        jauh di atas normal.
+                        Oleh karena itu, Jaringan A
+                        <span className='italic'> Jitter </span>
+                        berinilai minimal, sedangkan pada jaringan B
+                        <span className='italic'> Jitter </span>
+                        bernilai besar.
                     </p>
                     <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-1 mb-7 leading-relaxed italic rounded">
                         <p className='text-base font-regular leading-relaxed text-gray-700'>
@@ -283,21 +312,26 @@ const BelajarJitter = () => {
 
                     <h5 id='pengaruh-jitter' className='text-xl font-bold mb-5'>Pengaruh <i>Jitter</i></h5>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Nilai xxx tentu akan mempengaruhi aktivitas Anda di Internet, seperti browsing, streaming, dan gaming.
+                        Nilai Jitter memiliki pengaruh terhadap seluruh aktivitas Anda di Internet, seperti browsing, streaming, dan gaming.
                     </p>
-
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Gejala-gejala yang timbul adalah sebagai berikut.
+                        Setiap aktivitas di Internet memiliki ketahanan masing-masing terhadap Jitter.
+                    </p>
+                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        Nilai Jitter akan sangat berpengaruh terhadap aktivitas yang sifatnya sinkron dan butuh respon yang cepat, seperti panggilan dan game.
+                    </p>
+                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        Jika nilai Jitter tinggi, maka Anda akan meraskan Gejala-gejala sebagai berikut.
                     </p>
                     <ul className="list-disc mx-7 mb-6 text-gray-700">
                         <li className='mb-2'>
-                            Lambat dalam memuat situs web, game, dan atau aplikasi online.
+                            Visual Stuttering (glitch)
                         </li>
                         <li className='mb-2'>
-                            Lambat dalam mengunduh dan mengunggah file.
+                            Suara atau video yang tidak jelas saat melakukan panggilan online.
                         </li>
                         <li className='mb-2'>
-                            Lambat dalam memuat streaming video/audio (buffering).
+                            Reconnecting atau bahkan terputus dari game.
                         </li>
                     </ul>
 

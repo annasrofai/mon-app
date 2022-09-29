@@ -1,7 +1,7 @@
 import React from 'react'
 import { logoMoniqq } from '../../assets';
 import { useState } from "react";
-import { Table } from 'flowbite-react';
+import { Accordion, Table } from 'flowbite-react';
 import { Doughnut, Bar, Line } from 'react-chartjs-2';
 import { Chart, Filler, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement, BarElement } from 'chart.js'
 import { useEffect } from 'react';
@@ -51,6 +51,18 @@ const DashboardAdmin = () => {
             },
         ],
 
+    };
+    const dataline = {
+        labels: ["2022/21/12", "2022/21/12", "2022/21/12", "2022/21/12", "2022/21/12"],
+        datasets: [
+            {
+                label: "Throughput",
+                data: [19, 11, 10, 12, 13],
+                fill: false,
+                backgroundColor: 'rgba(5, 99, 132, 0.8)',
+                borderColor: 'rgba(5, 99, 132, 0.8)',
+            }
+        ]
     };
 
     return (
@@ -215,17 +227,30 @@ const DashboardAdmin = () => {
                                     {/* Jenis Produk*/}
                                     <div>
                                         <label
-                                            htmlFor="jenisproduk"
+                                            htmlFor="jenis"
                                             className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                                         >Jenis Produk</label
                                         >
+                                        <input
+                                            type="text"
+                                            id="jenis"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            required
+                                        />
+                                    </div>
+                                    <div>
+                                        <label
+                                            htmlFor="bandwidth"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                        >Bandwidth</label
+                                        >
                                         <select
-                                            id="jenisproduk"
+                                            id="bandwidth"
                                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                             required
                                         >
-                                            <option>Internet 20Mbps</option>
-                                            <option>Internet 10Mbps</option>
+                                            <option>20Mbps</option>
+                                            <option>10Mbps</option>
                                         </select>
                                     </div>
                                     {/* Lokasi */}
@@ -356,13 +381,13 @@ const DashboardAdmin = () => {
                                         <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                                             <div className='flex gap-6'>
                                                 <div>
-                                                    <button type="button" class="focus:outline-none text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                                                    <button type="button" className="focus:outline-none text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                                                         Detail
                                                     </button>
 
                                                 </div>
                                                 <div>
-                                                    <button type="button" class="focus:outline-none text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
+                                                    <button type="button" className="focus:outline-none text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
                                                         Hapus
                                                     </button>
 
@@ -388,13 +413,13 @@ const DashboardAdmin = () => {
                                         <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                                             <div className='flex gap-6'>
                                                 <div>
-                                                    <button type="button" class="focus:outline-none text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                                                    <button type="button" className="focus:outline-none text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                                                         Detail
                                                     </button>
 
                                                 </div>
                                                 <div>
-                                                    <button type="button" class="focus:outline-none text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
+                                                    <button type="button" className="focus:outline-none text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
                                                         Hapus
                                                     </button>
 
@@ -412,399 +437,393 @@ const DashboardAdmin = () => {
                         {/* tabel detail */}
                         <div className='px-3 py-5 text-xl font-semibold mt-6'>Detail Data Pengukuran Quality Of Service</div>
                         {/* identitas */}
-                        <div className='px-3 py-3 text-lg font-medium '>Identitas</div>
-                        <div className="w-full p-5 px-3 mb-6 md:mb-0">
-                            <Table >
-                                <Table.Head>
-                                    <Table.HeadCell>
-                                        Nama
-                                    </Table.HeadCell>
-                                    <Table.HeadCell>
-                                        Provider
-                                    </Table.HeadCell>
-                                    <Table.HeadCell>
-                                        Lokasi
-                                    </Table.HeadCell>
-                                    <Table.HeadCell>
-                                        Jenis Produk
-                                    </Table.HeadCell>
-                                </Table.Head>
-                                <Table.Body className="divide-y">
-                                    <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            Person 1
-                                        </Table.Cell>
-                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            Lifemedia
-                                        </Table.Cell>
-                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            Sleman
-                                        </Table.Cell>
-                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            Internet 20Mbps
-                                        </Table.Cell>
-                                    </Table.Row>
-                                </Table.Body>
-                            </Table>
-                        </div>
-                        {/* detail trhoughput */}
-                        <div className='px-3 py-3 text-lg font-medium '>Throughput</div>
-                        <div className="w-full p-5 px-3 md:mb-0">
-                            <div className='overflow-y-scroll h-48 border rounded-lg'>
+                        {/* <div className='px-3 py-3 text-lg font-medium '>Identitas</div> */}
+                        <div className=''>
+                            <div className="w-full p-5 px-3 mb-6 md:mb-0">
                                 <Table >
                                     <Table.Head>
                                         <Table.HeadCell>
-                                            Datetime
+                                            Nama
                                         </Table.HeadCell>
                                         <Table.HeadCell>
-                                            Nilai
+                                            Provider
                                         </Table.HeadCell>
-
+                                        <Table.HeadCell>
+                                            Lokasi
+                                        </Table.HeadCell>
+                                        <Table.HeadCell>
+                                            Jenis Produk
+                                        </Table.HeadCell>
                                     </Table.Head>
-                                    <Table.Body>
+                                    <Table.Body className="divide-y">
                                         <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
+                                                Person 1
                                             </Table.Cell>
                                             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
+                                                Lifemedia
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                Sleman
+                                            </Table.Cell>
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                Internet 20Mbps
                                             </Table.Cell>
                                         </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-
                                     </Table.Body>
                                 </Table>
                             </div>
-                        </div>
-                        {/* detail trhoughput */}
-                        <div className='px-3 py-3 text-lg font-medium '>Delay</div>
-                        <div className="w-full p-5 px-3 md:mb-0">
-                            <div className='overflow-y-scroll h-48 border rounded-lg'>
-                                <Table >
-                                    <Table.Head>
-                                        <Table.HeadCell>
-                                            Datetime
-                                        </Table.HeadCell>
-                                        <Table.HeadCell>
-                                            Nilai
-                                        </Table.HeadCell>
+                            <div className='px-3'>
+                                <Accordion alwaysOpen={true}>
+                                    <Accordion.Panel>
+                                        <Accordion.Title className='text-2xl'>
+                                            Throughput
+                                        </Accordion.Title>
+                                        <Accordion.Content>
+                                            <div>
+                                                <div className="w-full p-5 px-3 md:mb-0">
+                                                    <div className='border h-64 p-4 mb-5 rounded-lg flex  w-full items-center justify-center'>
+                                                        <Line data={dataline} options={{ maintainAspectRatio: false }} />
+                                                    </div>
+                                                    <div className='overflow-y-scroll h-48 border rounded-lg'>
+                                                        <Table >
+                                                            <Table.Head>
+                                                                <Table.HeadCell>
+                                                                    Datetime
+                                                                </Table.HeadCell>
+                                                                <Table.HeadCell>
+                                                                    Nilai
+                                                                </Table.HeadCell>
 
-                                    </Table.Head>
-                                    <Table.Body>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
+                                                            </Table.Head>
+                                                            <Table.Body>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
 
-                                    </Table.Body>
-                                </Table>
+                                                            </Table.Body>
+                                                        </Table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </Accordion.Content>
+                                    </Accordion.Panel>
+                                    <Accordion.Panel>
+                                        <Accordion.Title>
+                                            Delay
+                                        </Accordion.Title>
+                                        <Accordion.Content>
+                                            <div>
+                                                <div className="w-full p-5 px-3 md:mb-0">
+                                                    <div className='border h-64 p-4 mb-5 rounded-lg flex  w-full items-center justify-center'>
+                                                        <Line data={dataline} options={{ maintainAspectRatio: false }} />
+                                                    </div>
+                                                    <div className='overflow-y-scroll h-48 border rounded-lg'>
+                                                        <Table >
+                                                            <Table.Head>
+                                                                <Table.HeadCell>
+                                                                    Datetime
+                                                                </Table.HeadCell>
+                                                                <Table.HeadCell>
+                                                                    Nilai
+                                                                </Table.HeadCell>
+
+                                                            </Table.Head>
+                                                            <Table.Body>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+
+                                                            </Table.Body>
+                                                        </Table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </Accordion.Content>
+                                    </Accordion.Panel>
+                                    <Accordion.Panel>
+                                        <Accordion.Title>
+                                            Jitter
+                                        </Accordion.Title>
+                                        <Accordion.Content>
+                                            <div>
+                                                <div className="w-full p-5 px-3 md:mb-0">
+                                                    <div className='border h-64 p-4 mb-5 rounded-lg flex  w-full items-center justify-center'>
+                                                        <Line data={dataline} options={{ maintainAspectRatio: false }} />
+                                                    </div>
+                                                    <div className='overflow-y-scroll h-48 border rounded-lg'>
+                                                        <Table >
+                                                            <Table.Head>
+                                                                <Table.HeadCell>
+                                                                    Datetime
+                                                                </Table.HeadCell>
+                                                                <Table.HeadCell>
+                                                                    Nilai
+                                                                </Table.HeadCell>
+
+                                                            </Table.Head>
+                                                            <Table.Body>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+
+                                                            </Table.Body>
+                                                        </Table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </Accordion.Content>
+                                    </Accordion.Panel>
+                                    <Accordion.Panel>
+                                        <Accordion.Title>
+                                            Packet Loss
+                                        </Accordion.Title>
+                                        <Accordion.Content>
+                                            <div>
+                                                <div className="w-full p-5 px-3 md:mb-0">
+                                                    <div className='border h-64 p-4 mb-5 rounded-lg flex  w-full items-center justify-center'>
+                                                        <Line data={dataline} options={{ maintainAspectRatio: false }} />
+                                                    </div>
+                                                    <div className='overflow-y-scroll h-48 border rounded-lg'>
+                                                        <Table >
+                                                            <Table.Head>
+                                                                <Table.HeadCell>
+                                                                    Datetime
+                                                                </Table.HeadCell>
+                                                                <Table.HeadCell>
+                                                                    Nilai
+                                                                </Table.HeadCell>
+
+                                                            </Table.Head>
+                                                            <Table.Body>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+                                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        22/02/2222
+                                                                    </Table.Cell>
+                                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                                        19.8
+                                                                    </Table.Cell>
+                                                                </Table.Row>
+
+                                                            </Table.Body>
+                                                        </Table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </Accordion.Content>
+                                    </Accordion.Panel>
+
+                                </Accordion>
                             </div>
                         </div>
-                        {/* detail Jitter */}
-                        <div className='px-3 py-3 text-lg font-medium '>Jitter</div>
-                        <div className="w-full p-5 px-3 md:mb-0">
-                            <div className='overflow-y-scroll h-48 border rounded-lg'>
-                                <Table >
-                                    <Table.Head>
-                                        <Table.HeadCell>
-                                            Datetime
-                                        </Table.HeadCell>
-                                        <Table.HeadCell>
-                                            Nilai
-                                        </Table.HeadCell>
 
-                                    </Table.Head>
-                                    <Table.Body>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-
-                                    </Table.Body>
-                                </Table>
-                            </div>
-                        </div>
-                        {/* detail Packet Loss */}
-                        <div className='px-3 py-3 text-lg font-medium '>Packet Loss</div>
-                        <div className="w-full p-5 px-3 md:mb-0">
-                            <div className='overflow-y-scroll h-48 border rounded-lg'>
-                                <Table >
-                                    <Table.Head>
-                                        <Table.HeadCell>
-                                            Datetime
-                                        </Table.HeadCell>
-                                        <Table.HeadCell>
-                                            Nilai
-                                        </Table.HeadCell>
-
-                                    </Table.Head>
-                                    <Table.Body>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                22/02/2222
-                                            </Table.Cell>
-                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                19.8
-                                            </Table.Cell>
-                                        </Table.Row>
-
-                                    </Table.Body>
-                                </Table>
-                            </div>
-                        </div>
-
-                        {/*  chart */}
-                        <div className='px-3'>
-                            <div className='flex flex-col rounded-lg border p-3 '>
-                                <div className="flex flex-wrap mx-0 ">
-                                    <div className="w-full md:w-full p-3 mb-6 md:mb-0">
-                                        <div className='border h-96 p-4 rounded-lg flex flex-row w-full items-center justify-center'>
-                                            <Bar data={databar} options={{ maintainAspectRatio: false, }} />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="flex flex-wrap mx-0">
-                                    <div className="w-full p-3 md:w-1/2 mb-6 md:mb-0">
-                                        <div className='border p-4 rounded-lg flex flex-row w-full'>
-                                            <div className="flex w-1/4  items-center justify-center">
-                                                {/* svg */}
-                                            </div>
-                                            <div className="flex flex-col w-3/4 ">
-                                                <h6
-                                                    className="mb-0 ml-4 text-xl text-black sm:text-lg dark:text-gray-400"
-                                                >
-                                                    Rata-rata
-                                                </h6>
-                                                <p
-                                                    className="mb-0 ml-4 text-base text-gray-500 sm:text-lg dark:text-gray-400"
-                                                >
-                                                    19.98Mbps
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-full p-3 md:w-1/2  mb-6 md:mb-0">
-                                        <div className='border p-4 rounded-lg flex flex-row w-full'>
-                                            <div className="flex w-1/4  items-center justify-center">
-                                                {/* svg */}
-                                            </div>
-                                            <div className="flex flex-col w-3/4 ">
-                                                <h6
-                                                    className="mb-0 ml-4 text-xl text-black sm:text-lg dark:text-gray-400"
-                                                >
-                                                    Nilai
-                                                </h6>
-                                                <p
-                                                    className="mb-0 ml-4 text-base text-gray-500 sm:text-lg dark:text-gray-400"
-                                                >
-                                                    Good
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                     </section>
                     {/* coba modal */}

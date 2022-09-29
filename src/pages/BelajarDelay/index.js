@@ -10,23 +10,23 @@ const BelajarDelay = () => {
     useEffect(() => {
         document.title = "Belajar Delay/Latency - MONIQQ";
     }, []);
-    const labels = ['22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222', '22/02/2222'];
+    const labels = ['Person1', 'person2', 'person3'];
     const databarmulti = {
         labels,
         datasets: [
             {
-                label: 'Person 1',
-                data: [18, 12, 13, 14, 17, 11, 10],
+                label: 'Maximal',
+                data: [18, 23, 25,],
                 backgroundColor: 'rgba(53, 90, 232, 0.5)',
             },
             {
-                label: 'Person 2',
-                data: [15, 20, 19, 19.1, 12, 19, 18],
+                label: 'Minimal',
+                data: [15, 12, 12],
                 backgroundColor: 'rgba(53, 162, 235, 0.5)',
             },
             {
-                label: 'Person 3',
-                data: [15, 10, 11, 11, 12, 12, 18],
+                label: 'Rata-Rata',
+                data: [17, 18, 18],
                 backgroundColor: 'rgba(53, 162, 200, 0.5)',
             },
 
@@ -237,23 +237,36 @@ const BelajarDelay = () => {
 
                     <h5 id='pengaruh-delay' className='text-xl font-bold mb-5'>Pengaruh <i>Delay</i></h5>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Nilai xxx tentu akan mempengaruhi aktivitas Anda di Internet, seperti browsing, streaming, dan gaming.
+                        Nilai Delay memiliki pengaruh terhadap seluruh aktivitas Anda di Internet, seperti browsing, streaming, dan gaming.
                     </p>
-
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Gejala-gejala yang timbul adalah sebagai berikut.
+                        Delay akan sangat berpengaruh terhadap aktivitas yang membutuhkan respon cepat.
+                    </p>
+                    {/* <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        yang butuh sinkron atau langsung langsung sangat terpengaruh. seperti panggilan streaming game
+                    </p> */}
+                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        Nilai Delay yang rendah akan membuat mayoritas aktivitas anda di internet berjalan dengan lancar.
+                    </p>
+                    <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        Jika nilai Delay tinggi, maka Anda akan meraskan Gejala-gejala sebagai berikut.
                     </p>
                     <ul className="list-disc mx-7 mb-6 text-gray-700">
                         <li className='mb-2'>
                             Lambat dalam memuat situs web, game, dan atau aplikasi online.
                         </li>
                         <li className='mb-2'>
-                            Lambat dalam mengunduh dan mengunggah file.
+                            Keterlambatan suara atau video saat melakukan panggilan online.
+                        </li>
+                        <li className='mb-2'>
+                            Keterlambatan respons dalam game saat menekan tombol (Nge-lag).
+                        </li>
+                        <li className='mb-2'>
+                            Reconnecting atau bahkan terputus dari game.
                         </li>
                         <li className='mb-2'>
                             Lambat dalam memuat streaming video/audio (buffering).
                         </li>
-
                     </ul>
 
 
