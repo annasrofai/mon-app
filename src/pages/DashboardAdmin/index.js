@@ -482,8 +482,62 @@ const DashboardAdmin = () => {
                                         <Accordion.Content>
                                             <div>
                                                 <div className="w-full p-5 px-3 md:mb-0">
-                                                    <div className='border h-64 p-4 mb-5 rounded-lg flex  w-full items-center justify-center'>
+                                                    <div className='border h-96 p-4 mb-2 rounded-lg flex  w-full items-center justify-center'>
                                                         <Line data={dataline} options={{ maintainAspectRatio: false }} />
+                                                    </div>
+                                                    <div className="flex flex-wrap mx-0 mb-2">
+                                                        <div className="w-full md:w-1/2 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Rata-rata
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    16.9 Mbps
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="w-full md:w-1/2 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Standar
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    Good
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex flex-wrap mx-0 mb-2">
+                                                        <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Std Deviasi
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    1.1
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Minimal
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    12.2 Mbps
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Maximal
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    19.8 Mbps
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div className='overflow-y-scroll h-48 border rounded-lg'>
                                                         <Table >
@@ -568,8 +622,62 @@ const DashboardAdmin = () => {
                                         <Accordion.Content>
                                             <div>
                                                 <div className="w-full p-5 px-3 md:mb-0">
-                                                    <div className='border h-64 p-4 mb-5 rounded-lg flex  w-full items-center justify-center'>
+                                                    <div className='border h-96 p-4 mb-2 rounded-lg flex  w-full items-center justify-center'>
                                                         <Line data={dataline} options={{ maintainAspectRatio: false }} />
+                                                    </div>
+                                                    <div className="flex flex-wrap mx-0 mb-2">
+                                                        <div className="w-full md:w-1/2 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Rata-rata
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    16.9 Mbps
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="w-full md:w-1/2 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Standar
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    Good
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex flex-wrap mx-0 mb-2">
+                                                        <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Std Deviasi
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    1.1
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Minimal
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    12.2 Mbps
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Maximal
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    19.8 Mbps
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div className='overflow-y-scroll h-48 border rounded-lg'>
                                                         <Table >
@@ -654,8 +762,62 @@ const DashboardAdmin = () => {
                                         <Accordion.Content>
                                             <div>
                                                 <div className="w-full p-5 px-3 md:mb-0">
-                                                    <div className='border h-64 p-4 mb-5 rounded-lg flex  w-full items-center justify-center'>
+                                                    <div className='border h-96 p-4 mb-2 rounded-lg flex  w-full items-center justify-center'>
                                                         <Line data={dataline} options={{ maintainAspectRatio: false }} />
+                                                    </div>
+                                                    <div className="flex flex-wrap mx-0 mb-2">
+                                                        <div className="w-full md:w-1/2 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Rata-rata
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    16.9 Mbps
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="w-full md:w-1/2 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Standar
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    Good
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex flex-wrap mx-0 mb-2">
+                                                        <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Std Deviasi
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    1.1
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Minimal
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    12.2 Mbps
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Maximal
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    19.8 Mbps
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div className='overflow-y-scroll h-48 border rounded-lg'>
                                                         <Table >
@@ -740,8 +902,62 @@ const DashboardAdmin = () => {
                                         <Accordion.Content>
                                             <div>
                                                 <div className="w-full p-5 px-3 md:mb-0">
-                                                    <div className='border h-64 p-4 mb-5 rounded-lg flex  w-full items-center justify-center'>
+                                                    <div className='border h-96 p-4 mb-2 rounded-lg flex  w-full items-center justify-center'>
                                                         <Line data={dataline} options={{ maintainAspectRatio: false }} />
+                                                    </div>
+                                                    <div className="flex flex-wrap mx-0 mb-2">
+                                                        <div className="w-full md:w-1/2 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Rata-rata
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    16.9 Mbps
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="w-full md:w-1/2 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Standar
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    Good
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex flex-wrap mx-0 mb-2">
+                                                        <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Std Deviasi
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    1.1
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Minimal
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    12.2 Mbps
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
+                                                            <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                                                <div className='flex text-base'>
+                                                                    Maximal
+                                                                </div>
+                                                                <div className='flex text-lg font-bold'>
+                                                                    19.8 Mbps
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div className='overflow-y-scroll h-48 border rounded-lg'>
                                                         <Table >

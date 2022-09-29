@@ -4,10 +4,6 @@ import { Doughnut, Line } from 'react-chartjs-2';
 import { Chart, Filler, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js'
 import { Table } from 'flowbite-react';
 
-
-
-
-
 Chart.register(ArcElement, Tooltip, Legend, Filler, CategoryScale, LinearScale, PointElement, LineElement);
 
 const SentimenChartCardHome = ({ sentimenDaily, sentimenSum, filteredTweet }) => {

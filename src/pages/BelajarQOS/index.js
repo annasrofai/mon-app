@@ -422,7 +422,7 @@ const BelajarQOS = () => {
                                 <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
                                     <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
                                         <div className='flex text-base'>
-                                            Varian
+                                            Std Deviasi
                                         </div>
                                         <div className='flex text-lg font-bold'>
                                             1.1
