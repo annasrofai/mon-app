@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { Navbar, Button, Table } from 'flowbite-react'
 import { Link } from 'react-router-dom'
-import { logoMoniqq, imageThroughput, imageDelayBad } from '../../assets'
-import { Doughnut, Bar, Line } from 'react-chartjs-2';
+import { logoMoniqq, imageThroughput, } from '../../assets'
+import { Bar } from 'react-chartjs-2';
 import { Chart, Filler, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement, BarElement } from 'chart.js'
 Chart.register(ArcElement, Tooltip, Legend, Filler, CategoryScale, LinearScale, PointElement, LineElement, BarElement);
 const BelajarThroughput = () => {
@@ -32,28 +32,7 @@ const BelajarThroughput = () => {
         ],
 
     };
-    const databarmulti2 = {
-        labels,
-        datasets: [
-            {
-                label: 'Person 1',
-                data: [18, 25, ,],
-                backgroundColor: 'rgba(1, 90, 232, 0.5)',
-            },
-            {
-                label: 'Person2',
-                data: [15, 0, 5],
-                backgroundColor: 'rgba(53, 255, 235, 0.5)',
-            },
-            {
-                label: 'Person3',
-                data: [17, , 18],
-                backgroundColor: 'rgba(255, 162, 200, 0.5)',
-            },
 
-        ],
-
-    };
     return (
         <div className='flex flex-col div h-screen scroll-smooth  '>
             <header className="container p-0">

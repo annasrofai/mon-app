@@ -19,8 +19,8 @@ const kemarin = formatDate(yesterday);
 const InputFilterTweet = ({ setFilteredTweet, setSentimenSum, setSentimenDaily, setKataNegatif, setKataPositif, setTanggalAkhirLaporan, setTanggalMulaiLaporan }) => {
     const [startDate, setStartDate] = useState("")
     const [endDate, setEndDate] = useState("")
-    const [userISP, setUserISP] = useState("")
-    // const [hitungan, setHitungan] = useState("")
+    // const [provider, setProvider] = useState("")
+
     const fetchTweets = async ({ startDate, endDate }) => {
         const { data } = await ispApi.fetchTweetData({ provider: 'firstmedia', startDate, endDate })
         setFilteredTweet(data.tweets)
