@@ -46,7 +46,7 @@ const InputFilterTweetHome = ({ setFilteredTweet, setSentimenSum, setSentimenDai
 
     return (
         <div>
-            <div className='text-lg px-3 font-medium flex justify-between items-center'>
+            <div className='text-base px-3 font-semibold flex justify-between items-center'>
                 <div>
                     Filter
                 </div>

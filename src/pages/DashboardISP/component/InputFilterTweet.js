@@ -19,22 +19,22 @@ const kemarin = formatDate(yesterday);
 const InputFilterTweet = ({ setFilteredTweet, setSentimenSum, setSentimenDaily, setKataNegatif, setKataPositif, setTanggalAkhirLaporan, setTanggalMulaiLaporan }) => {
     const [startDate, setStartDate] = useState("")
     const [endDate, setEndDate] = useState("")
-    // const [provider, setProvider] = useState("")
+    const [provider, setProvider] = useState("pt_i")
 
     const fetchTweets = async ({ startDate, endDate }) => {
-        const { data } = await ispApi.fetchTweetData({ provider: 'firstmedia', startDate, endDate })
+        const { data } = await ispApi.fetchTweetData({ provider, startDate, endDate })
         setFilteredTweet(data.tweets)
         console.log(data.tweets)
     }
     const fetchSentimen = async ({ startDate, endDate }) => {
-        const { data } = await ispApi.fetchSentimenData({ provider: 'firstmedia', startDate, endDate })
+        const { data } = await ispApi.fetchSentimenData({ provider, startDate, endDate })
         setSentimenSum(data.sentimen_total)
         setSentimenDaily(data.sentimen_daily)
         console.log(data.sentimen_total)
         console.log(data.sentimen_daily)
     }
     const fetchKata = async ({ startDate, endDate }) => {
-        const { data } = await ispApi.fetchKataData({ provider: 'firstmedia', startDate, endDate })
+        const { data } = await ispApi.fetchKataData({ provider, startDate, endDate })
         setKataNegatif(data.kata_negatif)
         setKataPositif(data.kata_positif)
         console.log(data.kata_negatif)

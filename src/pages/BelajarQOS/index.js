@@ -101,7 +101,7 @@ const BelajarQOS = () => {
 
             <div className='container flex flex-col items-center justify-center mt-16'>
                 <div className='w-full md:w-3/4 flex flex-col '>
-                    <div>
+                    <div className="my-4">
                         <h4 className='text-3xl font-bold my-5 dark:text-green-100'>Kualitas Koneksi Internet</h4>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
                             Anda sebagai pengguna internet rumahan pasti menginginkan kualitas koneksi yang
@@ -111,12 +111,12 @@ const BelajarQOS = () => {
                         </p>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
                             Setiap orang pasti menginginkan pengalaman menggunakan internet (<i>browsing</i>, <i>gaming</i>, dan <i>streaming</i>) yang
-                            <span className='font-semibold'> menyenangkan </span>
-                            (optimal).
+                            <span className='font-semibold'> menyenangkan</span>
+                            .
                         </p>
                     </div>
-                    <div>
-                        <h6 className='text-lg font-bold mb-5'>Bagaimana Cara Untuk Mengukur Kualitas Koneksi Internet?</h6>
+                    <div className='my-4'>
+                        <h5 className='text-xl font-bold mb-5'>Bagaimana Cara Untuk Mengukur Kualitas Koneksi Internet?</h5>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
                             Performa atau kualitas koneksi internet rumahan (<i>Quality of Service</i>) dapat diukur dengan beberapa parameter, seperti
                             <span className='font-semibold italic'> Throughput</span>,
@@ -138,7 +138,7 @@ const BelajarQOS = () => {
                         </ul>
                     </div>
 
-                    <div>
+                    <div className=''>
                         <div className="flex flex-wrap mx-0 ">
                             <div className="w-full p-3 md:w-1/2  mb-6 md:mb-0">
                                 <Link to="/belajarqos/throughput">
@@ -259,15 +259,20 @@ const BelajarQOS = () => {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <p className='text-base font-regular mt-8 mb-6 leading-relaxed text-gray-700'>
+                    <div className='my-4'>
+                        <p className='text-base font-regular mt-8 mb-4 leading-relaxed text-gray-700'>
                             Selain dari kualitas teknis jaringan Penyedia Jasa Internet (ISP),
                             luaran dari parameter-parameter QoS ini juga tergantung pada faktor non-teknis, yaitu <strong>kebijakan, syarat, dan ketentuan </strong> dari ISP.
                         </p>
+                        <p className='text-base font-regular mb-6 leading-relaxed text-gray-700'>
+                            Anda juga perlu memeriksa <strong>kemampuan perangkat</strong> Anda dan <strong>status penyedia konten</strong> Anda.
+                            Bisa jadi gangguan koneksi berasal dari perangkat yang tidak <i>support</i> dan penyedia konten yang <i>offline</i>.
+
+                        </p>
                     </div>
                     {/* QOS */}
-                    <div>
-                        <h6 className='text-lg font-bold mb-5'>Contoh Pengukuran Kualitas Koneksi Internet</h6>
+                    <div className='my-4'>
+                        <h5 className='text-xl font-bold mb-5'>Contoh Pengukuran Kualitas Koneksi Internet</h5>
 
                         {/* input filter */}
                         <div>
@@ -455,16 +460,77 @@ const BelajarQOS = () => {
                         </div>
                     </div>
                     {/* QoE */}
-                    <div>
-                        <h6 className='text-lg font-bold mb-5'>Contoh Pendapat Masyarakat Tentang ISP</h6>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Penjelasan Kok review banyak yang jelek berdasar jurnal
-                        </p>
-                        <InputFilterTweetHome
-                            setFilteredTweet={setFilteredTweet} setSentimenSum={setSentimenSum}
-                            setSentimenDaily={setSentimenDaily}
-                        />
-                        <SentimenChartCardHome sentimenDaily={sentimenDaily} sentimenSum={sentimenSum} filteredTweet={filteredTweet} />
+                    <div className='my-4'>
+                        <h5 className='text-xl font-bold mb-5'>Contoh Pendapat Pengguna ISP</h5>
+                        <div className='mb-12'>
+                            <InputFilterTweetHome
+                                setFilteredTweet={setFilteredTweet} setSentimenSum={setSentimenSum}
+                                setSentimenDaily={setSentimenDaily}
+                            />
+                            <SentimenChartCardHome sentimenDaily={sentimenDaily} sentimenSum={sentimenSum} filteredTweet={filteredTweet} />
+                        </div>
+                        <div className='my-6 px-3'>
+                            <div className='text-regular py-5 font-semibold flex justify-between items-center'>
+                                <div>
+                                    Kecenderungan Sentimen <i>Tweet</i>
+                                </div>
+                            </div>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Anda akan menemui banyak pendapat pengguna ISP di Twitter yang cenderung memiliki sentimen negatif.
+
+                            </p>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+
+                                Berdasarkan jurnal Bad is Stronger than Good yang ditulis oleh Baumeister R F et al. [xx]
+                            </p>
+                            <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-1 mb-7 leading-relaxed italic rounded">
+                                <p className='text-base font-regular leading-relaxed text-gray-700'>
+                                    secara alamiah manusia cenderung lebih terpengaruh oleh pengalaman buruk daripada pengalaman baik.
+                                    Pengalaman buruk juga lebih menonjol dan cenderung bertahan lama di pikiran manusia.
+                                </p>
+                            </div>
+                            <p className='text-base font-regular my-4 leading-relaxed text-gray-700'>
+                                Oleh karena itu, Pelanggan akan lebih cenderung menulis ulasan negatif daripada ulasan positif.
+                            </p>
+                            {/* <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-1 mb-7 leading-relaxed italic rounded">
+                                <p className='text-base font-regular leading-relaxed text-gray-700'>
+                                    Jadi,
+                                    <span className='font-semibold '> waktu yang diperlukan </span>
+                                    mulai saat Anda memberikan perintah hingga konten termuat disebut
+                                    <span className='font-semibold italic'> Delay </span>
+                                    .
+                                </p>
+                            </div> */}
+                        </div>
+                        <div className='my-6 px-3'>
+                            <div className='text-regular py-5 font-semibold flex justify-between items-center'>
+                                <div>
+                                    Menyikapi Pendapat di Twitter
+                                </div>
+                            </div>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Anda harus bijak dalam menyikapi pendapat pengguna ISP di Twitter.
+                            </p>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Menurut penelitian Hamed Qahri-Saremi [xx], respon yang dapat Anda lakukan adalah
+                            </p>
+                            <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-1 mb-7 leading-relaxed italic rounded">
+                                <p className='text-base font-regular leading-relaxed text-gray-700'>
+                                    Hindari respons emosional yang alami terhadap informasi negatif dan berpikir kritis tentang seluruh informasi yang tersedia.
+                                </p>
+                            </div>
+
+
+                            {/* <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-1 mb-7 leading-relaxed italic rounded">
+                                <p className='text-base font-regular leading-relaxed text-gray-700'>
+                                    Jadi,
+                                    <span className='font-semibold '> waktu yang diperlukan </span>
+                                    mulai saat Anda memberikan perintah hingga konten termuat disebut
+                                    <span className='font-semibold italic'> Delay </span>
+                                    .
+                                </p>
+                            </div> */}
+                        </div>
                     </div>
 
                 </div>

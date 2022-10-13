@@ -167,7 +167,9 @@ const BelajarDelay = () => {
                         />
                     </div>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Berdasarkan penelitian Mister X et.al. Nilai throughput yang. percuma jika nilai bandwidth besar tapi throughputnya tetap kecil.
+                        Berdasarkan penelitian Mister X et.al standar nilai
+                        <span className='italic'> Delay </span>
+                        adalah sebagai berikut.
                     </p>
 
                     <div className='flex mt-2 mb-10 justify-center'>
@@ -187,48 +189,49 @@ const BelajarDelay = () => {
                             <Table.Body className="divide-y">
                                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                     <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                        &#60;0%&#62; &ge;asda &le;
-
-
+                                        &#60; 150ms
                                     </Table.Cell>
                                     <Table.Cell>
-                                        3
+                                        4
                                     </Table.Cell>
                                     <Table.Cell>
-                                        Good
+                                        Sangat Bagus
                                     </Table.Cell>
                                 </Table.Row>
                                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                     <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                        0%
+                                        150ms &#60; x &le; 300ms
                                     </Table.Cell>
                                     <Table.Cell>
                                         3
                                     </Table.Cell>
                                     <Table.Cell>
-                                        Good
+                                        Bagus
                                     </Table.Cell>
                                 </Table.Row>
                                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                     <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                        0%
+                                        300ms &#60; x &le; 450ms
                                     </Table.Cell>
                                     <Table.Cell>
-                                        3
+                                        2
                                     </Table.Cell>
                                     <Table.Cell>
-                                        Good
+                                        Jelek
                                     </Table.Cell>
                                 </Table.Row>
                                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                     <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                        0%
+                                        &#62;450ms
+                                    </Table.Cell>
+                                    {/* <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                            &#60;25%&#62; &ge; &le;
+                                        </Table.Cell> */}
+                                    <Table.Cell>
+                                        1
                                     </Table.Cell>
                                     <Table.Cell>
-                                        3
-                                    </Table.Cell>
-                                    <Table.Cell>
-                                        Good
+                                        Sangat Jelek
                                     </Table.Cell>
                                 </Table.Row>
                             </Table.Body>
@@ -286,8 +289,8 @@ const BelajarDelay = () => {
                                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         required
                                     >
-                                        <option>LifeMedia</option>
-                                        <option>IndiHome</option>
+                                        <option>PT_L</option>
+                                        <option>PT_I</option>
                                     </select>
                                 </div>
                                 <div className="w-full md:w-1/4 p-3 mb-1 md:mb-0">

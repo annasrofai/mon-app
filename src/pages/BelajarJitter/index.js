@@ -242,7 +242,9 @@ const BelajarJitter = () => {
                         />
                     </div>
                     <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                        Berdasarkan penelitian Mister X et.al. Nilai throughput yang. percuma jika nilai bandwidth besar tapi throughputnya tetap kecil.
+                        Berdasarkan penelitian Mister X et.al standar nilai
+                        <span className='italic'> Jitter </span>
+                        adalah sebagai berikut.
                     </p>
 
                     <div className='flex mt-2 mb-10 justify-center'>
@@ -262,48 +264,49 @@ const BelajarJitter = () => {
                             <Table.Body className="divide-y">
                                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                     <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                        &#60;0%&#62; &ge;asda &le;
-
-
+                                        0ms
                                     </Table.Cell>
                                     <Table.Cell>
-                                        3
+                                        4
                                     </Table.Cell>
                                     <Table.Cell>
-                                        Good
+                                        Sangat Bagus
                                     </Table.Cell>
                                 </Table.Row>
                                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                     <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                        0%
+                                        0ms &#60; x &le; 75ms
                                     </Table.Cell>
                                     <Table.Cell>
                                         3
                                     </Table.Cell>
                                     <Table.Cell>
-                                        Good
+                                        Bagus
                                     </Table.Cell>
                                 </Table.Row>
                                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                     <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                        0%
+                                        75ms &#60; x &le; 125ms
                                     </Table.Cell>
                                     <Table.Cell>
-                                        3
+                                        2
                                     </Table.Cell>
                                     <Table.Cell>
-                                        Good
+                                        Sedang
                                     </Table.Cell>
                                 </Table.Row>
                                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                     <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                        0%
+                                        125ms &#60; x &le; 225ms
+                                    </Table.Cell>
+                                    {/* <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                            &#60;25%&#62; &ge; &le;
+                                        </Table.Cell> */}
+                                    <Table.Cell>
+                                        1
                                     </Table.Cell>
                                     <Table.Cell>
-                                        3
-                                    </Table.Cell>
-                                    <Table.Cell>
-                                        Good
+                                        Jelek
                                     </Table.Cell>
                                 </Table.Row>
                             </Table.Body>

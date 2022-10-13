@@ -34,7 +34,7 @@ const BelajarThroughput = () => {
     };
 
     return (
-        <div className='flex flex-col div h-screen scroll-smooth  '>
+        <div className='flex flex-col div scroll-smooth  '>
             <header className="container p-0">
                 <Navbar
                     fluid={true}
@@ -94,7 +94,7 @@ const BelajarThroughput = () => {
                 <div className='w-full md:w-3/4 flex flex-col '>
 
                     {/* apa itu */}
-                    <div>
+                    <div className='my-4'>
                         <h5 id='apa-itu-throughput' className='text-xl font-bold mb-5'>
                             Apa itu
                             <span className='italic'> Throughput</span>
@@ -110,7 +110,7 @@ const BelajarThroughput = () => {
                         </p>
                     </div>
                     {/* apa itu */}
-                    <div>
+                    <div className='my-4'>
                         <h5 id='apa-itu-bandwidth' className='text-xl font-bold mb-5'>
                             Bagaimana dengan istilah
                             <span className='italic'> Bandwidth</span>
@@ -126,8 +126,8 @@ const BelajarThroughput = () => {
                         </p>
                     </div>
                     {/* apa itu */}
-                    <div>
-                        <h5 id='arti-throughput-bandwidth' className='text-xl font-bold mb-5'>Jadi, apa arti kedua istilah tersebut? Mari kita ulas bersama.</h5>
+                    <div className='my-4'>
+                        <h5 id='arti-throughput-bandwidth' className='text-xl font-bold mb-5'>Arti Throughput dan Bandwidth</h5>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
                             <span className='italic'>Bandwidth </span>
                             dan
@@ -173,7 +173,7 @@ const BelajarThroughput = () => {
                         </p>
                     </div>
                     {/* salah paham */}
-                    <div>
+                    <div className='my-4'>
                         <h5 id='kesalahpahaman' className='text-xl font-bold mb-5'>Salah Paham</h5>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
                             Sering terjadi kesalahpahaman terkait dua istilah ini.
@@ -236,7 +236,7 @@ const BelajarThroughput = () => {
                         </div>
                     </div>
                     {/* illustrasi */}
-                    <div>
+                    <div className='my-4'>
                         <h5 id='illustrasi-throughput-bandwidth' className='text-xl font-bold mb-5'>Illustrasi Throughput vs Bandwidth</h5>
                         <div>
                             <img
@@ -305,195 +305,202 @@ const BelajarThroughput = () => {
                         </p>
                     </div>
                     {/* nilai */}
-                    <div>
+                    <div className='my-4'>
                         <h5 id='standar-nilai-throughput' className='text-xl font-bold mb-5'>Nilai <i>Throughput</i></h5>
-                        <h6 id='standar-throughput' className='text-lg font-bold mb-4'>Standar</h6>
+                        {/* standar */}
+                        <div className='my-6'>
+                            <h6 id='standar-throughput' className='text-lg font-bold mb-4'>Standar</h6>
 
-                        <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-3 mb-6 leading-relaxed italic rounded">
-                            <span className='font-semibold '> Semakin besar </span>
-                            nilai Throughput, maka
-                            <span className='font-semibold '> semakin baik</span>
-                            .
-                        </div>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Berdasarkan penelitian Mister X et.al standar nilai
-                            <span className='italic'> Throughput </span>
-                            adalah sebagai berikut.
-                        </p>
+                            <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-3 mb-6 leading-relaxed italic rounded">
+                                <span className='font-semibold '> Semakin besar </span>
+                                nilai Throughput, maka
+                                <span className='font-semibold '> semakin baik</span>
+                                .
+                            </div>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Berdasarkan penelitian Mister X et.al standar nilai
+                                <span className='italic'> Throughput </span>
+                                adalah sebagai berikut.
+                            </p>
 
-                        <div className='flex mt-2 mb-10 justify-center'>
-                            <Table hoverable={true}>
-                                <Table.Head>
-                                    <Table.HeadCell>
-                                        Nilai
-                                    </Table.HeadCell>
-                                    <Table.HeadCell>
-                                        Index
-                                    </Table.HeadCell>
-                                    <Table.HeadCell>
-                                        Category
-                                    </Table.HeadCell>
+                            <div className='flex mt-2 mb-10 justify-center'>
+                                <Table hoverable={true}>
+                                    <Table.Head>
+                                        <Table.HeadCell>
+                                            Nilai
+                                        </Table.HeadCell>
+                                        <Table.HeadCell>
+                                            Index
+                                        </Table.HeadCell>
+                                        <Table.HeadCell>
+                                            Category
+                                        </Table.HeadCell>
 
-                                </Table.Head>
-                                <Table.Body className="divide-y">
-                                    <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            76% - 100%
-                                        </Table.Cell>
-                                        <Table.Cell>
-                                            4
-                                        </Table.Cell>
-                                        <Table.Cell>
-                                            Sangat Bagus
-                                        </Table.Cell>
-                                    </Table.Row>
-                                    <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            51% - 75%
-                                        </Table.Cell>
-                                        <Table.Cell>
-                                            3
-                                        </Table.Cell>
-                                        <Table.Cell>
-                                            Bagus
-                                        </Table.Cell>
-                                    </Table.Row>
-                                    <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            26% - 50%
-                                        </Table.Cell>
-                                        <Table.Cell>
-                                            2
-                                        </Table.Cell>
-                                        <Table.Cell>
-                                            Cukup
-                                        </Table.Cell>
-                                    </Table.Row>
-                                    <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                    </Table.Head>
+                                    <Table.Body className="divide-y">
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                75% &#60; x &le; 100%
+                                            </Table.Cell>
+                                            <Table.Cell>
+                                                4
+                                            </Table.Cell>
+                                            <Table.Cell>
+                                                Sangat Bagus
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                50% &#60; x &le; 75%
+                                            </Table.Cell>
+                                            <Table.Cell>
+                                                3
+                                            </Table.Cell>
+                                            <Table.Cell>
+                                                Bagus
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                25% &#60; x &le; 50%
+                                            </Table.Cell>
+                                            <Table.Cell>
+                                                2
+                                            </Table.Cell>
+                                            <Table.Cell>
+                                                Cukup
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                &#60;25%
+                                            </Table.Cell>
+                                            {/* <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                                             &#60;25%&#62; &ge; &le;
-                                        </Table.Cell>
-                                        <Table.Cell>
-                                            1
-                                        </Table.Cell>
-                                        <Table.Cell>
-                                            Jelek
-                                        </Table.Cell>
-                                    </Table.Row>
-                                </Table.Body>
-                            </Table>
+                                        </Table.Cell> */}
+                                            <Table.Cell>
+                                                1
+                                            </Table.Cell>
+                                            <Table.Cell>
+                                                Jelek
+                                            </Table.Cell>
+                                        </Table.Row>
+                                    </Table.Body>
+                                </Table>
+                            </div>
                         </div>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Jika Anda ingin mengukur
-                            <span className='italic'> Throughput</span>
-                            , Anda dapat memanfaatkan situs yang telah disediakan oleh Cloudflare berikut,
-                            <a className="text-blue-500 hover:text-blue-700 underline" href="https://speed.cloudflare.com/"> speed.cloudflare.com</a>
-                        </p>
-
-                        <h6 id='cara-hitung-throughput' className='text-lg font-bold mb-4'>Cara Hitung</h6>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Cara untuk mengetahui kategori kualitas
-                            <span className='italic'> Throughput </span>
-                            internet rumahan Anda adalah dengan membandingkan
-                            nilai pengukuran
-                            <span className='italic'> Throughput </span>
-                            dengan
-                            <span className='italic'> Bandwidth </span>
-                            yang Anda langgan.
-                        </p>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Sebagai contoh, Anda berlangganan internet rumahan dengan
-                            <span className='italic'> Bandwidth </span> 10Mbps. Saat diukur,
-                            <span className='italic'> Throughput </span>
-                            yang dihasilkan adalah 9.2Mbps.
-                            Perhitungannya adalah sebagai berikut.
-                        </p>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            <sup>9.2Mbps</sup>&frasl;<sub>10Mbps</sub> x 100% = 92%
-                        </p>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Dengan nilai  <span className='italic'> Throughput </span>92%, maka internet rumahan Anda
-                            masuk ke dalam kategori Sangat Bagus.
-                        </p>
-
-                        <h6 id='non-teknis-throughput' className='text-lg font-bold mb-4'>Faktor Non-teknis</h6>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Nilai
-                            <span className='italic'> Throughput </span>
-                            juga dipengaruhi oleh faktor non-teknis yaitu
-                            <span className='font-semibold'> kebijakan, syarat, </span>
-                            dan
-                            <span className='font-semibold'> ketentuan </span>
-                            dari ISP.
-                            Contohnya adalah penerapan kebijakan FUP (<i> Fairplay Usage Policy </i> ) dan <i> Bandwidth</i>  Asimetris.
-                        </p>
-
-                        <h6 id='fup' className='text-base font-bold mb-4'>FUP (<i> Fairplay Usage Policy </i> )</h6>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            FUP (Fairplay Usage Policy) adalah pembatasan nilai Bandwidth ketika telah mencapai batas pemakaian (kuota).
-                        </p>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Contoh
-                        </p>
-                        <div className='flex justify-center '>
-                            <Table hoverable={true}>
-                                <Table.Head>
-                                    <Table.HeadCell>
-                                        Kuota
-                                    </Table.HeadCell>
-                                    <Table.HeadCell>
-                                        Bandwidth
-                                    </Table.HeadCell>
-                                </Table.Head>
-                                <Table.Body className="divide-y">
-                                    <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            0 - 300GB
-                                        </Table.Cell>
-                                        <Table.Cell>
-                                            10MBps
-                                        </Table.Cell>
-                                    </Table.Row>
-                                    <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            300 - 400GB
-                                        </Table.Cell>
-                                        <Table.Cell>
-                                            7.5MBps
-                                        </Table.Cell>
-                                    </Table.Row>
-                                    <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            &#62; 400GB
-                                        </Table.Cell>
-                                        <Table.Cell>
-                                            4MBps
-                                        </Table.Cell>
-                                    </Table.Row>
-
-                                </Table.Body>
-                            </Table>
+                        {/* cara hitung */}
+                        <div className='my-8'>
+                            <h6 id='cara-hitung-throughput' className='text-lg font-bold mb-4'>Cara Hitung</h6>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Cara untuk mengetahui kategori kualitas
+                                <span className='italic'> Throughput </span>
+                                internet rumahan Anda adalah dengan membandingkan
+                                nilai pengukuran
+                                <span className='italic'> Throughput </span>
+                                dengan
+                                <span className='italic'> Bandwidth </span>
+                                yang Anda langgan.
+                            </p>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Sebagai contoh, Anda berlangganan internet rumahan dengan
+                                <span className='italic'> Bandwidth </span> 10Mbps. Saat diukur,
+                                <span className='italic'> Throughput </span>
+                                yang dihasilkan adalah 9.2Mbps.
+                                Perhitungannya adalah sebagai berikut.
+                            </p>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                <sup>9.2Mbps</sup>&frasl;<sub>10Mbps</sub> x 100% = 92%
+                            </p>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Dengan nilai  <span className='italic'> Throughput </span>92%, maka internet rumahan Anda
+                                masuk ke dalam kategori Sangat Bagus.
+                            </p>
                         </div>
-                        <p className='text-base font-regular mt-4 mb-4 leading-relaxed text-gray-700'>
-                            Anda berlangganan Internet rumahan dengan Bandwidth 10Mbps.
-                            Setelah Anda menggunakan kuota sebesar 300GB, maka nilai Bandwidth anda dibatasi/diturunkan menjadi 75% (7,5 Mbps).
-                            Setelah itu, apabila pemakaian Anda melebihi 400GB, maka nilai Bandwidth anda dibatasi/diturunkan menjadi 40% (4 Mbps) saja.
-                        </p>
-                        <p className='text-base font-regular mt-4 mb-4 leading-relaxed text-gray-700'>
-                            Untuk informasi penerapan FUP yang lebih jelas, silakan kontak ISP kesayangan Anda.
-                        </p>
+                        {/* non teknis */}
+                        <div className='my-8'>
+                            <h6 id='non-teknis-throughput' className='text-lg font-bold mb-4'>Faktor Non-teknis</h6>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Nilai
+                                <span className='italic'> Throughput </span>
+                                juga dipengaruhi oleh faktor non-teknis yaitu
+                                <span className='font-semibold'> kebijakan, syarat, </span>
+                                dan
+                                <span className='font-semibold'> ketentuan </span>
+                                dari ISP.
+                                Contohnya adalah penerapan kebijakan FUP (<i> Fairplay Usage Policy </i> ) dan <i> Bandwidth</i>  Asimetris.
+                            </p>
+                            {/* fup */}
+                            <div>
+                                <h6 id='fup' className='text-base font-bold mb-4'>FUP (<i> Fairplay Usage Policy </i> )</h6>
+                                <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                    FUP (Fairplay Usage Policy) adalah pembatasan nilai Bandwidth ketika telah mencapai batas pemakaian (kuota).
+                                </p>
+                                <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                    Contoh
+                                </p>
+                                <div className='flex justify-center '>
+                                    <Table hoverable={true}>
+                                        <Table.Head>
+                                            <Table.HeadCell>
+                                                Kuota
+                                            </Table.HeadCell>
+                                            <Table.HeadCell>
+                                                Bandwidth
+                                            </Table.HeadCell>
+                                        </Table.Head>
+                                        <Table.Body className="divide-y">
+                                            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                    0 - 300GB
+                                                </Table.Cell>
+                                                <Table.Cell>
+                                                    10MBps
+                                                </Table.Cell>
+                                            </Table.Row>
+                                            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                    300 - 400GB
+                                                </Table.Cell>
+                                                <Table.Cell>
+                                                    7.5MBps
+                                                </Table.Cell>
+                                            </Table.Row>
+                                            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                    &#62; 400GB
+                                                </Table.Cell>
+                                                <Table.Cell>
+                                                    4MBps
+                                                </Table.Cell>
+                                            </Table.Row>
 
-                        <h6 id='fup' className='text-base font-bold mb-4'><i>Bandwidth </i> Asimetris</h6>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            <i>Bandwidth </i> Asimetris adalah penerapan Bandwidth yang berbeda tergantung aktivitasnya,yaitu Download dan Upload.
-                        </p>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Hal ini  akan menyebabkan perbedaan nilai Throughput saat Download dan Upload. Nilai Throughput saat Upload, biasanya akan lebih kecil daripada saat Download.
-                        </p>
-
+                                        </Table.Body>
+                                    </Table>
+                                </div>
+                                <p className='text-base font-regular mt-4 mb-4 leading-relaxed text-gray-700'>
+                                    Anda berlangganan Internet rumahan dengan Bandwidth 10Mbps.
+                                    Setelah Anda menggunakan kuota sebesar 300GB, maka nilai Bandwidth anda dibatasi/diturunkan menjadi 75% (7,5 Mbps).
+                                    Setelah itu, apabila pemakaian Anda melebihi 400GB, maka nilai Bandwidth anda dibatasi/diturunkan menjadi 40% (4 Mbps) saja.
+                                </p>
+                                <p className='text-base font-regular mt-4 mb-4 leading-relaxed text-gray-700'>
+                                    Untuk informasi penerapan FUP yang lebih jelas, silakan kontak ISP kesayangan Anda.
+                                </p>
+                            </div>
+                            {/* asimetris */}
+                            <div>
+                                <h6 id='fup' className='text-base font-bold mb-4'><i>Bandwidth </i> Asimetris</h6>
+                                <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                    <i>Bandwidth </i> Asimetris adalah penerapan Bandwidth yang berbeda tergantung aktivitasnya,yaitu Download dan Upload.
+                                </p>
+                                <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                    Hal ini  akan menyebabkan perbedaan nilai Throughput saat Download dan Upload. Nilai Throughput saat Upload, biasanya akan lebih kecil daripada saat Download.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     {/* pengaruh */}
-                    <div>
+                    <div className='my-4'>
                         <h5 id='pengaruh-throughput-bandwidth' className='text-xl font-bold mt-2 mb-5'>Pengaruh <i>Throughput</i> dan <i>Bandwidth</i></h5>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
                             Nilai throughput dan bandwidth tentu akan mempengaruhi aktivitas Anda di Internet, seperti browsing, streaming, dan gaming.
@@ -527,8 +534,9 @@ const BelajarThroughput = () => {
 
                     </div>
                     {/* pengukuran */}
-                    <div>
+                    <div className='my-4'>
                         <h5 id='pengukuran-throughput' className='text-xl font-bold mb-5'>Pengukuran <i>Throughput</i></h5>
+
                         {/* input filter */}
                         <div>
                             <form  >
@@ -656,6 +664,12 @@ const BelajarThroughput = () => {
                         </div>
                         <div className='my-10'>
                         </div>
+                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                            Jika Anda ingin mengukur
+                            <span className='italic'> Throughput </span>
+                            dari internet rumahan Anda, Anda dapat memanfaatkan situs
+                            <a className="text-blue-500 hover:text-blue-700 underline" href="https://www.speedtest.net/"> speedtest.net</a>.
+                        </p>
 
                     </div>
 

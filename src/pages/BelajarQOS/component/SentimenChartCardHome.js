@@ -77,9 +77,9 @@ const SentimenChartCardHome = ({ sentimenDaily, sentimenSum, filteredTweet }) =>
             </div> */}
             {/* summary */}
             <div>
-                <div className='text-lg px-3 font-medium flex justify-between items-center'>
+                <div className='text-base px-3 font-semibold flex justify-between items-center'>
                     <div>
-                        Rangkuman
+                        Sentimen
                     </div>
                 </div>
                 <div className="flex flex-wrap mx-0 ">
@@ -187,12 +187,12 @@ const SentimenChartCardHome = ({ sentimenDaily, sentimenSum, filteredTweet }) =>
             </div>
             {/* tabel */}
             <div className="w-full px-3 md:mb-0">
-                <div className='text-lg py-3 font-medium flex justify-between items-center'>
+                <div className='text-base py-3 font-semibold flex justify-between items-center'>
                     <div>
                         Daftar Tweet
                     </div>
                 </div>
-                <div className='overflow-y-scroll h-48 border rounded-lg'>
+                <div className='overflow-y-scroll h-96 border rounded-lg'>
 
                     <Table >
                         <Table.Head>
