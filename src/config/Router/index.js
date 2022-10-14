@@ -1,11 +1,13 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes, } from 'react-router-dom'
-import { DashboardAdmin, DashboardISP, Home, Login, BelajarQOS, BelajarThroughput, BelajarDelay, BelajarJitter, BelajarPacketLoss } from '../../pages'
+import { DashboardAdmin, DashboardISP, Home, Login, BelajarQOS, BelajarThroughput, BelajarDelay, BelajarJitter, BelajarPacketLoss, Pengukuran } from '../../pages'
 
 const Routess = () => {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path='/pengukuran' element={<Pengukuran />}>
+                </Route>
                 <Route path='/belajarqos/packetloss' element={<BelajarPacketLoss />}>
                 </Route>
                 <Route path='/belajarqos/jitter' element={<BelajarJitter />}>

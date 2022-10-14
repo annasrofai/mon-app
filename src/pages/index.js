@@ -7,5 +7,6 @@ import BelajarThroughput from "./BelajarThroughput";
 import BelajarDelay from "./BelajarDelay";
 import BelajarJitter from "./BelajarJitter";
 import BelajarPacketLoss from "./BelajarPacketLoss";
+import Pengukuran from "./Pengukuran";
 
-export { Home, BelajarQOS, Login, DashboardAdmin, DashboardISP, BelajarThroughput, BelajarDelay, BelajarJitter, BelajarPacketLoss }
+export { Home, BelajarQOS, Login, DashboardAdmin, DashboardISP, BelajarThroughput, BelajarDelay, BelajarJitter, BelajarPacketLoss, Pengukuran }
