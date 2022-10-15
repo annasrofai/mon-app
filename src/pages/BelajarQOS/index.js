@@ -44,6 +44,7 @@ const BelajarQOS = () => {
     };
     return (
         <div className='flex flex-col div dark:bg-gray-900  '>
+            {/* navbar */}
             <header className="container p-0">
                 <Navbar
                     fluid={true}
@@ -89,7 +90,16 @@ const BelajarQOS = () => {
                                     <div
                                         className="block py-2 pr-4 pl-3 text-blue-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                                         aria-current="page"
-                                    >Belajar Internet
+                                    >Belajar
+                                    </div>
+                                </li>
+                            </Link>
+                            <Link to='/pengukuran'>
+                                <li>
+                                    <div
+                                        className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                        aria-current="page"
+                                    >Pengukuran
                                     </div>
                                 </li>
                             </Link>
@@ -99,8 +109,11 @@ const BelajarQOS = () => {
 
             </header>
 
-            <div className='container flex flex-col items-center justify-center mt-16'>
+
+            <div className='container flex flex-col items-center justify-center sm:mt-10 md:mt-16 sm:mb-10 md:mb-16'>
+                {/* konten */}
                 <div className='w-full md:w-3/4 flex flex-col '>
+                    {/* judul besar kualitas koneksi internet */}
                     <div className="my-4">
                         <h4 className='text-3xl font-bold my-5 dark:text-green-100'>Kualitas Koneksi Internet</h4>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
@@ -115,8 +128,10 @@ const BelajarQOS = () => {
                             .
                         </p>
                     </div>
+
+                    {/* judul kecil kualitas koneksi internet */}
                     <div className='my-4'>
-                        <h5 className='text-xl font-bold mb-5'>Bagaimana Cara Untuk Mengukur Kualitas Koneksi Internet?</h5>
+                        <h5 className='text-2xl font-bold mb-5'>Bagaimana Cara Mengukur Kualitas Koneksi Internet?</h5>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
                             Performa atau kualitas koneksi internet rumahan (<i>Quality of Service</i>) dapat diukur dengan beberapa parameter, seperti
                             <span className='font-semibold italic'> Throughput</span>,
@@ -138,6 +153,7 @@ const BelajarQOS = () => {
                         </ul>
                     </div>
 
+                    {/* card parameter qos */}
                     <div className=''>
                         <div className="flex flex-wrap mx-0 ">
                             <div className="w-full p-3 md:w-1/2  mb-6 md:mb-0">
@@ -259,6 +275,8 @@ const BelajarQOS = () => {
                             </div>
                         </div>
                     </div>
+
+                    {/* penjelasan lanjutan */}
                     <div className='my-4'>
                         <p className='text-base font-regular mt-8 mb-4 leading-relaxed text-gray-700'>
                             Selain dari kualitas teknis jaringan Penyedia Jasa Internet (ISP),
@@ -271,8 +289,85 @@ const BelajarQOS = () => {
                         </p>
                     </div>
 
+                    {/* judul kecil pengukuran */}
+                    <div className='my-4'>
+                        <h5 className='text-2xl font-bold mb-5'>Pengukuran</h5>
+                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                            Terdapat dua pengukuran terkait Penyedia Jasa Internet (ISP), yaitu <i>Quality of Service</i> dan <i>Quality of Experience</i>.
+
+
+                        </p>
+
+                    </div>
+
+                    {/* card pengukuran */}
+                    <div className=''>
+                        <div className="flex flex-wrap mx-0 ">
+                            <div className="w-full p-3 md:w-1/2  mb-6 md:mb-0">
+                                <Link to="/pengukuran">
+                                    <div className="mb-6 max-w-sm rounded-sm border border-gray-200 bg-white shadow-lg transform transition duration-500 hover:scale-110">
+                                        <div className="flex items-center relative mb-10">
+                                            <div className="border-t border-gray-200 z-20 w-full"></div>
+                                            <div className="rounded-full bg-blue-400 z-30 p-2 inline-block absolute mx-8">
+                                                <svg className="text-white inline-block h-10 w-10 p-2" strokeWidth="2" stroke="currentColor" fill="none">
+                                                    <path strokeLinecap="round" strokeLinejoin="round"
+                                                        d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5"
+                                                    />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div className="px-8 pb-4">
+                                            <h2 className="text-gray-800 text-xl font-bold mb-1">Quality of Service</h2>
+                                            <p className="text-gray-600 text-xs mb-2">
+                                                Berapa nilai Throughput, Delay, Jitter, Packet Loss Anda? Apakah Sesuai Standar?
+                                            </p>
+                                            <div className="text-right">
+                                                <p className="text-blue-600 underline text-xs">
+                                                    lihat selengkapnya
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+                            <div className="w-full p-3 md:w-1/2  mb-6 md:mb-0">
+                                <Link to="/pengukuran">
+                                    <div className="mb-6 max-w-sm rounded-sm border border-gray-200 bg-white shadow-lg transform transition duration-500 hover:scale-110">
+                                        <div className="flex items-center relative mb-10">
+                                            <div className="border-t border-gray-200 z-20 w-full"></div>
+                                            <div className="rounded-full bg-blue-400 z-30 p-2 inline-block absolute mx-8">
+                                                <svg className="text-white inline-block h-10 w-10 p-2" strokeWidth="2" stroke="currentColor" fill="none"
+                                                    height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path strokeLinecap="round" strokeLinejoin="round"
+                                                        d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"
+                                                    />
+                                                </svg>
+
+
+                                            </div>
+                                        </div>
+                                        <div className="px-8 pb-4">
+                                            <h2 className="text-gray-800 text-xl font-bold mb-1">Quality of Experience</h2>
+                                            <p className="text-gray-600 text-xs mb-2">
+                                                Bagaimana pendapat pengguna Penyedia Jasa Internet di Twitter?
+                                            </p>
+                                            <div className="text-right">
+                                                <p className="text-blue-600 underline text-xs">
+                                                    lihat selengkapnya
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
+
+                {/* footer */}
                 <footer
                     className="container p-4 bg-white rounded-lg md:px-6 md:py-8 dark:bg-gray-900"
                 >
