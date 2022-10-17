@@ -48,7 +48,7 @@ const SentimenChartCardHome = ({ sentimenDaily, sentimenSum, filteredTweet }) =>
 
 
     return (
-        <div>
+        <div className='p-5 border rounded-xl'>
             {/* chart */}
             {/* <div className="flex mx-0 flex-row-reverse md:flex-row flex-wrap ">
                 <div className="w-full pb-5 pt-0 md:w-1/3 px-3 mb-6 md:mb-0">
@@ -77,13 +77,13 @@ const SentimenChartCardHome = ({ sentimenDaily, sentimenSum, filteredTweet }) =>
             </div> */}
             {/* summary */}
             <div>
-                <div className='text-base px-3 font-semibold flex justify-between items-center'>
+                <div className='text-base mb-2 font-semibold flex justify-between items-center'>
                     <div>
                         Sentimen
                     </div>
                 </div>
                 <div className="flex flex-wrap mx-0 ">
-                    <div className="w-full p-3 md:w-1/3 mb-2 md:mb-0">
+                    <div className="w-full py-3 px-1 md:w-1/3 mb-2 md:mb-0">
                         <div className='border p-4 rounded-lg flex flex-row w-full'>
                             <div className="flex w-1/4  items-center justify-center">
                                 <svg
@@ -116,7 +116,7 @@ const SentimenChartCardHome = ({ sentimenDaily, sentimenSum, filteredTweet }) =>
                             </div>
                         </div>
                     </div>
-                    <div className="w-full p-3 md:w-1/3  mb-2 md:mb-0">
+                    <div className="w-full py-3 px-1 md:w-1/3  mb-2 md:mb-0">
                         <div className='border p-4 rounded-lg flex flex-row w-full'>
                             <div className="flex w-1/4  items-center justify-center">
                                 <svg
@@ -149,7 +149,7 @@ const SentimenChartCardHome = ({ sentimenDaily, sentimenSum, filteredTweet }) =>
                             </div>
                         </div>
                     </div>
-                    <div className="w-full p-3 md:w-1/3  mb-2 md:mb-0">
+                    <div className="w-full py-3 px-1 md:w-1/3  mb-2 md:mb-0">
                         <div className='border p-4 rounded-lg flex flex-row w-full'>
                             <div className="flex w-1/4  items-center justify-center">
                                 <svg
@@ -186,8 +186,8 @@ const SentimenChartCardHome = ({ sentimenDaily, sentimenSum, filteredTweet }) =>
                 </div>
             </div>
             {/* tabel */}
-            <div className="w-full px-3 md:mb-0">
-                <div className='text-base py-3 font-semibold flex justify-between items-center'>
+            <div className="w-full md:mb-0">
+                <div className='text-base mb-2 py-3 font-semibold flex justify-between items-center'>
                     <div>
                         Daftar Tweet
                     </div>

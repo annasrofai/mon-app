@@ -7,6 +7,7 @@ import { Doughnut, Bar, Line } from 'react-chartjs-2';
 import { Chart, Filler, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement, BarElement } from 'chart.js'
 import InputFilterTweetHome from './component/InputFilterTweetHome';
 import SentimenChartCardHome from './component/SentimenChartCardHome';
+import CekQoS from './component/CekQoS';
 Chart.register(ArcElement, Tooltip, Legend, Filler, CategoryScale, LinearScale, PointElement, LineElement, BarElement);
 
 
@@ -14,11 +15,11 @@ const Pengukuran = () => {
     useEffect(() => {
         document.title = "Belajar Internet - MONIQQ";
     }, []);
-    const [filteredTweet, setFilteredTweet] = useState([])
 
+    const [filteredTweet, setFilteredTweet] = useState([])
     const [sentimenSum, setSentimenSum] = useState([])
     const [sentimenDaily, setSentimenDaily] = useState([])
-
+    const [cardHasilSentimen, setCardHasilSentimen] = useState(false);
     const labels = ['Person1', 'Person2', 'Person3'];
     const databarmulti = {
         labels,
@@ -44,6 +45,7 @@ const Pengukuran = () => {
     };
     return (
         <div className='flex flex-col div dark:bg-gray-900  '>
+            {/* navbar */}
             <header className="container p-0">
                 <Navbar
                     fluid={true}
@@ -107,14 +109,13 @@ const Pengukuran = () => {
                 </Navbar>
 
             </header>
-
             <div className='container flex flex-col items-center justify-center mt-16'>
                 <div className='w-full md:w-3/4 flex flex-col '>
 
                     {/* QOS */}
                     <div className='my-4'>
-                        <h5 className='text-xl font-bold mb-5'>Pengukuran Kualitas Koneksi Internet ISP (QoS)</h5>
-
+                        <h5 className='text-2xl font-bold mb-5'>Pengukuran Kualitas Koneksi Internet ISP (QoS)</h5>
+                        <h6 className='text-xl font-bold mb-5'>Contoh</h6>
                         {/* input filter */}
                         <div>
                             <form  >
@@ -299,17 +300,59 @@ const Pengukuran = () => {
                         </div>
                         <div className='my-10'>
                         </div>
+
+                        {/* ukur masukan user */}
+                        <div className='my-24'>
+                            <h6 className='text-xl font-bold mb-5'>Cek Internet Anda</h6>
+                            <div className='text-base my-4 font-light leading-loose flex justify-between items-center'>
+                                <div>
+                                    Anda dapat memeriksa nilai standar kualitas koneksi internet Anda.
+                                    Caranya adalah sebagai berikut.
+                                    <span className="">
+                                        Langkah-langkah.
+                                        <ol className="list-decimal p-3">
+                                            <li>
+                                                Ukur parameter-parameter kualitas koneksi internet Anda pada laman
+                                                <a className="text-blue-800 hover:text-blue-900 underline" href="https://www.speedtest.net/"> speedtest.net </a>
+                                                terlebih dahulu.
+                                            </li>
+                                            <li>
+                                                Masukkan hasil pengukuran tersebut pada kolom-kolom pengujian.
+                                            </li>
+                                            <li>Lihat hasil di bagian bawahnya.</li>
+                                        </ol>
+                                    </span>
+                                </div>
+                            </div>
+                            {/* cek qos manual */}
+                            <CekQoS />
+                        </div>
                     </div>
                     {/* QoE */}
                     <div className='my-4'>
                         <h5 className='text-xl font-bold mb-5'>Pengukuran Pendapat Pengguna ISP (QoE)</h5>
-                        <div className='mb-12'>
-                            <InputFilterTweetHome
-                                setFilteredTweet={setFilteredTweet} setSentimenSum={setSentimenSum}
-                                setSentimenDaily={setSentimenDaily}
-                            />
-                            <SentimenChartCardHome sentimenDaily={sentimenDaily} sentimenSum={sentimenSum} filteredTweet={filteredTweet} />
+                        <div className='text-base my-4 font-light leading-loose flex justify-between items-center'>
+                            <div>
+                                Pendapat yang digunakan adalah pendapat pengguna ISP yang ada di sosial media Twitter.
+                                Pendapat pengguna diambil berdasarkan kata kunci nama ISP.
+                                Algoritma yang digunakan untuk analisis sentimen adalah Algoritma Support Vector Machine.
+                            </div>
                         </div>
+                        <div className='mb-8'>
+                            <InputFilterTweetHome
+                                setFilteredTweet={setFilteredTweet}
+                                setSentimenSum={setSentimenSum}
+                                setSentimenDaily={setSentimenDaily}
+                                setCardHasilSentimen={setCardHasilSentimen}
+                            />
+                            {cardHasilSentimen &&
+                                <SentimenChartCardHome
+                                    sentimenDaily={sentimenDaily}
+                                    sentimenSum={sentimenSum}
+                                    filteredTweet={filteredTweet} />
+                            }
+                        </div>
+                        {/* kecenderungan */}
                         <div className='my-6 px-3'>
                             <div className='text-regular py-5 font-semibold flex justify-between items-center'>
                                 <div>
@@ -343,6 +386,7 @@ const Pengukuran = () => {
                                 </p>
                             </div> */}
                         </div>
+                        {/* saran */}
                         <div className='my-6 px-3'>
                             <div className='text-regular py-5 font-semibold flex justify-between items-center'>
                                 <div>

@@ -16,7 +16,7 @@ function formatDate(date) {
 }
 const kemarin = formatDate(yesterday);
 
-const InputFilterTweetHome = ({ setFilteredTweet, setSentimenSum, setSentimenDaily }) => {
+const InputFilterTweetHome = ({ setFilteredTweet, setCardHasilSentimen, setSentimenSum, setSentimenDaily }) => {
     const [startDate, setStartDate] = useState("")
     const [endDate, setEndDate] = useState("")
     const [provider, setProvider] = useState("")
@@ -40,21 +40,22 @@ const InputFilterTweetHome = ({ setFilteredTweet, setSentimenSum, setSentimenDai
         if (startDate.length !== 0 && endDate.length !== 0) {
             fetchTweets({ provider, startDate, endDate });
             fetchSentimen({ provider, startDate, endDate });
+            setCardHasilSentimen(true)
         }
     }
 
 
     return (
-        <div>
-            <div className='text-base px-3 font-semibold flex justify-between items-center'>
+        <div className='border p-5 mb-4 rounded-xl'>
+            <div className='text-base font-semibold flex justify-between items-center'>
                 <div>
                     Filter
                 </div>
             </div>
             <div>
                 <form onSubmit={handleSubmit} >
-                    <div className="flex flex-wrap mx-0 mb-2">
-                        <div className="w-full md:w-1/4 p-3 mb-1 md:mb-0">
+                    <div className="flex flex-wrap mx-0 mb-2 justify-between">
+                        <div className="w-full md:w-1/4 p-2 mb-1 md:mb-0">
                             <label
                                 htmlFor="isp-twt"
                                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -73,7 +74,7 @@ const InputFilterTweetHome = ({ setFilteredTweet, setSentimenSum, setSentimenDai
 
                             </select>
                         </div>
-                        <div className="w-full md:w-1/4 p-3 mb-1 md:mb-0">
+                        <div className="w-full md:w-1/4 p-2 mb-1 md:mb-0">
                             <label
                                 htmlFor="tanggalmulai-twt"
                                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -90,7 +91,7 @@ const InputFilterTweetHome = ({ setFilteredTweet, setSentimenSum, setSentimenDai
                                 onChange={(e) => setStartDate(e.target.value)}
                             />
                         </div>
-                        <div className="w-full md:w-1/4 p-3 mb-1 md:mb-0">
+                        <div className="w-full md:w-1/4 p-2 mb-1 md:mb-0">
                             <label
                                 htmlFor="tanggalakhir-twt"
                                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -108,7 +109,7 @@ const InputFilterTweetHome = ({ setFilteredTweet, setSentimenSum, setSentimenDai
                                 onChange={(e) => setEndDate(e.target.value)}
                             />
                         </div>
-                        <div className="w-full md:w-1/4 p-3 mb-6 sm:mt-7 ">
+                        <div className="w-full md:w-1/4 p-2 mb-2 sm:mt-7 ">
                             <button
                                 type="submit"
                                 className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"

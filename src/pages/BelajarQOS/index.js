@@ -133,12 +133,11 @@ const BelajarQOS = () => {
                     <div className='my-4'>
                         <h5 className='text-2xl font-bold mb-5'>Bagaimana Cara Mengukur Kualitas Koneksi Internet?</h5>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Performa atau kualitas koneksi internet rumahan (<i>Quality of Service</i>) dapat diukur dengan beberapa parameter, seperti
+                            Kualitas koneksi internet rumahan (<i>Quality of Service</i>) secara teknis dapat diukur dengan beberapa parameter, seperti
                             <span className='font-semibold italic'> Throughput</span>,
                             <span className='font-semibold italic'> Delay/Latency</span>,
                             <span className='font-semibold italic'> Jitter</span>, dan
                             <span className='font-semibold italic'> Packet Loss</span>.
-
                         </p>
                         <ul className="list-disc mx-5 mb-16">
                             <li className='mb-2'>
