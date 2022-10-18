@@ -292,15 +292,20 @@ const BelajarQOS = () => {
                     <div className='my-4'>
                         <h5 className='text-2xl font-bold mb-5'>Pengukuran</h5>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Terdapat dua pengukuran terkait Penyedia Jasa Internet (ISP), yaitu <i>Quality of Service</i> dan <i>Quality of Experience</i>.
-
+                            Terdapat dua pengukuran terkait Penyedia Jasa Internet (ISP), yaitu <i>Quality of Service</i> (QoS) dan <i>Quality of Experience</i> (QoE).
+                            Pengukuran QoS merupakan
+                            <span className='font-semibold'> pengukuran teknis </span>
+                            terkait parameter-parameter yang kualitas koneksi internet.
+                            Pengukuran QoE merupakan
+                            <span className='font-semibold'> pengukuran pendapat pengguna </span>
+                            .
 
                         </p>
 
                     </div>
 
                     {/* card pengukuran */}
-                    <div className=''>
+                    <div className='my-10'>
                         <div className="flex flex-wrap mx-0 ">
                             <div className="w-full p-3 md:w-1/2  mb-6 md:mb-0">
                                 <Link to="/pengukuran">
@@ -377,7 +382,6 @@ const BelajarQOS = () => {
                         Reserved.
                     </span>
                 </footer>
-
 
             </div>
 

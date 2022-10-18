@@ -309,11 +309,13 @@ const Pengukuran = () => {
                                     Anda dapat memeriksa nilai standar kualitas koneksi internet Anda.
                                     Caranya adalah sebagai berikut.
                                     <span className="">
-                                        Langkah-langkah.
                                         <ol className="list-decimal p-3">
                                             <li>
                                                 Ukur parameter-parameter kualitas koneksi internet Anda pada laman
-                                                <a className="text-blue-800 hover:text-blue-900 underline" href="https://www.speedtest.net/"> speedtest.net </a>
+                                                <a className="text-blue-800 hover:text-blue-900 underline"
+                                                    href="https://www.speedtest.net/"
+                                                    target="_blank" rel="noopener noreferrer"
+                                                > speedtest.net </a>
                                                 terlebih dahulu.
                                             </li>
                                             <li>
@@ -333,12 +335,11 @@ const Pengukuran = () => {
                         <h5 className='text-xl font-bold mb-5'>Pengukuran Pendapat Pengguna ISP (QoE)</h5>
                         <div className='text-base my-4 font-light leading-loose flex justify-between items-center'>
                             <div>
-                                Pendapat yang digunakan adalah pendapat pengguna ISP yang ada di sosial media Twitter.
-                                Pendapat pengguna diambil berdasarkan kata kunci nama ISP.
-                                Algoritma yang digunakan untuk analisis sentimen adalah Algoritma Support Vector Machine.
+                                Pendapat pengguna ISP yang dianalisis adalah pendapat pengguna ISP di sosial media Twitter.
+                                Tweet pendapat pengguna diambil berdasarkan kata kunci nama ISP.
                             </div>
                         </div>
-                        <div className='mb-8'>
+                        <div className='mt-8 mb-8'>
                             <InputFilterTweetHome
                                 setFilteredTweet={setFilteredTweet}
                                 setSentimenSum={setSentimenSum}
@@ -353,7 +354,7 @@ const Pengukuran = () => {
                             }
                         </div>
                         {/* kecenderungan */}
-                        <div className='my-6 px-3'>
+                        <div className='my-6 '>
                             <div className='text-regular py-5 font-semibold flex justify-between items-center'>
                                 <div>
                                     Kecenderungan Sentimen <i>Tweet</i>
@@ -387,7 +388,7 @@ const Pengukuran = () => {
                             </div> */}
                         </div>
                         {/* saran */}
-                        <div className='my-6 px-3'>
+                        <div className='mt-6 mb-12'>
                             <div className='text-regular py-5 font-semibold flex justify-between items-center'>
                                 <div>
                                     Menyikapi Pendapat di Twitter
@@ -419,6 +420,7 @@ const Pengukuran = () => {
                     </div>
 
                 </div>
+
                 <footer
                     className="container p-4 bg-white rounded-lg md:px-6 md:py-8 dark:bg-gray-900"
                 >

@@ -115,7 +115,8 @@ const BelajarThroughput = () => {
                             dengan istilah
                             <span className='font-semibold italic'> Throughput</span>
                             .
-                            Throughput mungkin masih menjadi istilah yang asing, khususnya bagi masyarakat awam.
+                            <span className='italic'> Throughput </span>
+                            mungkin masih menjadi istilah yang asing, khususnya bagi masyarakat awam.
                         </p>
                     </div>
                     {/* apa itu */}
@@ -131,13 +132,19 @@ const BelajarThroughput = () => {
                             mungkin lebih
                             <span className='font-semibold'> familiar </span>
                             bagi Anda.
-                            Pasti Anda pernah mendengar kata Bandwidth saat hendak belangganan internet rumahan.
+                            Pasti Anda pernah mendengar istilah
+                            <span className='italic'> Bandwidth </span>
+                            saat hendak belangganan internet rumahan.
                         </p>
                     </div>
                     {/* apa itu */}
                     <div className='my-4'>
-                        <h5 id='arti-throughput-bandwidth' className='text-xl font-bold mb-5'>Arti Throughput dan Bandwidth</h5>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        <h5 id='arti-throughput-bandwidth' className='text-xl font-bold mb-5'>
+                            Arti
+                            <span className='italic'> Throughput </span>
+                            dan
+                            <span className='italic'> Bandwidth</span></h5>
+                        <p className='text-base font-regular mb-6 leading-relaxed text-gray-700'>
                             <span className='italic'>Bandwidth </span>
                             dan
                             <span className='italic'> Throughput </span>
@@ -176,7 +183,7 @@ const BelajarThroughput = () => {
                             <span className='font-semibold'> saling terkait</span>.
                         </p>
                         <p className='text-base font-regular mb-5 leading-relaxed text-gray-700'>
-                            Dengan memahami kedua istilah tersebut, Anda akan dapat memahami kualitas koneksi Anda secara
+                            Dengan memahami kedua istilah tersebut, Anda akan dapat memahami kualitas koneksi internet Anda secara
                             <span className='font-semibold'> komprehensif</span>
                             .
                         </p>
@@ -232,7 +239,9 @@ const BelajarThroughput = () => {
                             <span className='font-semibold'>Hal yang perlu diluruskan </span>
                             adalah nilai atau luaran transfer data
                             <span className='font-semibold'> tidak akan selalu sama </span>
-                            pada setiap saat seperti yang ditawarkan ISP (Berdasarkan Bandwidth).
+                            pada setiap saat seperti yang ditawarkan ISP (Berdasarkan
+                            <span className='italic'> Bandwidth </span>
+                            ).
                         </p>
                         <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-3 mb-6 leading-relaxed italic rounded">
                             Nilai
@@ -298,7 +307,7 @@ const BelajarThroughput = () => {
                             sebesar 10Mbps.
                         </p>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Lalu Anda ingin mengunduh sebuah
+                            Lalu, Anda ingin mengunduh sebuah
                             <span className='italic'> file </span>
                             di internet.
                         </p>
@@ -315,10 +324,10 @@ const BelajarThroughput = () => {
                     </div>
                     {/* nilai */}
                     <div className='my-4'>
-                        <h5 id='standar-nilai-throughput' className='text-xl font-bold mb-5'>Nilai <i>Throughput</i></h5>
+                        <h5 id='nilai-throughput' className='text-xl font-bold mb-5'>Nilai <i>Throughput</i></h5>
                         {/* standar */}
                         <div className='my-6'>
-                            <h6 id='standar-throughput' className='text-lg font-bold mb-4'>Standar</h6>
+                            <h6 id='nilai-throughput-standar' className='text-lg font-bold mb-4'>Standar</h6>
 
                             <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-3 mb-6 leading-relaxed italic rounded">
                                 <span className='font-semibold '> Semakin besar </span>
@@ -326,13 +335,12 @@ const BelajarThroughput = () => {
                                 <span className='font-semibold '> semakin baik</span>
                                 .
                             </div>
-                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                            <p className='text-base font-regular mb-10 leading-relaxed text-gray-700'>
                                 Berdasarkan penelitian Mister X et.al standar nilai
                                 <span className='italic'> Throughput </span>
                                 adalah sebagai berikut.
                             </p>
-
-                            <div className='flex mt-2 mb-10 justify-center'>
+                            <div className='flex mt-2 mb-16 justify-center'>
                                 <Table hoverable={true}>
                                     <Table.Head>
                                         <Table.HeadCell>
@@ -400,20 +408,22 @@ const BelajarThroughput = () => {
                         </div>
                         {/* cara hitung */}
                         <div className='my-8'>
-                            <h6 id='cara-hitung-throughput' className='text-lg font-bold mb-4'>Cara Hitung</h6>
+                            <h6 id='nilai-throughput-carahitung' className='text-lg font-bold mb-4'>Cara Hitung</h6>
                             <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
                                 Cara untuk mengetahui kategori kualitas
                                 <span className='italic'> Throughput </span>
-                                internet rumahan Anda adalah dengan membandingkan
+                                internet rumahan Anda adalah dengan
+                                <span className='font-semibold'> membandingkan </span>
                                 nilai pengukuran
                                 <span className='italic'> Throughput </span>
-                                dengan
+                                dengan besaran
                                 <span className='italic'> Bandwidth </span>
-                                yang Anda langgan.
+                                internet yang Anda langgan.
                             </p>
                             <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
                                 Sebagai contoh, Anda berlangganan internet rumahan dengan
-                                <span className='italic'> Bandwidth </span> 10Mbps. Saat diukur,
+                                <span className='italic'> Bandwidth </span>
+                                10Mbps. Saat diukur,
                                 <span className='italic'> Throughput </span>
                                 yang dihasilkan adalah 9.2Mbps.
                                 Perhitungannya adalah sebagai berikut.
@@ -427,9 +437,9 @@ const BelajarThroughput = () => {
                             </p>
                         </div>
                         {/* non teknis */}
-                        <div className='my-8'>
-                            <h6 id='non-teknis-throughput' className='text-lg font-bold mb-4'>Faktor Non-teknis</h6>
-                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        <div className='my-12'>
+                            <h6 id='nilai-throughput-nonteknis' className='text-lg font-bold mb-4'>Faktor Non-teknis</h6>
+                            <p className='text-base font-regular mb-8 leading-relaxed text-gray-700'>
                                 Nilai
                                 <span className='italic'> Throughput </span>
                                 juga dipengaruhi oleh faktor non-teknis yaitu
@@ -441,12 +451,26 @@ const BelajarThroughput = () => {
                             </p>
                             {/* fup */}
                             <div>
-                                <h6 id='fup' className='text-base font-bold mb-4'>FUP (<i> Fairplay Usage Policy </i> )</h6>
+                                <h6 id='nilai-throughput-nonteknis-fup' className='text-base font-bold mb-4'>FUP (<i> Fairplay Usage Policy </i> )</h6>
                                 <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                                    FUP (Fairplay Usage Policy) adalah pembatasan nilai Bandwidth ketika telah mencapai batas pemakaian (kuota).
+                                    FUP (Fairplay Usage Policy) adalah
+                                    <span className='font-semibold'> pembatasan nilai <i>Bandwidth</i> </span>
+                                    ketika telah mencapai batas pemakaian (kuota).
+                                </p>
+                                <p className='text-base font-regular  mb-4 leading-relaxed text-gray-700'>
+                                    Sebagai contoh, Anda berlangganan Internet rumahan dengan
+                                    <span className='italic'> Bandwidth </span>
+                                    10Mbps.
                                 </p>
                                 <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                                    Contoh
+                                    Setelah Anda menggunakan kuota sebesar 300GB, maka nilai
+                                    <span className='italic'> Bandwidth </span>
+                                    anda dibatasi/diturunkan menjadi 75% (7,5 Mbps).
+                                </p>
+                                <p className='text-base font-regular  mb-10 leading-relaxed text-gray-700'>
+                                    Setelah itu, apabila pemakaian Anda melebihi 400GB, maka nilai
+                                    <span className='italic'> Bandwidth </span>
+                                    anda dibatasi/diturunkan menjadi 40% (4 Mbps) saja.
                                 </p>
                                 <div className='flex justify-center '>
                                     <Table hoverable={true}>
@@ -464,7 +488,7 @@ const BelajarThroughput = () => {
                                                     0 - 300GB
                                                 </Table.Cell>
                                                 <Table.Cell>
-                                                    10MBps
+                                                    10Mbps
                                                 </Table.Cell>
                                             </Table.Row>
                                             <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -472,7 +496,7 @@ const BelajarThroughput = () => {
                                                     300 - 400GB
                                                 </Table.Cell>
                                                 <Table.Cell>
-                                                    7.5MBps
+                                                    7.5Mbps
                                                 </Table.Cell>
                                             </Table.Row>
                                             <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -480,30 +504,29 @@ const BelajarThroughput = () => {
                                                     &#62; 400GB
                                                 </Table.Cell>
                                                 <Table.Cell>
-                                                    4MBps
+                                                    4Mbps
                                                 </Table.Cell>
                                             </Table.Row>
 
                                         </Table.Body>
                                     </Table>
                                 </div>
-                                <p className='text-base font-regular mt-4 mb-4 leading-relaxed text-gray-700'>
-                                    Anda berlangganan Internet rumahan dengan Bandwidth 10Mbps.
-                                    Setelah Anda menggunakan kuota sebesar 300GB, maka nilai Bandwidth anda dibatasi/diturunkan menjadi 75% (7,5 Mbps).
-                                    Setelah itu, apabila pemakaian Anda melebihi 400GB, maka nilai Bandwidth anda dibatasi/diturunkan menjadi 40% (4 Mbps) saja.
-                                </p>
-                                <p className='text-base font-regular mt-4 mb-4 leading-relaxed text-gray-700'>
-                                    Untuk informasi penerapan FUP yang lebih jelas, silakan kontak ISP kesayangan Anda.
+
+                                <p className='text-base font-regular mt-6 mb-8 leading-relaxed text-gray-700'>
+                                    Untuk informasi penerapan FUP yang lebih jelas, silakan menghubungi ISP kesayangan Anda.
                                 </p>
                             </div>
                             {/* asimetris */}
                             <div>
-                                <h6 id='fup' className='text-base font-bold mb-4'><i>Bandwidth </i> Asimetris</h6>
+                                <h6 id='nilai-throughput-nonteknis-asimetris' className='text-base font-bold mb-4'><i>Bandwidth </i> Asimetris</h6>
                                 <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                                    <i>Bandwidth </i> Asimetris adalah penerapan Bandwidth yang berbeda tergantung aktivitasnya,yaitu Download dan Upload.
+                                    <i>Bandwidth </i> Asimetris adalah penerapan
+                                    <span className='font-semibold '> perbedaan alokasi <i>Bandwidth</i> </span>
+                                    tergantung aktivitasnya, yaitu <i>Download</i> dan <i> Upload</i>.
                                 </p>
                                 <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                                    Hal ini  akan menyebabkan perbedaan nilai Throughput saat Download dan Upload. Nilai Throughput saat Upload, biasanya akan lebih kecil daripada saat Download.
+                                    Hal ini  akan menyebabkan perbedaan nilai  <i> Throughput </i>  saat <i>Download</i>  dan <i> Upload</i>.
+                                    Nilai <i> Throughput </i> saat <i> Upload</i>, biasanya akan lebih kecil daripada saat <i>Download</i> .
                                 </p>
                             </div>
                         </div>
@@ -542,259 +565,189 @@ const BelajarThroughput = () => {
                         </ul>
 
                     </div>
-                    {/* pengukuran */}
-                    <div className='my-4'>
-                        <h5 id='pengukuran-throughput' className='text-xl font-bold mb-5'>Pengukuran <i>Throughput</i></h5>
 
-                        {/* input filter */}
-                        <div>
-                            <form  >
-                                <div className="flex flex-wrap mx-0 mb-2">
-                                    <div className="w-full md:w-1/4 p-3 mb-1 md:mb-0">
-                                        <label
-                                            htmlFor="isp"
-                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                        >ISP</label
-                                        >
-                                        <select
-                                            id="isp"
-                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                            required
-                                        >
-                                            <option>PT_L</option>
-                                            <option>PT_I</option>
-                                        </select>
-                                    </div>
-                                    <div className="w-full md:w-1/4 p-3 mb-1 md:mb-0">
-                                        <label
-                                            htmlFor="jenisproduk"
-                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                        >Jenis Produk</label
-                                        >
-                                        <select
-                                            id="jenisproduk"
-                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                            required
-                                        >
-                                            <option>Internet 20Mbps</option>
-                                            <option>Internet 10Mbps</option>
-                                        </select>
-                                    </div>
-                                    <div className="w-full md:w-1/4 p-3 mb-1 md:mb-0 ">
-                                        <label
-                                            htmlFor="lokasi"
-                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                        >Lokasi</label
-                                        >
-                                        <select
-                                            id="lokasi"
-                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                            required
-                                        >
-                                            <option>Sleman</option>
-                                            <option>Yogyakarta</option>
-                                        </select>
-                                    </div>
-                                    <div className="w-full md:w-1/4 p-3 mb-6 sm:mt-7 ">
-                                        <button
-                                            type="submit"
-                                            className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                        >
-                                            Cari
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        {/* chart */}
-                        <div className=' p-3 border rounded-lg m-3'>
-                            <div className="flex flex-wrap mx-0 mb-2">
-                                <div className="w-full md:w-full p-3 mb-1 md:mb-0">
-                                    <div className='h-96'>
-                                        <Bar data={databarmulti} options={{ maintainAspectRatio: false, }} />
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div className="flex flex-wrap mx-0 mb-2">
-                                <div className="w-full md:w-1/2 p-2 mb-1 md:mb-0 ">
-                                    <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
-                                        <div className='flex text-base'>
-                                            Rata-rata
-                                        </div>
-                                        <div className='flex text-lg font-bold'>
-                                            16.9 Mbps
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="w-full md:w-1/2 p-2 mb-1 md:mb-0 ">
-                                    <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
-                                        <div className='flex text-base'>
-                                            Standar
-                                        </div>
-                                        <div className='flex text-lg font-bold'>
-                                            Good
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex flex-wrap mx-0 mb-2">
-                                <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
-                                    <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
-                                        <div className='flex text-base'>
-                                            Varian
-                                        </div>
-                                        <div className='flex text-lg font-bold'>
-                                            1.1
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
-                                    <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
-                                        <div className='flex text-base'>
-                                            Minimal
-                                        </div>
-                                        <div className='flex text-lg font-bold'>
-                                            12.2 Mbps
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
-                                    <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
-                                        <div className='flex text-base'>
-                                            Maximal
-                                        </div>
-                                        <div className='flex text-lg font-bold'>
-                                            19.8 Mbps
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='my-10'>
-                        </div>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Jika Anda ingin mengukur
-                            <span className='italic'> Throughput </span>
-                            dari internet rumahan Anda, Anda dapat memanfaatkan situs
-                            <a className="text-blue-500 hover:text-blue-700 underline" href="https://www.speedtest.net/"> speedtest.net</a>.
-                        </p>
-
-                    </div>
+                    <footer
+                        className="container mt-8 p-4 bg-white rounded-lg md:px-6 md:py-8 dark:bg-gray-900"
+                    >
+                        <span
+                            className="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
+                        >© 2022 <a href="localhost:3000" className="hover:underline">MONIQQ</a>. All Rights
+                            Reserved.
+                        </span>
+                    </footer>
 
                 </div>
+                {/* sidebar  */}
                 <aside className='w-1/4 flex flex-col'>
                     <div className='sticky top-14 px-5'>
-                        <div className='px-4 flex-col hidden overflow-auto lg:block border-l-2 border-blue-50 '>
-                            <h6 className='mb-3 text-gray-900 dark:text-gray-100 font-semibold text-lg'>Daftar Isi</h6>
-                            <a href='/belajarqos/throughput/#apa-itu-throughput'
-                                className=' mb-2 flex text-sm
-                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
-                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
-                                '
-                            > Apa itu Throughput?
-                            </a>
-                            <a href='/belajarqos/throughput/#apa-itu-bandwidth'
-                                className=' mb-2 flex text-sm
-                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
-                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
-                                '
-                            > Apa itu Bandwidth?
-                            </a>
-                            <a href='/belajarqos/throughput/#arti-throughput-bandwidth'
-                                className=' mb-2 flex text-sm
-                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
-                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
-                                '
-                            > Arti Bandwidth & Throughput
-                            </a>
-                            <a href='/belajarqos/throughput/#kesalahpahaman'
-                                className=' mb-2 flex text-sm
-                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
-                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
-                                '
-                            > Kesalahpahaman
-                            </a>
-                            <a href='/belajarqos/throughput/#illustrasi-throughput-bandwidth'
-                                className=' mb-2 flex text-sm
-                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
-                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
-                                '
-                            > Illustrasi
-                            </a>
+                        <div className='px-4 flex-col hidden max-h-[calc(100vh-9rem-15px)] overflow-auto lg:block border-l-2 border-blue-50 '>
                             <div>
-                                <a href='/belajarqos/throughput/#analogi-throughput-bandwidth'
-                                    className=' ml-4 mb-2 flex text-sm
+                                <h6 className='mb-3 text-gray-900 dark:text-gray-100 font-semibold text-lg'>Daftar Isi</h6>
+                                <a href='/belajarqos/throughput/#apa-itu-throughput'
+                                    className=' mb-2 flex text-sm
                                              hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
                                              focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
                                 '
-                                > Analogi
+                                > Apa itu Throughput?
                                 </a>
-                                <a href='/belajarqos/throughput/#contoh-throughput-bandwidth'
-                                    className=' ml-4 mb-2 flex text-sm
+                                <a href='/belajarqos/throughput/#apa-itu-bandwidth'
+                                    className=' mb-2 flex text-sm
                                              hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
                                              focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
                                 '
-                                > Contoh
+                                > Apa itu Bandwidth?
+                                </a>
+                                <a href='/belajarqos/throughput/#arti-throughput-bandwidth'
+                                    className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                > Arti Bandwidth & Throughput
+                                </a>
+                                <a href='/belajarqos/throughput/#kesalahpahaman'
+                                    className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                > Kesalahpahaman
+                                </a>
+                                <a href='/belajarqos/throughput/#illustrasi-throughput-bandwidth'
+                                    className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                > Illustrasi
+                                </a>
+                                <div>
+                                    <a href='/belajarqos/throughput/#analogi-throughput-bandwidth'
+                                        className=' ml-4 mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                    > Analogi
+                                    </a>
+                                    <a href='/belajarqos/throughput/#contoh-throughput-bandwidth'
+                                        className=' ml-4 mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                    > Contoh
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href='/belajarqos/throughput/#nilai-throughput'
+                                        className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                    >Nilai Throughput
+                                    </a>
+                                    <div>
+                                        <a href='/belajarqos/throughput/#nilai-throughput-standar'
+                                            className=' ml-4 mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                        > Standar
+                                        </a>
+                                        <a href='/belajarqos/throughput/#nilai-throughput-carahitung'
+                                            className=' ml-4 mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                        > Cara Hitung
+                                        </a>
+                                        <a href='/belajarqos/throughput/#nilai-throughput-nonteknis'
+                                            className=' ml-4 mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                        > Faktor Non-Teknis
+                                        </a>
+                                        <div>
+                                            <a href='/belajarqos/throughput/#nilai-throughput-nonteknis-fup'
+                                                className=' ml-8 mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                            > FUP
+                                            </a>
+                                            <a href='/belajarqos/throughput/#nilai-throughput-nonteknis-asimetris'
+                                                className=' ml-8 mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                            > Asimetris
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href='/belajarqos/throughput/#pengaruh-throughput-bandwidth'
+                                    className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                > Pengaruh Throughput & Bandwidth
                                 </a>
                             </div>
-                            <a href='/belajarqos/throughput/#standar-nilai-throughput'
-                                className=' mb-2 flex text-sm
+                            {/* parameter lain */}
+                            <div>
+                                <h6 className='mt-5 mb-3 text-gray-900 dark:text-gray-100 font-semibold text-base'>Parameter Lain</h6>
+                                <Link to='/belajarqos/delay'>
+                                    <div
+                                        className=' mb-2 flex text-sm
                                              hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
                                              focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
                                 '
-                            >Standar Throughput
-                            </a>
-                            <a href='/belajarqos/throughput/#pengaruh-throughput-bandwidth'
-                                className=' mb-2 flex text-sm
+                                    > Delay/Latency
+                                    </div>
+                                </Link>
+                                <Link to='/belajarqos/jitter'>
+                                    <div
+                                        className=' mb-2 flex text-sm
                                              hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
                                              focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
                                 '
-                            > Pengaruh Throughput & Bandwidth
-                            </a>
+                                    > Jitter
+                                    </div>
+                                </Link>
+                                <Link to='/belajarqos/packetloss'>
+                                    <div
+                                        className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                    > Packet Loss
+                                    </div>
+                                </Link>
+                            </div>
+                            {/* pengukuran */}
+                            <div>
+                                <h6 className='mt-5 mb-3 text-gray-900 dark:text-gray-100 font-semibold text-base'>Pengukuran</h6>
+                                <Link to='/pengukuran'>
+                                    <div
+                                        className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                    > Quality of Service
+                                    </div>
+                                </Link>
+                                <Link to='/pengukuran'>
+                                    <div
+                                        className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                    > Quality of Experience
+                                    </div>
+                                </Link>
+                            </div>
 
-                            <a href='/belajarqos/throughput/#pengukuran-throughput'
-                                className=' mb-2 flex text-sm
-                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
-                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
-                                '
-                            > Pengukuran Throughput
-                            </a>
-                            <h6 className='mt-5 mb-3 text-gray-900 dark:text-gray-100 font-semibold text-base'>Parameter Lain</h6>
-                            <Link to='/belajarqos/delay'>
-                                <div
-                                    className=' mb-2 flex text-sm
-                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
-                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
-                                '
-                                > Delay/Latency
-                                </div>
-                            </Link>
-                            <Link to='/belajarqos/jitter'>
-                                <div
-                                    className=' mb-2 flex text-sm
-                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
-                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
-                                '
-                                > Jitter
-                                </div>
-                            </Link>
-                            <Link to='/belajarqos/packetloss'>
-                                <div
-                                    className=' mb-2 flex text-sm
-                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
-                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
-                                '
-                                > Packet Loss
-                                </div>
-                            </Link>
                         </div>
 
                     </div>
                 </aside>
-
-
-
             </div>
 
         </div >
