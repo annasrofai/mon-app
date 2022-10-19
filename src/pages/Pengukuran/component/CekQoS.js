@@ -1,12 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
-import { ispApi } from '../../../api'
-import HasilCekTh from './HasilCekTh'
-import InputCekThroughput from './InputCekThroughput'
 
-const CekQoS = ({ setFilteredTweet, setSentimenSum, setSentimenDaily }) => {
-
-    const [angkaStandarThroughput, setAngkaStandarThroughput] = useState();
+const CekQoS = () => {
 
     // throughput
     const [th, setTh] = useState();

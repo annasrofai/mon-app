@@ -71,6 +71,7 @@ const DashboardISP = () => {
     const [sentimenDaily, setSentimenDaily] = useState([])
     const [tanggalMulaiLaporan, setTanggalMulaiLaporan] = useState("")
     const [tanggalAkhirLaporan, setTanggalAkhirLaporan] = useState("")
+    const [kontenAnalisisSentimen, setKontenAnalisisSentimen] = useState(false)
     // contoh kolom
     // const columns = [
     //     { accessor: 'name', label: 'Name' },
@@ -119,25 +120,24 @@ const DashboardISP = () => {
     const handleTweetPrint = useReactToPrint({
         content: () => tweetPrintComponentRef.current,
         documentTitle: ':Laporan-analisis-sentimen-twitter-daftar-tweet',
-        onAfterPrint: () => alert('sukses')
+        // onAfterPrint: () => alert('sukses')
     })
     const sentimenPrintComponentRef = useRef();
     const handleSentimenPrint = useReactToPrint({
         content: () => sentimenPrintComponentRef.current,
         documentTitle: ':Laporan-analisis-sentimen-twitter-daftar-sentimen',
-        onAfterPrint: () => alert('sukses')
+        // onAfterPrint: () => alert('sukses')
     })
     const kataPrintComponentRef = useRef();
     const handleKataPrint = useReactToPrint({
         content: () => kataPrintComponentRef.current,
         documentTitle: ':Laporan-analisis-sentimen-twitter-daftar-kata',
-        onAfterPrint: () => alert('sukses')
+        // onAfterPrint: () => alert('sukses')
     })
 
     return (
         <div className="min-h-screen lg:flex">
             {/* sidebar */}
-
             <aside
                 className={` ${openSidebars ? "translate-x-0 ease-in opacity-100" : "-translate-x-full ease-out opacity-0 "
                     } w-72 absolute inset-0 transform lg:transform-none lg:opacity-100 duration-200 lg:relative z-10 bg-white border text-white min-h-screen px-3`}
@@ -215,7 +215,6 @@ const DashboardISP = () => {
                     </ul>
                 </div>
             </aside >
-
             <div className="relative z-0 lg:flex-grow">
                 <div className="flex flex-col gap-20">
                     {/* navbar */}
@@ -245,7 +244,7 @@ const DashboardISP = () => {
                     </header>
 
                     {/* isine */}
-                    <section className="mb-20 container">
+                    <section className="mb-12 container">
                         {/* judul */}
                         <div
                             className="mx-auto text-left md:max-w-screen-lg lg:max-w-screen-lg"
@@ -267,120 +266,143 @@ const DashboardISP = () => {
                             </div>
                         </div>
                         <div className='border w-full mb-14'></div>
+                        {/*bagian input */}
+                        <div>
+                            <div className='text-2xl font-semibold p-3'>
+                                Pilih Periode <span className='italic'>Tweet</span>
+                            </div>
+                            {/* input filter */}
+                            <InputFilterTweet
+                                setTanggalAkhirLaporan={setTanggalAkhirLaporan}
+                                setTanggalMulaiLaporan={setTanggalMulaiLaporan}
+                                setFilteredTweet={setFilteredTweet} setSentimenSum={setSentimenSum}
+                                setSentimenDaily={setSentimenDaily} setKataNegatif={setKataNegatif} setKataPositif={setKataPositif}
+                                setKontenAnalisisSentimen={setKontenAnalisisSentimen}
+                            />
 
-                        <div className='text-2xl font-semibold p-3'>
-                            Pilih Periode <span className='italic'>Tweet</span>
+                            <div className='border w-full my-14'></div>
                         </div>
-                        {/* input filter */}
-                        <InputFilterTweet
-                            setTanggalAkhirLaporan={setTanggalAkhirLaporan}
-                            setTanggalMulaiLaporan={setTanggalMulaiLaporan}
-                            setFilteredTweet={setFilteredTweet} setSentimenSum={setSentimenSum}
-                            setSentimenDaily={setSentimenDaily} setKataNegatif={setKataNegatif} setKataPositif={setKataPositif} />
-
-                        <div className='border w-full my-14'></div>
-                        <div className='text-2xl p-3 font-semibold'>
-                            Hasil Analisis
-                        </div>
-                        <div className='text-xl p-3 font-semibold'>
-                            Jumlah Sentimen
-                        </div>
-                        {/* hasil tweet kecil=kecil */}
-                        <SentimenSumCard sentimenSum={sentimenSum} />
-                        <div className='w-full my-8'></div>
-                        {/*  chart */}
-                        <div className='text-xl p-3 font-semibold'>
-                            Grafik
-                        </div>
-                        <SentimenChartCard sentimenDaily={sentimenDaily} sentimenSum={sentimenSum} />
-                        <div className='w-full my-8'></div>
-
-                        {/* tabel sentimen */}
-                        <div className='flex justify-between items-center'>
-                            <div className='text-xl p-3 font-semibold'>
-                                Sentimen Harian
-                            </div>
-                            <div className='p-3'>
-                                <button type="button" onClick={handleSentimenPrint} className="focus:outline-none text-white
-                             bg-emerald-600 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg 
-                             text-xs px-3 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-                                    Download
-                                </button>
-                            </div>
-                        </div>
-                        <div className='p-3'>
-                            <TableTweet rows={rowSentimen} columns={colSentimen} />
-                        </div>
-                        <div className='w-full my-8'></div>
-
-                        {/* tabel tweet*/}
-                        <div className='flex justify-between items-center'>
-                            <div className='text-xl p-3 font-semibold'>
-                                Daftar Tweet
-                            </div>
-                            <div className='p-3'>
-                                <button type="button" onClick={handleTweetPrint} className="focus:outline-none text-white
-                             bg-emerald-600 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg 
-                             text-xs px-3 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-                                    Download
-                                </button>
-                            </div>
-                        </div>
-                        <div className='p-3' >
-                            <TableTweet rows={rowTweet} columns={colTweet} />
-                        </div>
-                        <div className='w-full my-8'></div>
-
-                        {/* tabel kata kata */}
-                        <div className='flex justify-between items-center'>
-                            <div className='text-xl p-3 font-semibold'>
-                                Daftar Kata
-                            </div>
-                            <div className='p-3'>
-                                <button type="button" onClick={handleKataPrint} className="focus:outline-none text-white
-                             bg-emerald-600 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg 
-                             text-xs px-3 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-                                    Download
-                                </button>
-                            </div>
-                        </div>
-                        <div className="flex flex-wrap mx-0 ">
-                            <div className="w-full pb-5 pt-0  md:w-1/2 px-3 mb-6 md:mb-0">
-                                <div className='text-lg py-3 font-medium'>
-                                    Kata Positif
+                        {/* hasil analisis senimen*/}
+                        {
+                            kontenAnalisisSentimen
+                            &&
+                            <div>
+                                <div className='text-2xl p-3 font-semibold'>
+                                    Hasil Analisis
                                 </div>
-                                <TableTweet rows={rowKataPositif} columns={colKata} />
-                            </div>
-                            <div className="w-full pb-5 pt-0  md:w-1/2 px-3 mb-6 md:mb-0">
-                                <div className='text-lg py-3 font-medium'>
-                                    Kata Negatif
+                                <div className='text-xl p-3 font-semibold'>
+                                    Analisis Sentimen
                                 </div>
-                                <TableTweet rows={rowKataNegatif} columns={colKata} />
+                                {/* hasil tweet kecil=kecil */}
+                                <SentimenSumCard sentimenSum={sentimenSum} />
+                                <div className='w-full my-8'></div>
+                                {/*  chart */}
+                                <div className='text-xl p-3 font-semibold'>
+                                    Grafik
+                                </div>
+                                <SentimenChartCard sentimenDaily={sentimenDaily} sentimenSum={sentimenSum} />
+                                <div className='w-full my-8'></div>
+
+                                {/* tabel sentimen */}
+                                <div className='flex justify-between items-center'>
+                                    <div className='text-xl p-3 font-semibold'>
+                                        Sentimen Harian
+                                    </div>
+                                    <div className='p-3'>
+                                        <button type="button" onClick={handleSentimenPrint} className="focus:outline-none text-white
+                             bg-emerald-600 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg 
+                             text-xs px-3 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className='p-3'>
+                                    <TableTweet rows={rowSentimen} columns={colSentimen} />
+                                </div>
+                                <div className='w-full my-8'></div>
+
+                                {/* tabel tweet*/}
+                                <div className='flex justify-between items-center'>
+                                    <div className='text-xl p-3 font-semibold'>
+                                        Daftar Tweet
+                                    </div>
+                                    <div className='p-3'>
+                                        <button type="button" onClick={handleTweetPrint} className="focus:outline-none text-white
+                             bg-emerald-600 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg 
+                             text-xs px-3 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className='p-3' >
+                                    <TableTweet rows={rowTweet} columns={colTweet} />
+                                </div>
+                                <div className='w-full my-8'></div>
+
+                                {/* tabel kata kata */}
+                                <div className='flex justify-between items-center'>
+                                    <div className='text-xl p-3 font-semibold'>
+                                        Daftar Kata
+                                    </div>
+                                    <div className='p-3'>
+                                        <button type="button" onClick={handleKataPrint} className="focus:outline-none text-white
+                             bg-emerald-600 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg 
+                             text-xs px-3 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="flex flex-wrap mx-0 ">
+                                    <div className="w-full pb-5 pt-0  md:w-1/2 px-3 mb-6 md:mb-0">
+                                        <div className='text-lg py-3 font-medium'>
+                                            Kata Positif
+                                        </div>
+                                        <TableTweet rows={rowKataPositif} columns={colKata} />
+                                    </div>
+                                    <div className="w-full pb-5 pt-0  md:w-1/2 px-3 mb-6 md:mb-0">
+                                        <div className='text-lg py-3 font-medium'>
+                                            Kata Negatif
+                                        </div>
+                                        <TableTweet rows={rowKataNegatif} columns={colKata} />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        }
+
+
                         {/* untuk print */}
                         {/* ------------------------------------ */}
-                        <div className='hidden'>
-                            <div ref={sentimenPrintComponentRef}>
-                                <SentimenToPrint tanggalAkhirLaporan={tanggalAkhirLaporan} tanggalMulaiLaporan={tanggalMulaiLaporan} sentimenDaily={sentimenDaily} sentimenSum={sentimenSum} />
+                        <div>
+                            <div className='hidden'>
+                                <div ref={sentimenPrintComponentRef}>
+                                    <SentimenToPrint tanggalAkhirLaporan={tanggalAkhirLaporan} tanggalMulaiLaporan={tanggalMulaiLaporan} sentimenDaily={sentimenDaily} sentimenSum={sentimenSum} />
+                                </div>
                             </div>
-                        </div>
-                        <div className='hidden'>
-                            <div ref={kataPrintComponentRef}>
-                                <KataToPrint tanggalAkhirLaporan={tanggalAkhirLaporan} tanggalMulaiLaporan={tanggalMulaiLaporan} kataNegatif={kataNegatif} kataPositif={kataPositif} />
+                            <div className='hidden'>
+                                <div ref={kataPrintComponentRef}>
+                                    <KataToPrint tanggalAkhirLaporan={tanggalAkhirLaporan} tanggalMulaiLaporan={tanggalMulaiLaporan} kataNegatif={kataNegatif} kataPositif={kataPositif} />
+                                </div>
                             </div>
-                        </div>
-
-                        <div className='hidden'>
-                            <div ref={tweetPrintComponentRef}>
-                                <TweetToPrint tanggalAkhirLaporan={tanggalAkhirLaporan} tanggalMulaiLaporan={tanggalMulaiLaporan} filteredTweet={filteredTweet} />
+                            <div className='hidden'>
+                                <div ref={tweetPrintComponentRef}>
+                                    <TweetToPrint tanggalAkhirLaporan={tanggalAkhirLaporan} tanggalMulaiLaporan={tanggalMulaiLaporan} filteredTweet={filteredTweet} />
+                                </div>
                             </div>
                         </div>
                         {/* ------------------------------------ */}
 
 
                     </section>
-
+                    {/* footer */}
+                    <footer
+                        className="container p-4 bg-white rounded-lg md:px-6 md:py-8 dark:bg-gray-900"
+                    >
+                        <span
+                            className="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
+                        >© 2022 <a href="localhost:3000" className="hover:underline">MONIQQ</a>. All Rights
+                            Reserved.
+                        </span>
+                    </footer>
                 </div>
 
             </div >

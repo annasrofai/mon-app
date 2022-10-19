@@ -16,7 +16,7 @@ function formatDate(date) {
 }
 const kemarin = formatDate(yesterday);
 
-const InputFilterTweet = ({ setFilteredTweet, setSentimenSum, setSentimenDaily, setKataNegatif, setKataPositif, setTanggalAkhirLaporan, setTanggalMulaiLaporan }) => {
+const InputFilterTweet = ({ setFilteredTweet, setSentimenSum, setSentimenDaily, setKataNegatif, setKataPositif, setTanggalAkhirLaporan, setTanggalMulaiLaporan, setKontenAnalisisSentimen }) => {
     const [startDate, setStartDate] = useState("")
     const [endDate, setEndDate] = useState("")
     const [provider, setProvider] = useState("pt_i")
@@ -48,6 +48,7 @@ const InputFilterTweet = ({ setFilteredTweet, setSentimenSum, setSentimenDaily, 
             fetchKata({ startDate, endDate });
             setTanggalMulaiLaporan(startDate);
             setTanggalAkhirLaporan(endDate);
+            setKontenAnalisisSentimen(true)
         }
     }
 
