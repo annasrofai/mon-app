@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-
+import { Link } from 'react-router-dom'
 const CekQoS = () => {
 
     // throughput
@@ -149,9 +149,12 @@ const CekQoS = () => {
         <div className='mn-20'>
             {/* throughput */}
             <div className='p-5 my-8 border rounded-xl'>
-                <div className='text-base my-2 font-bold flex justify-between items-center'>
-                    <div>
-                        Standar Throughput
+                <div className='my-2 p-2 flex flex-col '>
+                    <div className='text-base font-bold'>
+                        Standar <i>Throughput</i>
+                    </div>
+                    <div className='mt-4 text-sm text-gray-600'>
+                        Masukkan besar <i>Bandwidth</i> yang Anda langgan dan hasil pengukuran <i>Throughput</i> tanpa satuan Mbps/MBps.
                     </div>
                 </div>
                 {/* input throughput */}
@@ -224,15 +227,25 @@ const CekQoS = () => {
                             Nilai Throughput: {infoTh} {hasilTh}% ({batasanTh})
 
                         </div>
+                        <div className='mt-4 text-sm text-gray-600'>
+                            Silakan menuju halaman
+                            <Link to="/belajarqos/throughput" className='text-blue-800 hover:text-blue-500 underline'>
+                                <span> Belajar Throughput</span>
+                            </Link>
+                            , jika ingin mencari tahu lebih lanjut.
+                        </div>
                     </div>
                 }
             </div>
 
             {/* delay */}
             <div className='p-5 my-8 border rounded-xl'>
-                <div className='text-base font-bold flex justify-between items-center'>
-                    <div>
-                        Standar Delay
+                <div className='my-2 p-2 flex flex-col '>
+                    <div className='text-base font-bold'>
+                        Standar <i>Delay</i>
+                    </div>
+                    <div className='mt-4 text-sm text-gray-600'>
+                        Masukkan nilai hasil pengukuran <i>Delay</i> tanpa satuan milliseconds (ms).
                     </div>
                 </div>
                 {/* input delay */}
@@ -292,16 +305,25 @@ const CekQoS = () => {
                         >
                             Nilai Delay: {infoDelay} ({batasanDelay})
                         </div>
-
+                        <div className='mt-4 text-sm text-gray-600'>
+                            Silakan menuju halaman
+                            <Link to="/belajarqos/delay" className='text-blue-800 hover:text-blue-500 underline'>
+                                <span> Belajar Delay</span>
+                            </Link>
+                            , jika ingin mencari tahu lebih lanjut.
+                        </div>
                     </div>
                 }
             </div>
 
             {/* Jitter */}
             <div className='p-5 my-8 border rounded-xl'>
-                <div className='text-base my-2 font-bold flex justify-between items-center'>
-                    <div>
-                        Standar Jitter
+                <div className='my-2 p-2 flex flex-col '>
+                    <div className='text-base font-bold'>
+                        Standar <i>Jitter</i>
+                    </div>
+                    <div className='mt-4 text-sm text-gray-600'>
+                        Masukkan nilai hasil pengukuran <i>Jitter</i> tanpa satuan milliseconds (ms).
                     </div>
                 </div>
                 {/* input Jitter */}
@@ -361,6 +383,13 @@ const CekQoS = () => {
                         >
                             Nilai Jitter: {infoJitter} ({batasanJitter})
                         </div>
+                        <div className='mt-4 text-sm text-gray-600'>
+                            Silakan menuju halaman
+                            <Link to="/belajarqos/jitter" className='text-blue-800 hover:text-blue-500 underline'>
+                                <span> Belajar Jitter</span>
+                            </Link>
+                            , jika ingin mencari tahu lebih lanjut.
+                        </div>
 
                     </div>
                 }
@@ -368,9 +397,12 @@ const CekQoS = () => {
 
             {/* Packet Loss */}
             <div className='p-5 my-8 border rounded-xl'>
-                <div className='text-base my-2 font-bold flex justify-between items-center'>
-                    <div>
-                        Standar Packet Loss
+                <div className='my-2 p-2 flex flex-col '>
+                    <div className='text-base font-bold'>
+                        Standar <i>Packet Loss</i>
+                    </div>
+                    <div className='mt-4 text-sm text-gray-600'>
+                        Masukkan nilai hasil pengukuran <i>Packet Loss</i> tanpa satuan persen (%).
                     </div>
                 </div>
                 {/* input Packetloss */}
@@ -390,8 +422,6 @@ const CekQoS = () => {
                                         required />
                                 </div>
                             </div>
-
-
                             <div className="w-full md:w-1/3 p-2  sm:mt-7 ">
                                 <button
                                     type="submit"
@@ -429,6 +459,13 @@ const CekQoS = () => {
                         }
                         >
                             Packet Loss: {infoPacketloss} ({batasanPacketloss})
+                        </div>
+                        <div className='mt-4 text-sm text-gray-600'>
+                            Silakan menuju halaman
+                            <Link to="/belajarqos/packetloss" className='text-blue-800 hover:text-blue-500 underline'>
+                                <span> Belajar Packet Loss</span>
+                            </Link>
+                            , jika ingin mencari tahu lebih lanjut.
                         </div>
 
                     </div>

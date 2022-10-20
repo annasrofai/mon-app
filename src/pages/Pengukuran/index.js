@@ -13,7 +13,7 @@ Chart.register(ArcElement, Tooltip, Legend, Filler, CategoryScale, LinearScale, 
 
 const Pengukuran = () => {
     useEffect(() => {
-        document.title = "Belajar Internet - MONIQQ";
+        document.title = "Pengukuran - MONIQQ";
     }, []);
 
     const [filteredTweet, setFilteredTweet] = useState([])
@@ -115,190 +115,193 @@ const Pengukuran = () => {
                     {/* QOS */}
                     <div className='my-4'>
                         <h5 className='text-2xl font-bold mb-5'>Pengukuran Kualitas Koneksi Internet ISP (QoS)</h5>
-                        <h6 className='text-xl font-bold mb-5'>Contoh</h6>
-                        {/* input filter */}
+                        {/* contoh pengukuran */}
                         <div>
-                            <form  >
+                            <h6 className='text-xl font-bold mb-5'>Contoh</h6>
+
+                            <div>
+                                <form  >
+                                    <div className="flex flex-wrap mx-0 mb-2">
+                                        <div className='flex flex-col w-full md:w-1/2' >
+                                            <div className="w-full   py-2 pr-2 mb-1 md:mb-0">
+                                                <label
+                                                    htmlFor="parameter-qos"
+                                                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                >Parameter QoS</label
+                                                >
+                                                <select
+                                                    id="parameter-qos"
+                                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                    required
+                                                >
+                                                    <option>Throughput</option>
+                                                    <option>Delay</option>
+                                                    <option>Jitter</option>
+                                                    <option>PacketLoss</option>
+                                                </select>
+                                            </div>
+                                            <div className="w-full py-2 pr-4 mb-1 md:mb-0">
+                                                <label
+                                                    htmlFor="isp"
+                                                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                >ISP</label
+                                                >
+                                                <select
+                                                    id="isp"
+                                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                    required
+                                                >
+                                                    <option>PT_L</option>
+                                                    <option>PT_I</option>
+                                                </select>
+                                            </div>
+                                            <div className="w-full  py-2 pr-2 mb-1 md:mb-0">
+                                                <label
+                                                    htmlFor="jenisproduk"
+                                                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                >Jenis Produk</label
+                                                >
+                                                <select
+                                                    id="jenisproduk"
+                                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                    required
+                                                >
+                                                    <option>Internet 20Mbps</option>
+                                                    <option>Internet 10Mbps</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <div className='flex flex-col w-full md:w-1/2'>
+                                            <div className="w-full  py-2  mb-1 md:mb-0 ">
+                                                <label
+                                                    htmlFor="lokasi"
+                                                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                >Lokasi</label
+                                                >
+                                                <select
+                                                    id="lokasi"
+                                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                    required
+                                                >
+                                                    <option>Sleman</option>
+                                                    <option>Yogyakarta</option>
+                                                </select>
+                                            </div>
+                                            <div className="w-full  py-2 mb-1 md:mb-0 ">
+                                                <label
+                                                    htmlFor="tanggalmulai"
+                                                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                >Tanggal Mulai</label
+                                                >
+                                                <input
+                                                    type="date"
+                                                    id="tanggalmulai"
+                                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                    // max={endDate}
+                                                    min=""
+                                                    required
+                                                // value={startDate}
+                                                // onChange={(e) => setStartDate(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className="w-full  py-2 mb-1 md:mb-0 ">
+                                                <label
+                                                    htmlFor="tanggalakhir"
+                                                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                >Tanggal Akhir</label
+                                                >
+                                                <input
+                                                    type="date"
+                                                    id="tanggalakhir"
+                                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                    // max={endDate}
+                                                    min=""
+                                                    required
+                                                // value={startDate}
+                                                // onChange={(e) => setStartDate(e.target.value)}
+                                                />
+                                            </div>
+
+                                        </div>
+                                        <div className="w-full mb-6 mt-2">
+                                            <button
+                                                type="submit"
+                                                className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                            >
+                                                Cari
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div className=' p-3 border rounded-lg m-3'>
                                 <div className="flex flex-wrap mx-0 mb-2">
-                                    <div className='flex flex-col w-full md:w-1/2' >
-                                        <div className="w-full   py-2 pr-2 mb-1 md:mb-0">
-                                            <label
-                                                htmlFor="parameter-qos"
-                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                            >Parameter QoS</label
-                                            >
-                                            <select
-                                                id="parameter-qos"
-                                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                required
-                                            >
-                                                <option>Throughput</option>
-                                                <option>Delay</option>
-                                                <option>Jitter</option>
-                                                <option>PacketLoss</option>
-                                            </select>
-                                        </div>
-                                        <div className="w-full py-2 pr-4 mb-1 md:mb-0">
-                                            <label
-                                                htmlFor="isp"
-                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                            >ISP</label
-                                            >
-                                            <select
-                                                id="isp"
-                                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                required
-                                            >
-                                                <option>PT_L</option>
-                                                <option>PT_I</option>
-                                            </select>
-                                        </div>
-                                        <div className="w-full  py-2 pr-2 mb-1 md:mb-0">
-                                            <label
-                                                htmlFor="jenisproduk"
-                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                            >Jenis Produk</label
-                                            >
-                                            <select
-                                                id="jenisproduk"
-                                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                required
-                                            >
-                                                <option>Internet 20Mbps</option>
-                                                <option>Internet 10Mbps</option>
-                                            </select>
+                                    <div className="w-full md:w-full p-3 mb-1 md:mb-0">
+                                        <div className='h-96'>
+                                            <Bar data={databarmulti} options={{ maintainAspectRatio: false, }} />
                                         </div>
 
                                     </div>
-                                    <div className='flex flex-col w-full md:w-1/2'>
-                                        <div className="w-full  py-2  mb-1 md:mb-0 ">
-                                            <label
-                                                htmlFor="lokasi"
-                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                            >Lokasi</label
-                                            >
-                                            <select
-                                                id="lokasi"
-                                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                required
-                                            >
-                                                <option>Sleman</option>
-                                                <option>Yogyakarta</option>
-                                            </select>
-                                        </div>
-                                        <div className="w-full  py-2 mb-1 md:mb-0 ">
-                                            <label
-                                                htmlFor="tanggalmulai"
-                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                            >Tanggal Mulai</label
-                                            >
-                                            <input
-                                                type="date"
-                                                id="tanggalmulai"
-                                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                // max={endDate}
-                                                min=""
-                                                required
-                                            // value={startDate}
-                                            // onChange={(e) => setStartDate(e.target.value)}
-                                            />
-                                        </div>
-                                        <div className="w-full  py-2 mb-1 md:mb-0 ">
-                                            <label
-                                                htmlFor="tanggalakhir"
-                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                                            >Tanggal Akhir</label
-                                            >
-                                            <input
-                                                type="date"
-                                                id="tanggalakhir"
-                                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                // max={endDate}
-                                                min=""
-                                                required
-                                            // value={startDate}
-                                            // onChange={(e) => setStartDate(e.target.value)}
-                                            />
-                                        </div>
-
-                                    </div>
-                                    <div className="w-full mb-6 mt-2">
-                                        <button
-                                            type="submit"
-                                            className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                        >
-                                            Cari
-                                        </button>
-                                    </div>
                                 </div>
-                            </form>
-                        </div>
-                        {/* chart */}
-                        <div className=' p-3 border rounded-lg m-3'>
-                            <div className="flex flex-wrap mx-0 mb-2">
-                                <div className="w-full md:w-full p-3 mb-1 md:mb-0">
-                                    <div className='h-96'>
-                                        <Bar data={databarmulti} options={{ maintainAspectRatio: false, }} />
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div className="flex flex-wrap mx-0 mb-2">
-                                <div className="w-full md:w-1/2 p-2 mb-1 md:mb-0 ">
-                                    <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
-                                        <div className='flex text-base'>
-                                            Rata-rata
+                                <div className="flex flex-wrap mx-0 mb-2">
+                                    <div className="w-full md:w-1/2 p-2 mb-1 md:mb-0 ">
+                                        <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                            <div className='flex text-base'>
+                                                Rata-rata
+                                            </div>
+                                            <div className='flex text-lg font-bold'>
+                                                16.9 Mbps
+                                            </div>
                                         </div>
-                                        <div className='flex text-lg font-bold'>
-                                            16.9 Mbps
+                                    </div>
+                                    <div className="w-full md:w-1/2 p-2 mb-1 md:mb-0 ">
+                                        <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                            <div className='flex text-base'>
+                                                Standar
+                                            </div>
+                                            <div className='flex text-lg font-bold'>
+                                                Good
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="w-full md:w-1/2 p-2 mb-1 md:mb-0 ">
-                                    <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
-                                        <div className='flex text-base'>
-                                            Standar
+                                <div className="flex flex-wrap mx-0 mb-2">
+                                    <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
+                                        <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                            <div className='flex text-base'>
+                                                Std Deviasi
+                                            </div>
+                                            <div className='flex text-lg font-bold'>
+                                                1.1
+                                            </div>
                                         </div>
-                                        <div className='flex text-lg font-bold'>
-                                            Good
+                                    </div>
+                                    <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
+                                        <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                            <div className='flex text-base'>
+                                                Minimal
+                                            </div>
+                                            <div className='flex text-lg font-bold'>
+                                                12.2 Mbps
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
+                                        <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
+                                            <div className='flex text-base'>
+                                                Maximal
+                                            </div>
+                                            <div className='flex text-lg font-bold'>
+                                                19.8 Mbps
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex flex-wrap mx-0 mb-2">
-                                <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
-                                    <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
-                                        <div className='flex text-base'>
-                                            Std Deviasi
-                                        </div>
-                                        <div className='flex text-lg font-bold'>
-                                            1.1
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
-                                    <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
-                                        <div className='flex text-base'>
-                                            Minimal
-                                        </div>
-                                        <div className='flex text-lg font-bold'>
-                                            12.2 Mbps
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="w-full md:w-1/3 p-2 mb-1 md:mb-0 ">
-                                    <div className='border rounded-lg p-3 w-full flex flex-col justify-center items-center'>
-                                        <div className='flex text-base'>
-                                            Maximal
-                                        </div>
-                                        <div className='flex text-lg font-bold'>
-                                            19.8 Mbps
-                                        </div>
-                                    </div>
-                                </div>
+                            <div className='my-10'>
                             </div>
-                        </div>
-                        <div className='my-10'>
                         </div>
 
                         {/* ukur masukan user */}
@@ -306,8 +309,8 @@ const Pengukuran = () => {
                             <h6 className='text-xl font-bold mb-5'>Cek Internet Anda</h6>
                             <div className='text-base my-4 font-light leading-loose flex justify-between items-center'>
                                 <div>
-                                    Anda dapat memeriksa nilai standar kualitas koneksi internet Anda.
-                                    Caranya adalah sebagai berikut.
+                                    Anda dapat memeriksa nilai standar kualitas koneksi internet Anda secara mandiri.
+                                    Silakan ikuti langkah-langkah berikut.
                                     <span className="">
                                         <ol className="list-decimal p-3">
                                             <li>
@@ -366,7 +369,13 @@ const Pengukuran = () => {
                             </p>
                             <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
 
-                                Berdasarkan jurnal Bad is Stronger than Good yang ditulis oleh Baumeister R F et al. [xx]
+                                Berdasarkan jurnal "<i>Bad is Stronger than Good</i>" yang ditulis oleh
+                                <a href="https://www.researchgate.net/publication/46608952_Bad_Is_Stronger_than_Good"
+                                    target="_blank" rel="noopener noreferrer"
+                                    className="hover:underline"
+                                > Baumeister et al.
+                                </a>
+
                             </p>
                             <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-1 mb-7 leading-relaxed italic rounded">
                                 <p className='text-base font-regular leading-relaxed text-gray-700'>
@@ -398,7 +407,13 @@ const Pengukuran = () => {
                                 Anda harus bijak dalam menyikapi pendapat pengguna ISP di Twitter.
                             </p>
                             <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                                Menurut penelitian Hamed Qahri-Saremi [xx], respon yang dapat Anda lakukan adalah
+                                Menurut penelitian yang dilakukan oleh
+                                <a href="https://biz.source.colostate.edu/negative-online-reviews-impact-study/"
+                                    target="_blank" rel="noopener noreferrer"
+                                    className="hover:underline"
+                                > Hamed Qahri-Saremi
+                                </a>
+                                , respon yang dapat Anda lakukan terhadap pendapat yang ada di internet adalah
                             </p>
                             <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-1 mb-7 leading-relaxed italic rounded">
                                 <p className='text-base font-regular leading-relaxed text-gray-700'>
