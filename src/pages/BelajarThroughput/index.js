@@ -182,6 +182,13 @@ const BelajarThroughput = () => {
                             tetapi masih
                             <span className='font-semibold'> saling terkait</span>.
                         </p>
+                        <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-3 mb-6 leading-relaxed italic rounded">
+                            <span className=' '> Throughput </span>
+                            <span className='font-semibold '> tidak sama </span>
+                            dengan
+                            <span className=' '> Bandwidth </span>
+                            .
+                        </div>
                         <p className='text-base font-regular mb-5 leading-relaxed text-gray-700'>
                             Dengan memahami kedua istilah tersebut, Anda akan dapat memahami kualitas koneksi internet Anda secara
                             <span className='font-semibold'> komprehensif</span>
@@ -191,70 +198,112 @@ const BelajarThroughput = () => {
                     {/* salah paham */}
                     <div className='my-4'>
                         <h5 id='kesalahpahaman' className='text-xl font-bold mb-5'>Salah Paham</h5>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Sering terjadi kesalahpahaman terkait dua istilah ini.
-                        </p>
-                        <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-3 mb-6 leading-relaxed italic rounded">
-                            <span className=' '> Throughput </span>
-                            <span className='font-semibold '> tidak sama </span>
-                            dengan
-                            <span className=' '> Bandwidth </span>
-                            .
+                        {/* throughput vs bandwidth */}
+                        <div className='my-10'>
+                            <h5 id='kesalahpahaman-tb' className='text-lg font-bold mb-5'>Throughput vs Bandwidth</h5>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Sering terjadi kesalahpahaman terkait dua istilah ini.
+                                Yang paling sering ditemui adalah mengukur kecepatan dengan menggunakan <i>Bandwidth</i>.
+                            </p>
+
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Anda akan sering menjumpai
+                                <span className='font-semibold'> ISP </span>
+                                <span className='font-semibold'> mempromosikan </span>
+                                produk internetnya
+                                <span className='font-semibold'> berdasarkan besaran</span>
+                                <span className='italic font-semibold'> Bandwidth </span>
+                                yang tersedia.
+                                Perlu diketahui, hal tersebut merupakan teknik pemasaran atau
+                                <span className='font-semibold italic'> gimmick marketing </span>
+                                dari ISP saja.
+                            </p>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                ISP akan mempromosikan produk internetnya, seolah-olah performanya akan konstan
+                                di batas maksimal tersebut pada setiap saat.
+                            </p>
+                            {/* <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-3 mb-6 leading-relaxed italic rounded">
+                                <span className='font-semibold'>Seharusnya </span>
+                                yang digunakan untuk mengukur kecepatan adalah
+                                <span className='italic font-semibold'> Throughput</span>
+                                .
+                            </div> */}
+
+                            <p className='text-base font-regular mb-5 leading-relaxed text-gray-700'>
+                                <span className='font-semibold'>Hal yang perlu diluruskan </span>
+                                adalah nilai atau luaran transfer data
+                                <span className='font-semibold'> tidak akan selalu sama </span>
+                                pada setiap saat seperti yang ditawarkan ISP.
+                            </p>
+                            <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-3 mb-6 leading-relaxed italic rounded">
+                                Nilai
+                                <span className=' font-semibold '> Throughput </span>
+                                akan selalu
+                                <span className='font-semibold '> lebih kecil </span>
+                                atau sama dengan nilai
+                                <span className=' font-semibold'> Bandwidth </span>
+                                .
+                            </div>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Oleh karena itu, ISP sebenarnya mempromosikan produknya menggunakan kata
+                                <span className='font-semibold italic'> "Up To"</span>.
+                            </p>
+                            <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-3 mb-6 leading-relaxed italic rounded">
+                                <span className=' font-semibold '> "Up To" </span>
+                                berarti
+                                <span className='font-semibold '> sampai dengan </span>
+                                atau
+                                <span className=' font-semibold'> batas maksimal </span>
+                                .
+                            </div>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Sebagai contoh, ISP menawari Anda produk internet dengan Bandwidth sebesar 20Mbps,
+                                Maka, besar kecepatan atau throughput akan berada di bawah 20Mbps karena
+                                20Mbps merupakan batas maksimal.
+                            </p>
                         </div>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            <span className='italic font-semibold'>Bandwidth </span>
-                            sering digunakan untuk
-                            <span className='font-semibold'> mengukur laju </span>
-                            suatu jaringan internet pada
-                            <span className='font-semibold'> setiap saat</span>
-                            .
-                            <span className='font-semibold'> Padahal</span>
-                            ,
-                            <span className='italic'> Bandwidth </span>
-                            merujuk pada kemampuan atau
-                            <span className='font-semibold'> kapasitas maksimal </span>
-                            suatu jaringan internet dalam mengirimkan atau transfer data.
-                        </p>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Untuk mengukur jumlah data yang ditransfer dalam waktu tertentu,
-                            <span className='font-semibold'> seharusnya </span>
-                            menggunakan
-                            <span className='italic font-semibold'> Throughput</span>
-                            .
-                        </p>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Anda akan sering menjumpai
-                            <span className='font-semibold'> Penyedia Jasa Internet </span>
-                            (ISP)
-                            <span className='font-semibold'> mempromosikan </span>
-                            produk internetnya
-                            <span className='font-semibold'> berdasarkan besaran</span>
-                            <span className='italic font-semibold'> Bandwidth </span>
-                            yang tersedia.
-                            Hal tersebut merupakan teknik pemasaran atau
-                            <span className='font-semibold italic'> gimmick marketing </span>
-                            dari Penyedia Jasa Internet saja.
-                        </p>
-                        <p className='text-base font-regular mb-5 leading-relaxed text-gray-700'>
-                            <span className='font-semibold'>Hal yang perlu diluruskan </span>
-                            adalah nilai atau luaran transfer data
-                            <span className='font-semibold'> tidak akan selalu sama </span>
-                            pada setiap saat seperti yang ditawarkan ISP (Berdasarkan
-                            <span className='italic'> Bandwidth </span>
-                            ).
-                        </p>
-                        <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-3 mb-6 leading-relaxed italic rounded">
-                            Nilai
-                            <span className=' font-semibold '> Throughput </span>
-                            akan selalu
-                            <span className='font-semibold '> lebih kecil </span>
-                            atau sama dengan nilai
-                            <span className=' font-semibold'> Bandwidth </span>
-                            .
+                        {/* bit vs byte */}
+                        <div className='mt-16 mb-10'>
+                            <h5 id='kesalahpahaman-bb' className='text-lg font-bold mb-5'>Byte vs Bit</h5>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Istilah Byte dan Bit juga sering menimbulkan kesalapahaman dalam mengukur performa internet.
+                            </p>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Byte dan Bit sama-sama merupakan satuan dari data. Lalu apa perbedaannya?
+                            </p>
+                            <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-3 mb-6 leading-relaxed italic rounded">
+                                <span className=' font-semibold '> 1 </span>
+                                Byte
+                                =
+                                <span className=' font-semibold'> 8 </span>
+                                Bit
+                            </div>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Byte juga dinotasikan sebagai huruf
+                                <span className=' font-semibold'> "B" </span>
+                                besar, sedangkan Bit dengan huruf
+                                <span className=' font-semibold'> "b" </span>
+                                kecil.
+                            </p>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Biasanya, ISP mempromosikan produk internetnya dengan menggunakan satuan Bit.
+                                Tentu angka yang besar akan lebih menarik dari sisi marketing.
+                                Di lain sisi, satuan Byte digunakan dalam mekanisme transfer file.
+                            </p>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Sebagai contoh, ISP menawarkan Bandwidth 20Mbps,
+                                untuk mengetahui Throughput maksimal ketika melakukan download/upload adalah membagi nilainya dengan 8.
+                            </p>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                <sup>20Mbps</sup>&frasl;<sub>8 </sub> = 2.5MBps
+                            </p>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Jadi, Throughput yang didapat adalah 2.5 MBps
+                            </p>
                         </div>
                     </div>
                     {/* illustrasi */}
-                    <div className='my-4'>
+                    <div className='my-8'>
                         <h5 id='illustrasi-throughput-bandwidth' className='text-xl font-bold mb-5'>Illustrasi Throughput vs Bandwidth</h5>
                         <div>
                             <img
@@ -436,99 +485,98 @@ const BelajarThroughput = () => {
                                 masuk ke dalam kategori Sangat Bagus.
                             </p>
                         </div>
-                        {/* non teknis */}
-                        <div className='my-12'>
-                            <h6 id='nilai-throughput-nonteknis' className='text-lg font-bold mb-4'>Faktor Non-teknis</h6>
-                            <p className='text-base font-regular mb-8 leading-relaxed text-gray-700'>
-                                Nilai
-                                <span className='italic'> Throughput </span>
-                                juga dipengaruhi oleh faktor non-teknis yaitu
-                                <span className='font-semibold'> kebijakan, syarat, </span>
-                                dan
-                                <span className='font-semibold'> ketentuan </span>
-                                dari ISP.
-                                Contohnya adalah penerapan kebijakan FUP (<i> Fairplay Usage Policy </i> ) dan <i> Bandwidth</i>  Asimetris.
+
+                    </div>
+
+                    {/* non teknis */}
+                    <div className='my-4'>
+                        <h5 id='nilai-throughput-nonteknis' className='text-xl font-bold mb-4'>Faktor Non-teknis</h5>
+                        <p className='text-base font-regular mb-8 leading-relaxed text-gray-700'>
+                            Nilai
+                            <span className='italic'> Throughput </span>
+                            juga dipengaruhi oleh faktor non-teknis yaitu
+                            <span className='font-semibold'> kebijakan, syarat, </span>
+                            dan
+                            <span className='font-semibold'> ketentuan </span>
+                            dari ISP.
+                            Contohnya adalah penerapan kebijakan FUP (<i> Fairplay Usage Policy </i> ) dan <i> Bandwidth</i>  Asimetris.
+                        </p>
+                        {/* fup */}
+                        <div>
+                            <h6 id='nilai-throughput-nonteknis-fup' className='text-base font-bold mb-4'>FUP (<i> Fairplay Usage Policy </i> )</h6>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                FUP (Fairplay Usage Policy) adalah
+                                <span className='font-semibold'> pembatasan nilai <i>Bandwidth</i> </span>
+                                ketika telah mencapai batas pemakaian (kuota).
                             </p>
-                            {/* fup */}
-                            <div>
-                                <h6 id='nilai-throughput-nonteknis-fup' className='text-base font-bold mb-4'>FUP (<i> Fairplay Usage Policy </i> )</h6>
-                                <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                                    FUP (Fairplay Usage Policy) adalah
-                                    <span className='font-semibold'> pembatasan nilai <i>Bandwidth</i> </span>
-                                    ketika telah mencapai batas pemakaian (kuota).
-                                </p>
-                                <p className='text-base font-regular  mb-4 leading-relaxed text-gray-700'>
-                                    Sebagai contoh, Anda berlangganan Internet rumahan dengan
-                                    <span className='italic'> Bandwidth </span>
-                                    10Mbps.
-                                </p>
-                                <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                                    Setelah Anda menggunakan kuota sebesar 300GB, maka nilai
-                                    <span className='italic'> Bandwidth </span>
-                                    anda dibatasi/diturunkan menjadi 75% (7,5 Mbps).
-                                </p>
-                                <p className='text-base font-regular  mb-10 leading-relaxed text-gray-700'>
-                                    Setelah itu, apabila pemakaian Anda melebihi 400GB, maka nilai
-                                    <span className='italic'> Bandwidth </span>
-                                    anda dibatasi/diturunkan menjadi 40% (4 Mbps) saja.
-                                </p>
-                                <div className='flex justify-center '>
-                                    <Table hoverable={true}>
-                                        <Table.Head>
-                                            <Table.HeadCell>
-                                                Kuota
-                                            </Table.HeadCell>
-                                            <Table.HeadCell>
-                                                Bandwidth
-                                            </Table.HeadCell>
-                                        </Table.Head>
-                                        <Table.Body className="divide-y">
-                                            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                    0 - 300GB
-                                                </Table.Cell>
-                                                <Table.Cell>
-                                                    10Mbps
-                                                </Table.Cell>
-                                            </Table.Row>
-                                            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                    300 - 400GB
-                                                </Table.Cell>
-                                                <Table.Cell>
-                                                    7.5Mbps
-                                                </Table.Cell>
-                                            </Table.Row>
-                                            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                    &#62; 400GB
-                                                </Table.Cell>
-                                                <Table.Cell>
-                                                    4Mbps
-                                                </Table.Cell>
-                                            </Table.Row>
+                            <p className='text-base font-regular  mb-4 leading-relaxed text-gray-700'>
+                                Sebagai contoh, Anda berlangganan Internet rumahan dengan
+                                <span className='italic'> Bandwidth </span>
+                                10Mbps.
+                            </p>
 
-                                        </Table.Body>
-                                    </Table>
-                                </div>
+                            <div className='flex justify-center my-12 '>
+                                <Table hoverable={true}>
+                                    <Table.Head>
+                                        <Table.HeadCell>
+                                            Kuota
+                                        </Table.HeadCell>
+                                        <Table.HeadCell>
+                                            Bandwidth
+                                        </Table.HeadCell>
+                                    </Table.Head>
+                                    <Table.Body className="divide-y">
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                0 - 300GB
+                                            </Table.Cell>
+                                            <Table.Cell>
+                                                10Mbps
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                300 - 400GB
+                                            </Table.Cell>
+                                            <Table.Cell>
+                                                7.5Mbps
+                                            </Table.Cell>
+                                        </Table.Row>
+                                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                &#62; 400GB
+                                            </Table.Cell>
+                                            <Table.Cell>
+                                                4Mbps
+                                            </Table.Cell>
+                                        </Table.Row>
 
-                                <p className='text-base font-regular mt-6 mb-8 leading-relaxed text-gray-700'>
-                                    Untuk informasi penerapan FUP yang lebih jelas, silakan menghubungi ISP kesayangan Anda.
-                                </p>
+                                    </Table.Body>
+                                </Table>
                             </div>
-                            {/* asimetris */}
-                            <div>
-                                <h6 id='nilai-throughput-nonteknis-asimetris' className='text-base font-bold mb-4'><i>Bandwidth </i> Asimetris</h6>
-                                <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                                    <i>Bandwidth </i> Asimetris adalah penerapan
-                                    <span className='font-semibold '> perbedaan alokasi <i>Bandwidth</i> </span>
-                                    tergantung aktivitasnya, yaitu <i>Download</i> dan <i> Upload</i>.
-                                </p>
-                                <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                                    Hal ini  akan menyebabkan perbedaan nilai  <i> Throughput </i>  saat <i>Download</i>  dan <i> Upload</i>.
-                                    Nilai <i> Throughput </i> saat <i> Upload</i>, biasanya akan lebih kecil daripada saat <i>Download</i> .
-                                </p>
-                            </div>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Seperti tabel di atas, Setelah Anda menggunakan kuota sebesar 300GB, maka nilai
+                                <span className='italic'> Bandwidth </span>
+                                anda dibatasi/diturunkan menjadi 75% (7,5 Mbps).
+                            </p>
+                            <p className='text-base font-regular  mb-10 leading-relaxed text-gray-700'>
+                                Setelah itu, apabila pemakaian Anda melebihi 400GB, maka nilai
+                                <span className='italic'> Bandwidth </span>
+                                anda dibatasi/diturunkan menjadi 40% (4 Mbps) saja.
+                            </p>
+                        </div>
+                        {/* asimetris */}
+                        <div>
+                            <h6 id='nilai-throughput-nonteknis-asimetris' className='text-base font-bold mb-4'><i>Bandwidth </i> Asimetris</h6>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                <i>Bandwidth </i> Asimetris adalah penerapan
+                                <span className='font-semibold '> perbedaan alokasi <i>Bandwidth</i> </span>
+                                tergantung aktivitasnya, yaitu <i>Download</i> dan <i> Upload</i>.
+                            </p>
+                            <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                Hal ini  akan menyebabkan perbedaan nilai  <i> Throughput </i>  saat <i>Download</i>  dan <i> Upload</i>.
+                                Nilai <i> Throughput </i> saat <i> Upload</i>, biasanya akan lebih kecil daripada saat <i>Download</i> .
+                            </p>
                         </div>
                     </div>
                     {/* pengaruh */}
@@ -604,14 +652,34 @@ const BelajarThroughput = () => {
                                 '
                                 > Arti Bandwidth & Throughput
                                 </a>
-                                <a href='/belajarqos/throughput/#kesalahpahaman'
-                                    className=' mb-2 flex text-sm
+
+                                {/* kesalahpahaman */}
+                                <div>
+                                    <a href='/belajarqos/throughput/#kesalahpahaman'
+                                        className=' mb-2 flex text-sm
                                              hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
                                              focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
                                 '
-                                > Kesalahpahaman
-                                </a>
-                                <a href='/belajarqos/throughput/#illustrasi-throughput-bandwidth'
+                                    > Kesalahpahaman
+                                    </a>
+                                    <div>
+                                        <a href='/belajarqos/throughput/#kesalahpahaman-tb'
+                                            className=' ml-4 mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                        > Throughput vs Bandwidth
+                                        </a>
+                                        <a href='/belajarqos/throughput/#nilai-throughput-nonteknis-asimetris'
+                                            className=' ml-4 mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                        > Bit vs Byte
+                                        </a>
+                                    </div>
+                                </div>
+                                <a href='/belajarqos/throughput/#kesalahpahaman-bb'
                                     className=' mb-2 flex text-sm
                                              hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
                                              focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
@@ -634,6 +702,7 @@ const BelajarThroughput = () => {
                                     > Contoh
                                     </a>
                                 </div>
+                                {/* nilai */}
                                 <div>
                                     <a href='/belajarqos/throughput/#nilai-throughput'
                                         className=' mb-2 flex text-sm
@@ -657,29 +726,33 @@ const BelajarThroughput = () => {
                                 '
                                         > Cara Hitung
                                         </a>
-                                        <a href='/belajarqos/throughput/#nilai-throughput-nonteknis'
+
+                                    </div>
+                                </div>
+                                {/* nonteknis */}
+                                <div>
+                                    <a href='/belajarqos/throughput/#nilai-throughput-nonteknis'
+                                        className=' mb-2 flex text-sm
+                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
+                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
+                                '
+                                    > Faktor Non-Teknis
+                                    </a>
+                                    <div>
+                                        <a href='/belajarqos/throughput/#nilai-throughput-nonteknis-fup'
                                             className=' ml-4 mb-2 flex text-sm
                                              hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
                                              focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
                                 '
-                                        > Faktor Non-Teknis
+                                        > FUP
                                         </a>
-                                        <div>
-                                            <a href='/belajarqos/throughput/#nilai-throughput-nonteknis-fup'
-                                                className=' ml-8 mb-2 flex text-sm
+                                        <a href='/belajarqos/throughput/#nilai-throughput-nonteknis-asimetris'
+                                            className=' ml-4 mb-2 flex text-sm
                                              hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
                                              focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
                                 '
-                                            > FUP
-                                            </a>
-                                            <a href='/belajarqos/throughput/#nilai-throughput-nonteknis-asimetris'
-                                                className=' ml-8 mb-2 flex text-sm
-                                             hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
-                                             focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
-                                '
-                                            > Asimetris
-                                            </a>
-                                        </div>
+                                        > Asimetris
+                                        </a>
                                     </div>
                                 </div>
                                 <a href='/belajarqos/throughput/#pengaruh-throughput-bandwidth'

@@ -113,17 +113,88 @@ const Pengukuran = () => {
                 <div className='w-full md:w-3/4 flex flex-col '>
 
                     {/* QOS */}
-                    <div className='my-4'>
+                    <div className='my-10'>
                         <h5 className='text-2xl font-bold mb-5'>Pengukuran Kualitas Koneksi Internet ISP (QoS)</h5>
-                        {/* contoh pengukuran */}
-                        <div>
-                            <h6 className='text-xl font-bold mb-5'>Contoh</h6>
+                        <p className='text-base font-regular mb-4 leading-loose text-gray-700'>
+                            Kualitas koneksi internet (<i>Quality of Service</i>) secara teknis dapat diukur dengan beberapa parameter, seperti
+                            <span className='font-semibold italic'> Throughput</span>,
+                            <span className='font-semibold italic'> Delay/Latency</span>,
+                            <span className='font-semibold italic'> Jitter</span>, dan
+                            <span className='font-semibold italic'> Packet Loss</span>.
+                        </p>
 
-                            <div>
+                        {/* ukur masukan user */}
+                        <div className='mt-12 mb-12'>
+                            <h6 className='text-xl font-bold mb-5'>Cek Internet Anda</h6>
+                            {/* pengantar */}
+                            <div className='text-base my-4 font-regular leading-relaxed  text-gray-700 flex justify-between items-center'>
+                                <div>
+                                    Anda dapat memeriksa nilai standar kualitas koneksi pada internet Anda secara mandiri.
+                                    Silakan ikuti langkah-langkah berikut.
+                                    <span className="">
+                                        <ol className="list-decimal px-8 ">
+                                            <li>
+                                                Ukur parameter-parameter kualitas koneksi internet Anda pada laman
+                                                <a className="text-blue-800 hover:text-blue-900 underline"
+                                                    href="https://www.speedtest.net/"
+                                                    target="_blank" rel="noopener noreferrer"
+                                                > speedtest.net </a>
+                                                terlebih dahulu.
+                                            </li>
+                                            <li>
+                                                Masukkan hasil pengukuran tersebut pada kolom-kolom pengujian.
+                                            </li>
+                                            <li>Lihat hasil di bagian bawahnya.</li>
+                                        </ol>
+                                    </span>
+                                </div>
+                            </div>
+                            {/* cek qos manual */}
+                            <CekQoS />
+                            {/* saran */}
+                            <div className='mt-4'>
+                                <div className='text-regular py-5 font-semibold flex justify-between items-center'>
+                                    <div>
+                                        Jika Hasil Pengukuran QoS Tidak Sesuai Harapan
+                                    </div>
+                                </div>
+                                <p className='text-base font-regular mb-2 leading-relaxed text-gray-700'>
+                                    Jangan terburu-buru memberikan komplain kepada ISP ketika
+                                    hasil pengukuran QoS tidak sesuai standar atau yang Anda inginkan.
+                                </p>
+                                <div>
+                                    <ol className="list-decimal leading-loose px-8 ">
+                                        <li>
+                                            Pastikan bahwa perangkat Anda, seperti <i>smartphone</i>, laptop, komputer, dan router dalam keadaan yang prima.
+                                        </li>
+                                        <li>
+                                            Pastikan perangkat tidak sedang menjalankan proses lain yang membebani jaringan, seperti <i>download</i> atau <i>streaming</i> video.
+                                        </li>
+                                        <li>
+                                            Pastikan jumlah total pengguna internet di tempat Anda sesuai dengan anjuran dari ISP.
+                                        </li>
+                                    </ol>
+                                </div>
+
+                                <p className='text-base font-regular mb-4 leading-loose text-gray-600'>
+                                    Jika Anda telah melakukan Langkah-langkah di atas,
+                                    tetapi hasil pengukuran QoS masih tidak sesuai standar atau yang Anda inginkan.
+                                    Segera hubungi <i> customer service </i> dari ISP yang Anda langgan untuk mengajukan perbaikan.
+                                </p>
+
+                            </div>
+                        </div>
+                        {/* contoh pengukuran */}
+                        <div className=''>
+                            <h6 className='text-xl font-bold mb-5'>Contoh Pengukuran Quality of Service dari ISP</h6>
+                            {/* filter */}
+                            <div className='p-4 border rounded-xl'>
                                 <form  >
+                                    <div className='text-lg font-bold py-3'>Filter</div>
                                     <div className="flex flex-wrap mx-0 mb-2">
                                         <div className='flex flex-col w-full md:w-1/2' >
-                                            <div className="w-full   py-2 pr-2 mb-1 md:mb-0">
+                                            {/* parameter qos */}
+                                            <div className="w-full py-2 sm:pr-2 md:pr-4 mb-1 md:mb-0">
                                                 <label
                                                     htmlFor="parameter-qos"
                                                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -140,7 +211,8 @@ const Pengukuran = () => {
                                                     <option>PacketLoss</option>
                                                 </select>
                                             </div>
-                                            <div className="w-full py-2 pr-4 mb-1 md:mb-0">
+                                            {/* isp */}
+                                            <div className="w-full py-2 sm:pr-2 md:pr-4 mb-1 md:mb-0">
                                                 <label
                                                     htmlFor="isp"
                                                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -155,7 +227,8 @@ const Pengukuran = () => {
                                                     <option>PT_I</option>
                                                 </select>
                                             </div>
-                                            <div className="w-full  py-2 pr-2 mb-1 md:mb-0">
+                                            {/* jenisproduk */}
+                                            <div className="w-full  py-2 sm:pr-2 md:pr-4 mb-1 md:mb-0">
                                                 <label
                                                     htmlFor="jenisproduk"
                                                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -170,9 +243,9 @@ const Pengukuran = () => {
                                                     <option>Internet 10Mbps</option>
                                                 </select>
                                             </div>
-
                                         </div>
                                         <div className='flex flex-col w-full md:w-1/2'>
+                                            {/* lokasi */}
                                             <div className="w-full  py-2  mb-1 md:mb-0 ">
                                                 <label
                                                     htmlFor="lokasi"
@@ -188,6 +261,7 @@ const Pengukuran = () => {
                                                     <option>Yogyakarta</option>
                                                 </select>
                                             </div>
+                                            {/* Tanggal mulai */}
                                             <div className="w-full  py-2 mb-1 md:mb-0 ">
                                                 <label
                                                     htmlFor="tanggalmulai"
@@ -205,6 +279,7 @@ const Pengukuran = () => {
                                                 // onChange={(e) => setStartDate(e.target.value)}
                                                 />
                                             </div>
+                                            {/* Tanggal selesai */}
                                             <div className="w-full  py-2 mb-1 md:mb-0 ">
                                                 <label
                                                     htmlFor="tanggalakhir"
@@ -224,7 +299,7 @@ const Pengukuran = () => {
                                             </div>
 
                                         </div>
-                                        <div className="w-full mb-6 mt-2">
+                                        <div className="w-full mb-2 mt-2">
                                             <button
                                                 type="submit"
                                                 className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -235,8 +310,8 @@ const Pengukuran = () => {
                                     </div>
                                 </form>
                             </div>
-
-                            <div className=' p-3 border rounded-lg m-3'>
+                            {/* chart */}
+                            <div className=' p-3 border rounded-lg mt-6'>
                                 <div className="flex flex-wrap mx-0 mb-2">
                                     <div className="w-full md:w-full p-3 mb-1 md:mb-0">
                                         <div className='h-96'>
@@ -303,42 +378,13 @@ const Pengukuran = () => {
                             <div className='my-10'>
                             </div>
                         </div>
-
-                        {/* ukur masukan user */}
-                        <div className='my-24'>
-                            <h6 className='text-xl font-bold mb-5'>Cek Internet Anda</h6>
-                            <div className='text-base my-4 font-light leading-loose flex justify-between items-center'>
-                                <div>
-                                    Anda dapat memeriksa nilai standar kualitas koneksi internet Anda secara mandiri.
-                                    Silakan ikuti langkah-langkah berikut.
-                                    <span className="">
-                                        <ol className="list-decimal p-3">
-                                            <li>
-                                                Ukur parameter-parameter kualitas koneksi internet Anda pada laman
-                                                <a className="text-blue-800 hover:text-blue-900 underline"
-                                                    href="https://www.speedtest.net/"
-                                                    target="_blank" rel="noopener noreferrer"
-                                                > speedtest.net </a>
-                                                terlebih dahulu.
-                                            </li>
-                                            <li>
-                                                Masukkan hasil pengukuran tersebut pada kolom-kolom pengujian.
-                                            </li>
-                                            <li>Lihat hasil di bagian bawahnya.</li>
-                                        </ol>
-                                    </span>
-                                </div>
-                            </div>
-                            {/* cek qos manual */}
-                            <CekQoS />
-                        </div>
                     </div>
                     {/* QoE */}
-                    <div className='my-4'>
-                        <h5 className='text-xl font-bold mb-5'>Pengukuran Pendapat Pengguna ISP (QoE)</h5>
+                    <div className='my-10'>
+                        <h5 className='text-2xl font-bold mb-5'>Pengukuran Pendapat Pengguna ISP (QoE)</h5>
                         <div className='text-base my-4 font-light leading-loose flex justify-between items-center'>
                             <div>
-                                Pendapat pengguna ISP yang dianalisis adalah pendapat pengguna ISP di sosial media Twitter.
+                                Pendapat pengguna ISP yang menjadi object analisis sentimen adalah pendapat pengguna ISP fixed broadband di sosial media Twitter.
                                 Tweet pendapat pengguna diambil berdasarkan kata kunci nama ISP.
                             </div>
                         </div>

@@ -8,6 +8,7 @@ const CekQoS = () => {
     const [bw, setBw] = useState();
     const [hasilTh, setHasilTh] = useState();
     const [infoTh, setInfoTh] = useState();
+
     const [cardHasilTh, setCardHasilTh] = useState(false);
     const [batasanTh, setBatasanTh] = useState("");
     const handleThroughput = (e) => {
@@ -21,9 +22,11 @@ const CekQoS = () => {
             if (valTh === 0) {
                 setInfoTh("Tolong Masukkan Angka Hasil Pengukuran dengan benar");
                 setBatasanTh("X")
+
+                // Nilai Throughput: { infoTh } { hasilTh }% ({ batasanTh })
             } else if (valTh === Infinity) {
-                setInfoTh("Tolong Masukkan Angka Hasil Pengukuran dengan benar");
-                setBatasanTh("X")
+                setInfoTh("XXXX----Tolong Masukkan Angka Hasil Pengukuran dengan benar----XXXX");
+                setBatasanTh("XXX")
             } else if (valTh > 0 && valTh <= 25) {
                 setInfoTh("Jelek");
                 setBatasanTh("0% < x <= 25%")
@@ -49,6 +52,7 @@ const CekQoS = () => {
             let valThNormalized = valTh.toFixed(2);
             setHasilTh(valThNormalized);
         }
+
         setCardHasilTh(true)
     };
 
