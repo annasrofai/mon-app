@@ -134,7 +134,7 @@ const Pengukuran = () => {
                                     <span className="">
                                         <ol className="list-decimal px-8 ">
                                             <li>
-                                                Ukur parameter-parameter kualitas koneksi internet Anda pada laman
+                                                Masuk ke dalam halaman
                                                 <a className="text-blue-800 hover:text-blue-900 underline"
                                                     href="https://www.speedtest.net/"
                                                     target="_blank" rel="noopener noreferrer"
@@ -142,9 +142,12 @@ const Pengukuran = () => {
                                                 terlebih dahulu.
                                             </li>
                                             <li>
-                                                Masukkan hasil pengukuran tersebut pada kolom-kolom pengujian.
+                                                Ukur parameter-parameter kualitas koneksi internet (QoS) Anda dan catat hasilnya.
                                             </li>
-                                            <li>Lihat hasil di bagian bawahnya.</li>
+                                            <li>
+                                                Masukkan hasil pengukuran tersebut pada kolom-kolom pengecekan di bawah.
+                                            </li>
+                                            <li>Lihat hasil pengecekan standar pada komponen yang akan tampil di bawahnya.</li>
                                         </ol>
                                     </span>
                                 </div>
@@ -158,12 +161,12 @@ const Pengukuran = () => {
                                         Jika Hasil Pengukuran QoS Tidak Sesuai Harapan
                                     </div>
                                 </div>
-                                <p className='text-base font-regular mb-2 leading-relaxed text-gray-700'>
+                                <p className='text-base font-regular mb-2 leading-relaxed text-gray-600'>
                                     Jangan terburu-buru memberikan komplain kepada ISP ketika
                                     hasil pengukuran QoS tidak sesuai standar atau yang Anda inginkan.
                                 </p>
                                 <div>
-                                    <ol className="list-decimal leading-loose px-8 ">
+                                    <ol className="list-decimal leading-loose px-8  text-gray-600">
                                         <li>
                                             Pastikan bahwa perangkat Anda, seperti <i>smartphone</i>, laptop, komputer, dan router dalam keadaan yang prima.
                                         </li>
@@ -382,7 +385,7 @@ const Pengukuran = () => {
                     {/* QoE */}
                     <div className='my-10'>
                         <h5 className='text-2xl font-bold mb-5'>Pengukuran Pendapat Pengguna ISP (QoE)</h5>
-                        <div className='text-base my-4 font-light leading-loose flex justify-between items-center'>
+                        <div className='text-base my-4 font-regular leading-loose flex justify-between items-center  text-gray-600' >
                             <div>
                                 Pendapat pengguna ISP yang menjadi object analisis sentimen adalah pendapat pengguna ISP fixed broadband di sosial media Twitter.
                                 Tweet pendapat pengguna diambil berdasarkan kata kunci nama ISP.
@@ -416,11 +419,7 @@ const Pengukuran = () => {
                             <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
 
                                 Berdasarkan jurnal "<i>Bad is Stronger than Good</i>" yang ditulis oleh
-                                <a href="https://www.researchgate.net/publication/46608952_Bad_Is_Stronger_than_Good"
-                                    target="_blank" rel="noopener noreferrer"
-                                    className="hover:underline"
-                                > Baumeister et al.
-                                </a>
+                                Baumeister et al.<span className='text-xs'><sup >[2]</sup></span>.
 
                             </p>
                             <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-1 mb-7 leading-relaxed italic rounded">
@@ -453,35 +452,46 @@ const Pengukuran = () => {
                                 Anda harus bijak dalam menyikapi pendapat pengguna ISP di Twitter.
                             </p>
                             <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                                Menurut penelitian yang dilakukan oleh
+                                Berdasarkan penelitian
                                 <a href="https://biz.source.colostate.edu/negative-online-reviews-impact-study/"
                                     target="_blank" rel="noopener noreferrer"
                                     className="hover:underline"
-                                > Hamed Qahri-Saremi
-                                </a>
-                                , respon yang dapat Anda lakukan terhadap pendapat yang ada di internet adalah
+                                > Qahri-Saremi, H.
+                                </a> yang dirangkum oleh Sylte, A.<span className='text-xs'><sup >[3]</sup></span> respon yang dapat Anda lakukan terhadap pendapat yang ada di internet adalah
                             </p>
                             <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-1 mb-7 leading-relaxed italic rounded">
                                 <p className='text-base font-regular leading-relaxed text-gray-700'>
-                                    Hindari respons emosional yang alami terhadap informasi negatif dan berpikir kritis tentang seluruh informasi yang tersedia.
+                                    Hindari respons emosional yang alami terhadap informasi negatif dan berpikir kritis tentang seluruh informasi yang tersedia berdasarkan tujuan Anda.
                                 </p>
                             </div>
+                        </div>
+                    </div>
 
+                    <div className='my-10'>
+                        <h5 className='text-2xl font-bold mb-5'>Daftar Pustaka</h5>
+                        {/* saran */}
+                        <div className='mt-8 mb-12'>
+                            <p className='text-sm font-regular mb-2 leading-relaxed text-gray-700'>
+                                [1]  xxxx., et al. <i>Bad is Stronger than Good</i>. Review of General Psychology, 5(4), 323–370. (2001).
+                            </p>
+                            <p className='text-sm font-regular mb-2 leading-relaxed text-gray-700'>
+                                [2]  Baumeister, R. F., et al. <i>Bad is Stronger than Good</i>. Review of General Psychology, 5(4), 323–370. (2001).
+                            </p>
+                            <p className='text-sm font-regular mb-2 leading-relaxed text-gray-700'>
+                                [3] Sylte, A. <i>Why negative reviews could have more of an impact on some of the most important customers </i>[online].
+                                Available:
+                                <a href="https://biz.source.colostate.edu/negative-online-reviews-impact-study/"
+                                    target="_blank" rel="noopener noreferrer"
+                                    className="hover:underline"
+                                > https://biz.source.colostate.edu/negative-online-reviews-impact-study/
+                                </a>
+                            </p>
 
-                            {/* <div className="border-l-4 border-blue-500 pl-4 text-base font-regular mt-1 mb-7 leading-relaxed italic rounded">
-                                <p className='text-base font-regular leading-relaxed text-gray-700'>
-                                    Jadi,
-                                    <span className='font-semibold '> waktu yang diperlukan </span>
-                                    mulai saat Anda memberikan perintah hingga konten termuat disebut
-                                    <span className='font-semibold italic'> Delay </span>
-                                    .
-                                </p>
-                            </div> */}
                         </div>
                     </div>
 
                 </div>
-
+                {/* footer */}
                 <footer
                     className="container p-4 bg-white rounded-lg md:px-6 md:py-8 dark:bg-gray-900"
                 >

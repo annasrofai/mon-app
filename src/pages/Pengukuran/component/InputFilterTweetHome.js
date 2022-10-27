@@ -67,7 +67,9 @@ const InputFilterTweetHome = ({ setFilteredTweet, setCardHasilSentimen, setSenti
                                 required
                                 value={provider}
                                 onChange={(e) => setProvider(e.target.value)}
+                                placeholder="asdasdas"
                             >
+                                <option value="" disabled hidden>Pilih ISP</option>
                                 <option value={"pt_i"}>PT_I</option>
                                 <option value={"pt_b"}>PT_B</option>
                                 <option value={"pt_f"}>PT_F</option>

@@ -183,10 +183,10 @@ const BelajarDelay = () => {
                             </div>
                         </div>
                         <h6 id='nilai-delay-standar' className='text-base font-bold mb-4'>Standar</h6>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        <p className='text-base font-regular mb-8 leading-relaxed text-gray-700'>
                             Berdasarkan penelitian Mister X et.al standar nilai
-                            <span className='italic'> Delay </span>
-                            adalah sebagai berikut.
+                            <span className='italic'> Jitter </span>
+                            yang mengacu pada standar TIPHON (<i>Telecommunications and Internet Protocol Harmonization Over Networks </i>) adalah sebagai berikut<span className='text-xs'><sup >[1]</sup></span>.
                         </p>
                         {/* tabel delay */}
                         <div className='flex mt-8 mb-16 justify-center'>
@@ -196,10 +196,10 @@ const BelajarDelay = () => {
                                         Nilai
                                     </Table.HeadCell>
                                     <Table.HeadCell>
-                                        Index
+                                        Indeks
                                     </Table.HeadCell>
                                     <Table.HeadCell>
-                                        Category
+                                        Kategori
                                     </Table.HeadCell>
 
                                 </Table.Head>
@@ -234,7 +234,7 @@ const BelajarDelay = () => {
                                             2
                                         </Table.Cell>
                                         <Table.Cell>
-                                            Jelek
+                                            Sedang
                                         </Table.Cell>
                                     </Table.Row>
                                     <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -248,7 +248,7 @@ const BelajarDelay = () => {
                                             1
                                         </Table.Cell>
                                         <Table.Cell>
-                                            Sangat Jelek
+                                            Buruk
                                         </Table.Cell>
                                     </Table.Row>
                                 </Table.Body>
@@ -271,7 +271,7 @@ const BelajarDelay = () => {
                             Nilai <i>Delay</i> yang rendah akan membuat mayoritas aktivitas anda di internet berjalan dengan lancar.
                         </p>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Jika nilai <i>Delay</i> tinggi, maka Anda akan meraskan Gejala-gejala sebagai berikut.
+                            Jika nilai <i>Delay</i> tinggi, maka Anda akan merasakan gejala-gejala seperti berikut.
                         </p>
                         <ul className="list-disc mx-7 mb-6 text-gray-700">
                             <li className='mb-2'>
@@ -293,6 +293,15 @@ const BelajarDelay = () => {
                                 Lambat dalam memuat  <i>streaming</i> video/audio (<i>buffering</i>).
                             </li>
                         </ul>
+                    </div>
+                    {/* dafpus */}
+                    <div className='my-4'>
+                        <h5 id='' className='text-xl font-bold mt-2 mb-5'>Daftar Pustaka</h5>
+
+                        <p className='text-sm font-regular mb-2 leading-relaxed text-gray-700'>
+                            [1] xxx. <i>Bad is Stronger than Good</i>. Review of General Psychology, 5(4), 323–370. (2001).
+                        </p>
+
                     </div>
                     {/* footer */}
                     <footer

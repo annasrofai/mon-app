@@ -15,6 +15,7 @@ import { useReactToPrint } from 'react-to-print'
 import TweetToPrint from './component/TweetToPrint';
 import KataToPrint from './component/KataToPrint';
 import SentimenToPrint from './component/SentimenToPrint';
+import TableSentimen from './component/TableSentimen';
 
 Chart.register(ArcElement, Tooltip, Legend, Filler, CategoryScale, LinearScale, PointElement, LineElement);
 
@@ -110,9 +111,11 @@ const DashboardISP = () => {
 
     const colSentimen = [
         { accessor: 'created_date', label: 'Tanggal' },
-        { accessor: 'sentimen_pos', label: 'Sentimen Positif' },
-        { accessor: 'sentimen_neg', label: 'Sentimen Negatif' },
+        { accessor: 'sentimen_pos', label: 'Tweet Positif' },
+        { accessor: 'sentimen_neg', label: 'Tweet Negatif' },
         { accessor: 'sentimen_sum', label: 'Jumlah Tweet/Hari' },
+        // { accessor: 'sentimen_pos_persen', label: 'Presentase Positif' },
+        // { accessor: 'sentimen_neg_persen', label: 'Presentase Negatif' },
     ]
 
     const rowSentimen = sentimenDaily
@@ -215,6 +218,7 @@ const DashboardISP = () => {
                     </ul>
                 </div>
             </aside >
+            {/* konten */}
             <div className="relative z-0 lg:flex-grow">
                 <div className="flex flex-col gap-20">
                     {/* navbar */}
@@ -238,9 +242,14 @@ const DashboardISP = () => {
                                 />
                             </svg>
                         </button>
-                        <span className="block text-2xl font-semibold text-white p-4"
-                        >Dashboard</span
-                        >
+                        <div className='flex w-full justify-between'>
+                            <div className="flex text-2xl font-semibold text-white p-4"
+                            >Dashboard
+                            </div>
+                            <div className="flex text-xl font-semibold text-white p-4"
+                            >PT_I
+                            </div>
+                        </div>
                     </header>
 
                     {/* isine */}
@@ -249,121 +258,157 @@ const DashboardISP = () => {
                         <div
                             className="mx-auto text-left md:max-w-screen-lg lg:max-w-screen-lg"
                         >
-                            <div className="flex flex-col p-3 mb-4">
+                            <div className="flex flex-col py-3 mb-4">
                                 <span className="font-semibold text-4xl ">
                                     Analisis Sentimen
                                 </span>
-                                <span className="font-normal text-md mt-4 w-full md:w-5/6">
-                                    Halaman ini digunakan untuk melakukan analisis pendapat pengguna *ISP* (Quality of Experience) yang ada di sosial media Twitter.
+                                <span className="text-base font-regular leading-relaxed text-gray-700 mt-4 w-full md:w-5/6">
+                                    Halaman ini digunakan untuk melakukan analisis pendapat pelanggan *ISP* (<i>Quality of Experience</i>) yang ada di sosial media Twitter.
                                 </span>
-                                <span className="font-normal text-md mt-4 w-full md:w-5/6">
+                                <span className="text-base font-regular mb-4 leading-relaxed text-gray-700 mt-4 w-full md:w-5/6">
                                     Langkah-langkah.
-                                    <ol className="list-decimal p-3">
-                                        <li>Silakan pilih periode pengambilan Tweet.</li>
-                                        <li>Lihat hasil analisis pendapat pengguna di bagian bawah halaman.</li>
+                                    <ol className="list-decimal py-3 px-8 ">
+                                        <li>Silakan pilih periode tanggal <i>tweet</i> yang ingin Anda analisis.</li>
+                                        <li>Lihat hasil analisis sentimen pendapat pelanggan Anda di bagian hasil.</li>
                                     </ol>
                                 </span>
                             </div>
                         </div>
                         <div className='border w-full mb-14'></div>
                         {/*bagian input */}
-                        <div>
-                            <div className='text-2xl font-semibold p-3'>
+                        <div className=''>
+                            <div className='text-2xl font-semibold py-3'>
                                 Pilih Periode <span className='italic'>Tweet</span>
                             </div>
-                            {/* input filter */}
-                            <InputFilterTweet
-                                setTanggalAkhirLaporan={setTanggalAkhirLaporan}
-                                setTanggalMulaiLaporan={setTanggalMulaiLaporan}
-                                setFilteredTweet={setFilteredTweet} setSentimenSum={setSentimenSum}
-                                setSentimenDaily={setSentimenDaily} setKataNegatif={setKataNegatif} setKataPositif={setKataPositif}
-                                setKontenAnalisisSentimen={setKontenAnalisisSentimen}
-                            />
-
-                            <div className='border w-full my-14'></div>
+                            <div className='w-full my-8'></div>
+                            <div className='border rounded-xl p-4'>
+                                {/* input filter */}
+                                <div className='text-lg p-3 font-medium'>
+                                    Filter
+                                </div>
+                                <InputFilterTweet
+                                    setTanggalAkhirLaporan={setTanggalAkhirLaporan}
+                                    setTanggalMulaiLaporan={setTanggalMulaiLaporan}
+                                    setFilteredTweet={setFilteredTweet} setSentimenSum={setSentimenSum}
+                                    setSentimenDaily={setSentimenDaily} setKataNegatif={setKataNegatif} setKataPositif={setKataPositif}
+                                    setKontenAnalisisSentimen={setKontenAnalisisSentimen}
+                                />
+                            </div>
                         </div>
+                        <div className='border w-full my-14'></div>
                         {/* hasil analisis senimen*/}
                         {
                             kontenAnalisisSentimen
                             &&
                             <div>
-                                <div className='text-2xl p-3 font-semibold'>
-                                    Hasil Analisis
+                                <div className='text-2xl py-3 font-semibold'>
+                                    Hasil Analisis Sentimen
                                 </div>
-                                <div className='text-xl p-3 font-semibold'>
-                                    Analisis Sentimen
+                                <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                                    Hasil analisis sentimen (<i>tweet</i>) pendapat pelanggan *PT_I* yang ada di sosial media Twitter
+                                    pada {tanggalMulaiLaporan} hingga {tanggalAkhirLaporan} adalah sebagai berikut.
+                                </p>
+                                <div className='w-full my-8'></div>
+                                {/* jumlah sentimen total */}
+                                <div className='rounded-xl border p-3'>
+                                    <div className='text-xl p-3 font-semibold'>
+                                        Jumlah Total Sentimen Tweet
+                                    </div>
+                                    <p className='text-sm px-3 font-regular mb-4 leading-relaxed text-gray-700'>
+                                        Jumlah keseluruhan <i>tweet</i>  dan jenis sentimen dari <i>tweet</i> adalah sebagai berikut.
+                                    </p>
+                                    {/* hasil tweet kecil=kecil */}
+                                    <SentimenSumCard sentimenSum={sentimenSum} />
                                 </div>
-                                {/* hasil tweet kecil=kecil */}
-                                <SentimenSumCard sentimenSum={sentimenSum} />
                                 <div className='w-full my-8'></div>
                                 {/*  chart */}
-                                <div className='text-xl p-3 font-semibold'>
-                                    Grafik
-                                </div>
-                                <SentimenChartCard sentimenDaily={sentimenDaily} sentimenSum={sentimenSum} />
-                                <div className='w-full my-8'></div>
-
-                                {/* tabel sentimen */}
-                                <div className='flex justify-between items-center'>
+                                <div className='border rounded-xl p-3'>
                                     <div className='text-xl p-3 font-semibold'>
-                                        Sentimen Harian
+                                        Grafik
                                     </div>
-                                    <div className='p-3'>
-                                        <button type="button" onClick={handleSentimenPrint} className="focus:outline-none text-white
+                                    <SentimenChartCard sentimenDaily={sentimenDaily} sentimenSum={sentimenSum} />
+                                </div>
+                                <div className='w-full my-8'></div>
+                                {/* tabel sentimen */}
+                                <div className='border rounded-xl px-3 pt-5 pb-0'>
+                                    <div className='flex justify-between items-center '>
+                                        <div className='text-xl p-3  font-semibold'>
+                                            Sentimen <i>Tweet</i> Harian
+                                        </div>
+
+                                        <div className='p-3'>
+                                            <button type="button" onClick={handleSentimenPrint} className="focus:outline-none text-white
                              bg-emerald-600 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg 
                              text-xs px-3 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-                                            Download
-                                        </button>
+                                                Download
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className='p-3'>
-                                    <TableTweet rows={rowSentimen} columns={colSentimen} />
+                                    <p className='text-sm px-3 font-regular mb-4 leading-relaxed text-gray-700'>
+                                        Rincian dari jumlah <i>tweet</i>  dan jenis sentimen dari <i>tweet</i> setiap harinya  pada {tanggalMulaiLaporan} hingga {tanggalAkhirLaporan} dapat dilihat pada tabel berikut.
+                                    </p>
+                                    <div className='p-3'>
+                                        <TableSentimen rows={rowSentimen} columns={colSentimen} />
+                                    </div>
                                 </div>
                                 <div className='w-full my-8'></div>
 
                                 {/* tabel tweet*/}
-                                <div className='flex justify-between items-center'>
-                                    <div className='text-xl p-3 font-semibold'>
-                                        Daftar Tweet
-                                    </div>
-                                    <div className='p-3'>
-                                        <button type="button" onClick={handleTweetPrint} className="focus:outline-none text-white
+                                <div className='border rounded-xl px-3 pt-5 pb-0'>
+                                    <div className='flex justify-between items-center'>
+                                        <div className='text-xl p-3 font-semibold'>
+                                            Daftar Tweet
+                                        </div>
+                                        <div className='p-3'>
+                                            <button type="button" onClick={handleTweetPrint} className="focus:outline-none text-white
                              bg-emerald-600 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg 
                              text-xs px-3 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-                                            Download
-                                        </button>
+                                                Download
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className='p-3' >
-                                    <TableTweet rows={rowTweet} columns={colTweet} />
+                                    <p className='text-sm px-3 font-regular mb-4 leading-relaxed text-gray-700'>
+                                        Rincian dari <i>tweet</i> pelanggan *PT_I* pada {tanggalMulaiLaporan} hingga {tanggalAkhirLaporan} dapat dilihat pada tabel berikut.
+                                    </p>
+                                    <div className='p-3' >
+                                        <TableTweet rows={rowTweet} columns={colTweet} />
+                                    </div>
                                 </div>
                                 <div className='w-full my-8'></div>
 
                                 {/* tabel kata kata */}
-                                <div className='flex justify-between items-center'>
-                                    <div className='text-xl p-3 font-semibold'>
-                                        Daftar Kata
-                                    </div>
-                                    <div className='p-3'>
-                                        <button type="button" onClick={handleKataPrint} className="focus:outline-none text-white
+                                <div className='border rounded-xl px-3 pt-5 pb-0'>
+                                    <div className='flex justify-between items-center'>
+                                        <div className='text-xl p-3 font-semibold'>
+                                            Daftar Kata
+                                        </div>
+                                        <div className='p-3'>
+                                            <button type="button" onClick={handleKataPrint} className="focus:outline-none text-white
                              bg-emerald-600 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg 
                              text-xs px-3 py-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-                                            Download
-                                        </button>
-                                    </div>
-                                </div>
-                                <div className="flex flex-wrap mx-0 ">
-                                    <div className="w-full pb-5 pt-0  md:w-1/2 px-3 mb-6 md:mb-0">
-                                        <div className='text-lg py-3 font-medium'>
-                                            Kata Positif
+                                                Download
+                                            </button>
                                         </div>
-                                        <TableTweet rows={rowKataPositif} columns={colKata} />
                                     </div>
-                                    <div className="w-full pb-5 pt-0  md:w-1/2 px-3 mb-6 md:mb-0">
-                                        <div className='text-lg py-3 font-medium'>
-                                            Kata Negatif
+                                    <div className="flex flex-wrap mx-0 ">
+                                        <div className="w-full pb-5 pt-0  md:w-1/2 px-3 mb-6 md:mb-0">
+                                            <div className='text-lg py-3 font-medium'>
+                                                Kata Positif
+                                            </div>
+                                            <p className='text-sm font-regular mb-4 leading-relaxed text-gray-700'>
+                                                Kata-kata yang terkandung dalam <i>tweet</i> positif pada {tanggalMulaiLaporan} hingga {tanggalAkhirLaporan} dapat dilihat pada tabel berikut.
+                                            </p>
+                                            <TableTweet rows={rowKataPositif} columns={colKata} />
                                         </div>
-                                        <TableTweet rows={rowKataNegatif} columns={colKata} />
+                                        <div className="w-full pb-5 pt-0  md:w-1/2 px-3 mb-6 md:mb-0">
+                                            <div className='text-lg py-3 font-medium'>
+                                                Kata Negatif
+                                            </div>
+                                            <p className='text-sm font-regular mb-4 leading-relaxed text-gray-700'>
+                                                Kata-kata yang terkandung dalam <i>tweet</i> negatif pada {tanggalMulaiLaporan} hingga {tanggalAkhirLaporan} dapat dilihat pada tabel berikut.
+                                            </p>
+                                            <TableTweet rows={rowKataNegatif} columns={colKata} />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

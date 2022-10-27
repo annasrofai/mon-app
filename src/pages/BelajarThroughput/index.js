@@ -384,10 +384,10 @@ const BelajarThroughput = () => {
                                 <span className='font-semibold '> semakin baik</span>
                                 .
                             </div>
-                            <p className='text-base font-regular mb-10 leading-relaxed text-gray-700'>
+                            <p className='text-base font-regular mb-8 leading-relaxed text-gray-700'>
                                 Berdasarkan penelitian Mister X et.al standar nilai
-                                <span className='italic'> Throughput </span>
-                                adalah sebagai berikut.
+                                <span className='italic'> Jitter </span>
+                                yang mengacu pada standar TIPHON (<i>Telecommunications and Internet Protocol Harmonization Over Networks </i>) adalah sebagai berikut<span className='text-xs'><sup >[1]</sup></span>.
                             </p>
                             <div className='flex mt-2 mb-16 justify-center'>
                                 <Table hoverable={true}>
@@ -396,10 +396,10 @@ const BelajarThroughput = () => {
                                             Nilai
                                         </Table.HeadCell>
                                         <Table.HeadCell>
-                                            Index
+                                            Indeks
                                         </Table.HeadCell>
                                         <Table.HeadCell>
-                                            Category
+                                            Kategori
                                         </Table.HeadCell>
 
                                     </Table.Head>
@@ -434,7 +434,7 @@ const BelajarThroughput = () => {
                                                 2
                                             </Table.Cell>
                                             <Table.Cell>
-                                                Cukup
+                                                Sedang
                                             </Table.Cell>
                                         </Table.Row>
                                         <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -448,7 +448,7 @@ const BelajarThroughput = () => {
                                                 1
                                             </Table.Cell>
                                             <Table.Cell>
-                                                Jelek
+                                                Buruk
                                             </Table.Cell>
                                         </Table.Row>
                                     </Table.Body>
@@ -583,34 +583,43 @@ const BelajarThroughput = () => {
                     <div className='my-4'>
                         <h5 id='pengaruh-throughput-bandwidth' className='text-xl font-bold mt-2 mb-5'>Pengaruh <i>Throughput</i> dan <i>Bandwidth</i></h5>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Nilai throughput dan bandwidth tentu akan mempengaruhi aktivitas Anda di Internet, seperti browsing, streaming, dan gaming.
+                            Nilai <i>Throughput</i> dan <i>Bandwidth</i> tentu akan mempengaruhi aktivitas Anda di Internet, seperti <i>browsing</i>, <i>streaming</i>, dan <i>gaming</i>.
                         </p>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Bandwidth yang besar memungkinkan anda untuk melakukan banyak aktivitas di internet secara bersamaan, seperti browsing sambil streaming video.
-                            Bandwidth yang besar juga mendukung akses internet yang dilakukan oleh banyak perangkat.
+                            <i>Bandwidth</i> yang besar memungkinkan anda untuk melakukan banyak aktivitas di internet secara bersamaan, seperti <i>browsing</i> sambil <i>streaming</i> video.
+                            <i> Bandwidth</i> yang besar juga mendukung akses internet yang dilakukan oleh banyak perangkat.
                         </p>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Throughput yang besar akan membuat seluruh aktivitas anda di internet akan berjalan dengan lancar.
+                            <i>Throughput</i> yang besar akan membuat seluruh aktivitas anda di internet akan berjalan dengan lancar.
                         </p>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Jika nilai bandwidth kecil, terdapat kemungkinan terjadi kemacetan dalam transfer data.
-                            Hal ini juga akan berpengaruh terhadap nilai throughput, nilainya akan menjadi kecil.
+                            Jika nilai  <i> Bandwidth</i> kecil, terdapat kemungkinan terjadi kemacetan dalam transfer data.
+                            Hal ini juga akan berpengaruh terhadap nilai  <i>Throughput</i>, nilainya akan menjadi kecil.
                         </p>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
                             Gejala-gejala yang timbul adalah sebagai berikut.
                         </p>
                         <ul className="list-disc mx-7 mb-6 text-gray-700">
                             <li className='mb-2'>
-                                Lambat dalam memuat situs web, game, dan atau aplikasi online.
+                                Lambat dalam memuat situs <i>web</i>, <i>game</i>, dan atau aplikasi <i>online</i>.
                             </li>
                             <li className='mb-2'>
                                 Lambat dalam mengunduh dan mengunggah file.
                             </li>
                             <li className='mb-2'>
-                                Lambat dalam memuat streaming video/audio (buffering).
+                                Lambat dalam memuat <i>streaming</i> video/audio (<i>buffering</i>).
                             </li>
 
                         </ul>
+
+                    </div>
+                    {/* dafpus */}
+                    <div className='my-4'>
+                        <h5 id='' className='text-xl font-bold mt-2 mb-5'>Daftar Pustaka</h5>
+
+                        <p className='text-sm font-regular mb-2 leading-relaxed text-gray-700'>
+                            [1] xxx. <i>Bad is Stronger than Good</i>. Review of General Psychology, 5(4), 323–370. (2001).
+                        </p>
 
                     </div>
 

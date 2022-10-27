@@ -27,7 +27,7 @@ const SentimenSumCard = ({ sentimenSum }) => {
                             <h6
                                 className="mb-0 ml-4 text-md text-black lg dark:text-gray-400"
                             >
-                                Total Tweet
+                                Total <i>Tweet</i>
                             </h6>
                             <p
                                 className="mb-0 ml-4 text-2xl font-semibold text-black  dark:text-gray-400"
@@ -60,7 +60,7 @@ const SentimenSumCard = ({ sentimenSum }) => {
                             <h6
                                 className="mb-0 ml-4 text-md text-black dark:text-gray-400"
                             >
-                                Sentimen Positif
+                                <i>Tweet</i>  Positif
                             </h6>
                             <p
                                 className="mb-0 ml-4 text-2xl font-semibold text-black  dark:text-gray-400"
@@ -93,7 +93,7 @@ const SentimenSumCard = ({ sentimenSum }) => {
                             <h6
                                 className="mb-0 ml-4 text-md text-black dark:text-gray-400"
                             >
-                                Sentimen Negatif
+                                <i>Tweet</i> Negatif
                             </h6>
                             <p
                                 className="mb-0 ml-4 text-2xl font-semibold text-black  dark:text-gray-400"

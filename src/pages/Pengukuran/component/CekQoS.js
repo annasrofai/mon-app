@@ -1,3 +1,4 @@
+import { Table } from 'flowbite-react';
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -21,17 +22,17 @@ const CekQoS = () => {
         } else {
             if (valTh === 0) {
                 setInfoTh("Tolong Masukkan Angka Hasil Pengukuran dengan benar");
-                setBatasanTh("X")
+                setBatasanTh("XXXX")
 
                 // Nilai Throughput: { infoTh } { hasilTh }% ({ batasanTh })
             } else if (valTh === Infinity) {
                 setInfoTh("XXXX----Tolong Masukkan Angka Hasil Pengukuran dengan benar----XXXX");
                 setBatasanTh("XXX")
             } else if (valTh > 0 && valTh <= 25) {
-                setInfoTh("Jelek");
+                setInfoTh("Buruk");
                 setBatasanTh("0% < x <= 25%")
             } else if (valTh > 25 && valTh <= 50) {
-                setInfoTh("Cukup");
+                setInfoTh("Sedang");
                 setBatasanTh("25% < x <= 50%")
             } else if (valTh > 50 && valTh <= 75) {
                 setInfoTh("Bagus");
@@ -42,7 +43,7 @@ const CekQoS = () => {
             }
             else {
                 setInfoTh("Tolong Masukkan Angka Hasil Pengukuran dengan benar");
-                setBatasanTh("X")
+                setBatasanTh("XXXX")
             }
         }
         if (valTh >= 100) {
@@ -73,14 +74,15 @@ const CekQoS = () => {
             setInfoDelay("Bagus");
             setBatasanDelay("150ms < x <= 300ms")
         } else if (valDelay > 300 && valDelay <= 450) {
-            setInfoDelay("Jelek");
+            setInfoDelay("Sedang");
             setBatasanDelay("300ms < x <= 450ms")
         } else if (valDelay > 450) {
-            setInfoDelay("Sangat Jelek");
+            setInfoDelay("Buruk");
             setBatasanDelay("> 450ms")
         }
         else {
             setInfoDelay("Tolong Masukkan Angka Hasil Pengukuran dengan benar");
+            setBatasanDelay("XXXX")
         }
 
         setCardHasilDelay(true)
@@ -89,7 +91,6 @@ const CekQoS = () => {
 
     // Jitter
     const [jitter, setJitter] = useState();
-
     const [infoJitter, setInfoJitter] = useState();
     const [cardHasilJitter, setCardHasilJitter] = useState(false);
     const [batasanJitter, setBatasanJitter] = useState("");
@@ -107,11 +108,12 @@ const CekQoS = () => {
             setInfoJitter("Sedang");
             setBatasanJitter("75ms < x <= 225ms")
         } else if (valJitter > 125) {
-            setInfoJitter("Jelek");
+            setInfoJitter("Buruk");
             setBatasanJitter("> 125ms")
         }
         else {
             setInfoJitter("Tolong Masukkan Angka Hasil Pengukuran dengan benar");
+            setBatasanJitter("XXXX")
         }
 
         setCardHasilJitter(true)
@@ -138,11 +140,12 @@ const CekQoS = () => {
             setInfoPacketloss("Sedang");
             setBatasanPacketloss("3% < x <= 15%")
         } else if (valPacketloss > 15) {
-            setInfoPacketloss("Jelek");
+            setInfoPacketloss("Buruk");
             setBatasanPacketloss("> 15%")
         }
         else {
             setInfoPacketloss("Tolong Masukkan Angka Hasil Pengukuran dengan benar");
+            setBatasanPacketloss("XXXX")
         }
 
         setCardHasilPacketloss(true)
@@ -191,7 +194,6 @@ const CekQoS = () => {
                                         required />
                                 </div>
                             </div>
-
                             <div className="w-full md:w-1/3 p-2  sm:mt-7 ">
                                 <button
                                     type="submit"
@@ -204,7 +206,6 @@ const CekQoS = () => {
                                     Cek
                                 </button>
                             </div>
-
                         </div>
                     </form>
                 </div>
@@ -212,24 +213,127 @@ const CekQoS = () => {
                 {
                     cardHasilTh
                     &&
-                    <div className='p-2'>
-                        <div className='font-medium mb-4'>
+                    <div className='p-2 flex w-full flex-col'>
+                        <div className='font-semibold mb-4'>
                             Hasil
                         </div>
-                        <div className={
-                            infoTh !== 'Sangat Bagus' ?
-                                infoTh !== 'Bagus' ?
-                                    infoTh !== 'Cukup' ?
-                                        infoTh !== 'Jelek' ?
-                                            'w-full text-white bg-neutral-700 hover:bg-neutral-800 focus:ring-4 focus:outline-none :ring-neutral-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-neutral-600 dark:hover:bg-neutral-700 dark:focus:ring-neutral-800'
-                                            : 'w-full text-white bg-rose-700 hover:bg-rose-800 focus:ring-4 focus:outline-none :ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-rose-800'
-                                        : 'w-full text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none :ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800'
-                                    : 'w-full text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none :ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800'
-                                : 'w-full text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none :ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800'
-                        }
-                        >
-                            Nilai Throughput: {infoTh} {hasilTh}% ({batasanTh})
+                        <div className="border rounded-xl p-2 flex flex-wrap flex-col md:flex-row w-full mx-0 mb-2 justify-between">
+                            <div className="w-full  p-2 mb-1  md:mb-0">
+                                <div className='w-full flex flex-row p-2 '>
+                                    <div className='w-1/2 font-medium text-sm'>
+                                        Kategori
+                                    </div>
+                                    <div className='w-1/2 '>
 
+                                        <div className={
+                                            infoTh !== 'Sangat Bagus' ?
+                                                infoTh !== 'Bagus' ?
+                                                    infoTh !== 'Sedang' ?
+                                                        infoTh !== 'Buruk' ?
+                                                            'w-full text-white bg-neutral-700 hover:bg-neutral-800 focus:ring-4 focus:outline-none :ring-neutral-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-neutral-600 dark:hover:bg-neutral-700 dark:focus:ring-neutral-800'
+                                                            : 'w-full text-white bg-rose-700 hover:bg-rose-800 focus:ring-4 focus:outline-none :ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-rose-800'
+                                                        : 'w-full text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none :ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800'
+                                                    : 'w-full text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none :ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800'
+                                                : 'w-full text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none :ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800'
+                                        }
+                                        >
+                                            {infoTh}
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='w-full flex flex-row p-2 '>
+                                    <div className='w-1/2 font-medium text-sm'>
+                                        Nilai <i>Throughput</i>
+                                    </div>
+                                    <div className='w-1/2 '>
+                                        : <b>{hasilTh} %</b>
+                                    </div>
+                                </div>
+
+                                <div className='w-full  flex flex-row p-2 '>
+                                    <div className='w-1/2 font-medium text-sm'>
+                                        Batasan Standar
+                                    </div>
+                                    <div className='w-1/2 '>
+                                        : {batasanTh}
+                                    </div>
+                                </div>
+                            </div>
+                            {/* tabel */}
+                            <div className='w-full p-4'>
+                                <div className='flex w-full flex-row justify-center items-center'>
+                                    <span className='text-sm font-medium p-3'>Tabel Standar  <i> Throughput</i><span className='text-xs'><sup >[1]</sup></span></span>
+                                </div>
+                                <div className="w-full md:w-full p-2 mb-1 ">
+                                    <div className='flex justify-center overflow-hidden'>
+                                        <Table hoverable={true}>
+                                            <Table.Head>
+                                                <Table.HeadCell>
+                                                    Nilai
+                                                </Table.HeadCell>
+                                                <Table.HeadCell>
+                                                    Indeks
+                                                </Table.HeadCell>
+                                                <Table.HeadCell>
+                                                    Kategori
+                                                </Table.HeadCell>
+
+                                            </Table.Head>
+                                            <Table.Body className="divide-y">
+                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                        75% &#60; x &le; 100%
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        4
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        Sangat Bagus
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                        50% &#60; x &le; 75%
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        3
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        Bagus
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                        25% &#60; x &le; 50%
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        2
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        Sedang
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                        &#60;25%
+                                                    </Table.Cell>
+                                                    {/* <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                            &#60;25%&#62; &ge; &le;
+                                        </Table.Cell> */}
+                                                    <Table.Cell>
+                                                        1
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        Buruk
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                            </Table.Body>
+                                        </Table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div className='mt-4 text-sm text-gray-600'>
                             Silakan menuju halaman
@@ -292,22 +396,127 @@ const CekQoS = () => {
                     cardHasilDelay
                     &&
                     <div className='p-2'>
-                        <div className='font-medium mb-4'>
+
+                        <div className='font-semibold mb-4'>
                             Hasil
                         </div>
-                        <div className={
-                            infoDelay !== 'Sangat Bagus' ?
-                                infoDelay !== 'Bagus' ?
-                                    infoDelay !== 'Jelek' ?
-                                        infoDelay !== 'Sangat Jelek' ?
-                                            'w-full text-white bg-neutral-700 hover:bg-neutral-800 focus:ring-4 focus:outline-none :ring-neutral-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-neutral-600 dark:hover:bg-neutral-700 dark:focus:ring-neutral-800'
-                                            : 'w-full text-white bg-rose-700 hover:bg-rose-800 focus:ring-4 focus:outline-none :ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-rose-800'
-                                        : 'w-full text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none :ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800'
-                                    : 'w-full text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none :ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800'
-                                : 'w-full text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none :ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800'
-                        }
-                        >
-                            Nilai Delay: {infoDelay} ({batasanDelay})
+                        <div className="border rounded-xl p-2 flex flex-wrap flex-col md:flex-row w-full mx-0 mb-2 justify-between">
+                            <div className="w-full  p-2 mb-1  md:mb-0">
+                                <div className='w-full flex flex-row p-2 '>
+                                    <div className='w-1/2 font-medium text-sm'>
+                                        Kategori
+                                    </div>
+                                    <div className='w-1/2 '>
+
+                                        <div className={
+                                            infoDelay !== 'Sangat Bagus' ?
+                                                infoDelay !== 'Bagus' ?
+                                                    infoDelay !== 'Sedang' ?
+                                                        infoDelay !== 'Buruk' ?
+                                                            'w-full text-white bg-neutral-700 hover:bg-neutral-800 focus:ring-4 focus:outline-none :ring-neutral-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-neutral-600 dark:hover:bg-neutral-700 dark:focus:ring-neutral-800'
+                                                            : 'w-full text-white bg-rose-700 hover:bg-rose-800 focus:ring-4 focus:outline-none :ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-rose-800'
+                                                        : 'w-full text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none :ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800'
+                                                    : 'w-full text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none :ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800'
+                                                : 'w-full text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none :ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800'
+                                        }
+                                        >
+                                            {infoDelay}
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='w-full flex flex-row p-2 '>
+                                    <div className='w-1/2 font-medium text-sm'>
+                                        Nilai <i>Delay</i>
+                                    </div>
+                                    <div className='w-1/2 '>
+                                        : <b>{delay}ms</b>
+                                    </div>
+                                </div>
+
+                                <div className='w-full  flex flex-row p-2 '>
+                                    <div className='w-1/2 font-medium text-sm'>
+                                        Batasan Standar
+                                    </div>
+                                    <div className='w-1/2 '>
+                                        : {batasanDelay}
+                                    </div>
+                                </div>
+                            </div>
+                            {/* tabel */}
+                            <div className='w-full p-4'>
+                                <div className='flex w-full flex-row justify-center items-center'>
+                                    <span className=' text-sm font-medium p-3'>Tabel Standar <i>Delay</i><span className='text-xs'><sup >[1]</sup></span> </span>
+                                </div>
+                                <div className="w-full md:w-full p-2 mb-1 ">
+                                    <div className='flex justify-center overflow-hidden'>
+                                        <Table hoverable={true}>
+                                            <Table.Head>
+                                                <Table.HeadCell>
+                                                    Nilai
+                                                </Table.HeadCell>
+                                                <Table.HeadCell>
+                                                    Indeks
+                                                </Table.HeadCell>
+                                                <Table.HeadCell>
+                                                    Kategori
+                                                </Table.HeadCell>
+
+                                            </Table.Head>
+                                            <Table.Body className="divide-y">
+                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                        &#60; 150ms
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        4
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        Sangat Bagus
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                        150ms &#60; x &le; 300ms
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        3
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        Bagus
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                        300ms &#60; x &le; 450ms
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        2
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        Sedang
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                        &#62;450ms
+                                                    </Table.Cell>
+                                                    {/* <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                            &#60;25%&#62; &ge; &le;
+                                        </Table.Cell> */}
+                                                    <Table.Cell>
+                                                        1
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        Buruk
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                            </Table.Body>
+                                        </Table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div className='mt-4 text-sm text-gray-600'>
                             Silakan menuju halaman
@@ -317,6 +526,7 @@ const CekQoS = () => {
                             , jika ingin mencari tahu lebih lanjut.
                         </div>
                     </div>
+
                 }
             </div>
 
@@ -370,22 +580,127 @@ const CekQoS = () => {
                     cardHasilJitter
                     &&
                     <div className='p-2'>
-                        <div className='font-medium mb-4'>
+
+                        <div className='font-semibold mb-4'>
                             Hasil
                         </div>
-                        <div className={
-                            infoJitter !== 'Sangat Bagus' ?
-                                infoJitter !== 'Bagus' ?
-                                    infoJitter !== 'Sedang' ?
-                                        infoJitter !== 'Jelek' ?
-                                            'w-full text-white bg-neutral-700 hover:bg-neutral-800 focus:ring-4 focus:outline-none :ring-neutral-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-neutral-600 dark:hover:bg-neutral-700 dark:focus:ring-neutral-800'
-                                            : 'w-full text-white bg-rose-700 hover:bg-rose-800 focus:ring-4 focus:outline-none :ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-rose-800'
-                                        : 'w-full text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none :ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800'
-                                    : 'w-full text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none :ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800'
-                                : 'w-full text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none :ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800'
-                        }
-                        >
-                            Nilai Jitter: {infoJitter} ({batasanJitter})
+                        <div className="border rounded-xl p-2 flex flex-wrap flex-col md:flex-row w-full mx-0 mb-2 justify-between">
+                            <div className="w-full  p-2 mb-1  md:mb-0">
+                                <div className='w-full flex flex-row p-2 '>
+                                    <div className='w-1/2 font-medium text-sm'>
+                                        Kategori
+                                    </div>
+                                    <div className='w-1/2 '>
+
+                                        <div className={
+                                            infoJitter !== 'Sangat Bagus' ?
+                                                infoJitter !== 'Bagus' ?
+                                                    infoJitter !== 'Sedang' ?
+                                                        infoJitter !== 'Buruk' ?
+                                                            'w-full text-white bg-neutral-700 hover:bg-neutral-800 focus:ring-4 focus:outline-none :ring-neutral-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-neutral-600 dark:hover:bg-neutral-700 dark:focus:ring-neutral-800'
+                                                            : 'w-full text-white bg-rose-700 hover:bg-rose-800 focus:ring-4 focus:outline-none :ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-rose-800'
+                                                        : 'w-full text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none :ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800'
+                                                    : 'w-full text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none :ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800'
+                                                : 'w-full text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none :ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800'
+                                        }
+                                        >
+                                            {infoJitter}
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='w-full flex flex-row p-2 '>
+                                    <div className='w-1/2 font-medium text-sm'>
+                                        Nilai <i>Jitter</i>
+                                    </div>
+                                    <div className='w-1/2 '>
+                                        : <b>{jitter}ms</b>
+                                    </div>
+                                </div>
+
+                                <div className='w-full  flex flex-row p-2 '>
+                                    <div className='w-1/2 font-medium text-sm'>
+                                        Batasan Standar
+                                    </div>
+                                    <div className='w-1/2 '>
+                                        : {batasanJitter}
+                                    </div>
+                                </div>
+                            </div>
+                            {/* tabel */}
+                            <div className='w-full p-4'>
+                                <div className='flex w-full flex-row justify-center items-center'>
+                                    <span className=' text-sm font-medium p-3'>Tabel Standar <i>Jitter</i><span className='text-xs'><sup >[1]</sup></span> </span>
+                                </div>
+                                <div className="w-full md:w-full p-2 mb-1 ">
+                                    <div className='flex justify-center overflow-hidden'>
+                                        <Table hoverable={true}>
+                                            <Table.Head>
+                                                <Table.HeadCell>
+                                                    Nilai
+                                                </Table.HeadCell>
+                                                <Table.HeadCell>
+                                                    Indeks
+                                                </Table.HeadCell>
+                                                <Table.HeadCell>
+                                                    Kategori
+                                                </Table.HeadCell>
+
+                                            </Table.Head>
+                                            <Table.Body className="divide-y">
+                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                        0ms
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        4
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        Sangat Bagus
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                        0ms &#60; x &le; 75ms
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        3
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        Bagus
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                        75ms &#60; x &le; 125ms
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        2
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        Sedang
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                        125ms &#60; x &le; 225ms
+                                                    </Table.Cell>
+                                                    {/* <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                            &#60;25%&#62; &ge; &le;
+                                        </Table.Cell> */}
+                                                    <Table.Cell>
+                                                        1
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        Buruk
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                            </Table.Body>
+                                        </Table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div className='mt-4 text-sm text-gray-600'>
                             Silakan menuju halaman
@@ -447,23 +762,129 @@ const CekQoS = () => {
                     cardHasilPacketloss
                     &&
                     <div className='p-2'>
-                        <div className='font-medium mb-4'>
+
+                        <div className='font-semibold mb-4'>
                             Hasil
                         </div>
-                        <div className={
-                            infoPacketloss !== 'Sangat Bagus' ?
-                                infoPacketloss !== 'Bagus' ?
-                                    infoPacketloss !== 'Sedang' ?
-                                        infoPacketloss !== 'Jelek' ?
-                                            'w-full text-white bg-neutral-700 hover:bg-neutral-800 focus:ring-4 focus:outline-none :ring-neutral-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-neutral-600 dark:hover:bg-neutral-700 dark:focus:ring-neutral-800'
-                                            : 'w-full text-white bg-rose-700 hover:bg-rose-800 focus:ring-4 focus:outline-none :ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-rose-800'
-                                        : 'w-full text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none :ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800'
-                                    : 'w-full text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none :ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800'
-                                : 'w-full text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none :ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800'
-                        }
-                        >
-                            Packet Loss: {infoPacketloss} ({batasanPacketloss})
+                        <div className="border rounded-xl p-2 flex flex-wrap flex-col md:flex-row w-full mx-0 mb-2 justify-between">
+                            <div className="w-full  p-2 mb-1  md:mb-0">
+                                <div className='w-full flex flex-row p-2 '>
+                                    <div className='w-1/2 font-medium text-sm'>
+                                        Kategori
+                                    </div>
+                                    <div className='w-1/2 '>
+
+                                        <div className={
+                                            infoPacketloss !== 'Sangat Bagus' ?
+                                                infoPacketloss !== 'Bagus' ?
+                                                    infoPacketloss !== 'Sedang' ?
+                                                        infoPacketloss !== 'Buruk' ?
+                                                            'w-full text-white bg-neutral-700 hover:bg-neutral-800 focus:ring-4 focus:outline-none :ring-neutral-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-neutral-600 dark:hover:bg-neutral-700 dark:focus:ring-neutral-800'
+                                                            : 'w-full text-white bg-rose-700 hover:bg-rose-800 focus:ring-4 focus:outline-none :ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-rose-800'
+                                                        : 'w-full text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none :ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800'
+                                                    : 'w-full text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none :ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800'
+                                                : 'w-full text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none :ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800'
+                                        }
+                                        >
+                                            {infoPacketloss}
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='w-full flex flex-row p-2 '>
+                                    <div className='w-1/2 font-medium text-sm'>
+                                        Nilai  <i>Packet Loss</i>
+                                    </div>
+                                    <div className='w-1/2 '>
+                                        : <b>{packetloss}%</b>
+                                    </div>
+                                </div>
+
+                                <div className='w-full  flex flex-row p-2 '>
+                                    <div className='w-1/2 font-medium text-sm'>
+                                        Batasan Standar &#60;25%&#62; &ge; &le;
+                                    </div>
+                                    <div className='w-1/2 '>
+                                        : {batasanPacketloss}
+                                    </div>
+                                </div>
+                            </div>
+                            {/* tabel */}
+                            <div className='w-full p-4'>
+                                <div className='flex w-full flex-row justify-center items-center'>
+                                    <span className='text-sm font-medium p-3'>Tabel Standar <i>Packet Loss</i><span className='text-xs'><sup >[1]</sup></span> </span>
+                                </div>
+                                <div className="w-full md:w-full p-2 mb-1 ">
+                                    <div className='flex justify-center overflow-hidden'>
+                                        <Table hoverable={true}>
+                                            <Table.Head>
+                                                <Table.HeadCell >
+                                                    Nilai
+                                                </Table.HeadCell>
+                                                <Table.HeadCell>
+                                                    Indeks
+                                                </Table.HeadCell>
+                                                <Table.HeadCell>
+                                                    Kategori
+                                                </Table.HeadCell>
+
+                                            </Table.Head>
+                                            <Table.Body className="divide-y">
+                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                        0% &le; x &#60; 3%
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        4
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        Sangat Bagus
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                        3% &le; x &#60; 15%
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        3
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        Bagus
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                        15% &le; x &#60; 25%
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        2
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        Sedang
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                                        &gt; 25%
+                                                    </Table.Cell>
+                                                    {/* <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                            &#60;25%&#62; &ge; &le;
+                                        </Table.Cell> */}
+                                                    <Table.Cell>
+                                                        1
+                                                    </Table.Cell>
+                                                    <Table.Cell>
+                                                        Buruk
+                                                    </Table.Cell>
+                                                </Table.Row>
+                                            </Table.Body>
+                                        </Table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                         <div className='mt-4 text-sm text-gray-600'>
                             Silakan menuju halaman
                             <Link to="/belajarqos/packetloss" className='text-blue-800 hover:text-blue-500 underline'>

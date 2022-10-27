@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef, useCallback, useEffect, useState } from 'react'
 
 import { Doughnut, Line } from 'react-chartjs-2';
 import { Chart, Filler, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js'
@@ -45,6 +45,24 @@ const SentimenChartCardHome = ({ sentimenDaily, sentimenSum, filteredTweet }) =>
         ]
     };
 
+    // const [persenPositif, setPersenPositif] = useState();
+    // const [persenNegatif, setPersenNegatif] = useState();
+
+
+    // useEffect(() => {
+    //     let per_neg = (
+    //         (Number(sentimenSum.sentimen_neg_total) / Number(sentimenSum.sentimen_all_total)) * 100
+    //     );
+    //     let per_neg_normalized = per_neg.toFixed(1);
+    //     setPersenNegatif(per_neg_normalized)
+    //     console.log(persenNegatif)
+    //     let per_pos = (
+    //         (Number(sentimenSum.sentimen_pos_total) / Number(sentimenSum.sentimen_all_total)) * 100
+    //     );
+    //     let per_pos_normalized = per_pos.toFixed(1);
+    //     setPersenPositif(per_pos_normalized)
+    //     console.log(persenNegatif)
+    // });
 
 
     return (
@@ -79,7 +97,7 @@ const SentimenChartCardHome = ({ sentimenDaily, sentimenSum, filteredTweet }) =>
             <div>
                 <div className='text-base mb-2 font-semibold flex justify-between items-center'>
                     <div>
-                        Sentimen
+                        Sentimen Tweet
                     </div>
                 </div>
                 <div className="flex flex-wrap mx-0 ">
@@ -116,6 +134,7 @@ const SentimenChartCardHome = ({ sentimenDaily, sentimenSum, filteredTweet }) =>
                             </div>
                         </div>
                     </div>
+
                     <div className="w-full py-3 px-1 md:w-1/3  mb-2 md:mb-0">
                         <div className='border p-4 rounded-lg flex flex-row w-full'>
                             <div className="flex w-1/4  items-center justify-center">
@@ -139,13 +158,24 @@ const SentimenChartCardHome = ({ sentimenDaily, sentimenSum, filteredTweet }) =>
                                 <h6
                                     className="mb-0 ml-4 text-sm text-black dark:text-gray-400"
                                 >
-                                    Sentimen Positif
+                                    Tweet Positif
                                 </h6>
-                                <p
-                                    className="mb-0 ml-4 text-2xl font-semibold text-black  dark:text-gray-400"
-                                >
-                                    {sentimenSum.sentimen_pos_total}
-                                </p>
+                                <div className='flex flex-row items-baseline justify-between'>
+                                    <p
+                                        className="mb-0 ml-4 text-2xl font-bold text-green-600  dark:text-gray-400"
+                                    >
+                                        {sentimenSum.sentimen_pos_total_persen}%
+
+                                    </p>
+                                    <div className=' flex flex-col h-full items-baseline'>
+                                        <p
+                                            className="mb-0 text-base  font-semibold text-black  dark:text-gray-400"
+                                        >
+                                            {sentimenSum.sentimen_pos_total}
+                                        </p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -172,13 +202,24 @@ const SentimenChartCardHome = ({ sentimenDaily, sentimenSum, filteredTweet }) =>
                                 <h6
                                     className="mb-0 ml-4 text-sm text-black dark:text-gray-400"
                                 >
-                                    Sentimen Negatif
+                                    Tweet Negatif
                                 </h6>
-                                <p
-                                    className="mb-0 ml-4 text-2xl font-semibold text-black  dark:text-gray-400"
-                                >
-                                    {sentimenSum.sentimen_neg_total}
-                                </p>
+                                <div className='flex flex-row items-baseline justify-between'>
+                                    <p
+                                        className="mb-0 ml-4 text-2xl font-bold text-red-600  dark:text-gray-400"
+                                    >
+                                        {sentimenSum.sentimen_neg_total_persen}%
+
+                                    </p>
+                                    <div className=' flex flex-col h-full items-baseline'>
+                                        <p
+                                            className="mb-0 text-base  font-semibold text-black  dark:text-gray-400"
+                                        >
+                                            {sentimenSum.sentimen_neg_total}
+                                        </p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>

@@ -266,7 +266,7 @@ const BelajarJitter = () => {
                         <p className='text-base font-regular mb-8 leading-relaxed text-gray-700'>
                             Berdasarkan penelitian Mister X et.al standar nilai
                             <span className='italic'> Jitter </span>
-                            adalah sebagai berikut.
+                            yang mengacu pada standar TIPHON (<i>Telecommunications and Internet Protocol Harmonization Over Networks </i>) adalah sebagai berikut<span className='text-xs'><sup >[1]</sup></span>.
                         </p>
                         {/* tabel standar */}
                         <div className='flex mt-8 mb-10 justify-center'>
@@ -276,10 +276,10 @@ const BelajarJitter = () => {
                                         Nilai
                                     </Table.HeadCell>
                                     <Table.HeadCell>
-                                        Index
+                                        Indeks
                                     </Table.HeadCell>
                                     <Table.HeadCell>
-                                        Category
+                                        Kategori
                                     </Table.HeadCell>
 
                                 </Table.Head>
@@ -328,7 +328,7 @@ const BelajarJitter = () => {
                                             1
                                         </Table.Cell>
                                         <Table.Cell>
-                                            Jelek
+                                            Buruk
                                         </Table.Cell>
                                     </Table.Row>
                                 </Table.Body>
@@ -348,7 +348,7 @@ const BelajarJitter = () => {
                             Nilai <i>Jitter</i> akan sangat berpengaruh terhadap aktivitas yang sifatnya sinkron dan butuh respon yang cepat, seperti <i>online call</i> dan <i>gaming</i>.
                         </p>
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Jika nilai <i>Jitter</i> tinggi, maka Anda akan meraskan Gejala-gejala sebagai berikut.
+                            Jika nilai <i>Jitter</i> tinggi, maka Anda akan merasakan gejala-gejala seperti berikut.
                         </p>
                         <ul className="list-disc mx-7 mb-6 text-gray-700">
                             <li className='mb-2'>
@@ -361,6 +361,15 @@ const BelajarJitter = () => {
                                 <i>Reconnecting</i> atau bahkan terputus dari <i>game</i>.
                             </li>
                         </ul>
+                    </div>
+                    {/* dafpus */}
+                    <div className='my-4'>
+                        <h5 id='' className='text-xl font-bold mt-2 mb-5'>Daftar Pustaka</h5>
+
+                        <p className='text-sm font-regular mb-2 leading-relaxed text-gray-700'>
+                            [1] xxx. <i>Bad is Stronger than Good</i>. Review of General Psychology, 5(4), 323–370. (2001).
+                        </p>
+
                     </div>
                     {/* footer */}
                     <footer
@@ -433,13 +442,7 @@ const BelajarJitter = () => {
                                 > Pengaruh Jitter
                                 </a>
 
-                                <a href='/belajarqos/jitter/#pengukuran-jitter'
-                                    className=' mb-2 flex text-sm
-                                         hover:text-gray-700 focus:outline-none dark:hover:text-gray-200
-                                         focus-visible:text-gray-700 dark:focus-visible:text-gray-200 text-gray-400 dark:text-gray-500
-                            '
-                                > Pengukuran Jitter
-                                </a>
+
                             </div>
                             {/* parameter lain */}
                             <div>

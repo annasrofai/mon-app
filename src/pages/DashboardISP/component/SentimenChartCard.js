@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef, useCallback, useEffect, useState } from 'react'
 
 import { Doughnut, Line } from 'react-chartjs-2';
 import { Chart, Filler, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js'
@@ -64,6 +64,23 @@ const SentimenChartCard = ({ sentimenDaily, sentimenSum }) => {
         link.click();
     }, [])
 
+    // const [persenPositif, setPersenPositif] = useState();
+    // const [persenNegatif, setPersenNegatif] = useState();
+
+    // useEffect(() => {
+    //     let per_neg = (
+    //         (Number(sentimenSum.sentimen_neg_total) / Number(sentimenSum.sentimen_all_total)) * 100
+    //     );
+    //     let per_neg_normalized = per_neg.toFixed(0);
+    //     setPersenNegatif(per_neg_normalized)
+    //     console.log(persenNegatif)
+    //     let per_pos = (
+    //         (Number(sentimenSum.sentimen_pos_total) / Number(sentimenSum.sentimen_all_total)) * 100
+    //     );
+    //     let per_pos_normalized = per_pos.toFixed(0);
+    //     setPersenPositif(per_pos_normalized)
+    //     console.log(persenNegatif)
+    // });
 
     return (
         <div>
@@ -71,7 +88,7 @@ const SentimenChartCard = ({ sentimenDaily, sentimenSum }) => {
                 <div className="w-full pb-5 pt-0 md:w-1/3 px-3 mb-6 md:mb-0">
                     <div className='text-lg py-3 font-medium flex justify-between items-center'>
                         <div>
-                            Presentase
+                            Persentase
                         </div>
                         <div>
                             <button onClick={downloadImageDonut} type="button" className="focus:outline-none text-white
@@ -81,14 +98,28 @@ const SentimenChartCard = ({ sentimenDaily, sentimenSum }) => {
                             </button>
                         </div>
                     </div>
-                    <div className='border h-96 p-4 rounded-lg flex  w-full items-center justify-center'>
-                        <Doughnut ref={refDonut} data={datadonut} />
+                    <p className='text-sm font-regular mb-4 leading-relaxed text-gray-700'>
+                        Persentase seluruh jenis sentimen <i>tweet</i>.
+                    </p>
+                    <div className='border h-96 p-4 rounded-lg flex flex-col  w-full justify-around'>
+                        <div className='flex'>
+                            <Doughnut ref={refDonut} data={datadonut} />
+                        </div>
+                        <div className='flex flex-row justify-around'>
+                            <div className='text-2xl font-bold text-green-500'>
+                                {sentimenSum.sentimen_pos_total_persen}%
+                            </div>
+                            <div className='text-2xl font-bold text-red-500'>
+                                {sentimenSum.sentimen_neg_total_persen}%
+                            </div>
+
+                        </div>
                     </div>
                 </div>
                 <div className="w-full pb-5 pt-0 md:w-2/3 px-3 mb-6 md:mb-0">
                     <div className='text-lg py-3 font-medium flex justify-between items-center'>
                         <div>
-                            Tren
+                            <i>Trend</i>
                         </div>
                         <div>
                             <button onClick={downloadImageLine} type="button" className="focus:outline-none text-white
@@ -98,8 +129,19 @@ const SentimenChartCard = ({ sentimenDaily, sentimenSum }) => {
                             </button>
                         </div>
                     </div>
+                    <p className='text-sm font-regular mb-4 leading-relaxed text-gray-700'>
+                        Grafik <i>trend</i> jumlah <i>tweet</i> dan jenis sentimen dari <i>tweet</i> yang dihitung per hari.
+                    </p>
                     <div className='border h-96 p-4 rounded-lg flex  w-full items-center justify-center'>
-                        <Line ref={refLine} data={dataline} options={{ maintainAspectRatio: false }} />
+                        <Line ref={refLine} data={dataline} options={
+                            {
+                                maintainAspectRatio: false,
+                                scales: {
+                                    y: { beginAtZero: true, title: { display: true, text: 'Jumlah Tweet', } },
+                                    x: { title: { display: true, text: 'Tanggal', } }
+                                }
+                            }
+                        } />
                     </div>
                 </div>
 

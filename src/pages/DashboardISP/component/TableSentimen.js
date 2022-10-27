@@ -4,7 +4,7 @@ import { sortRows, filterRows, paginateRows } from './helpers'
 import Pagination from './Pagination'
 import { Table } from 'flowbite-react'
 
-const TableTweet = ({ columns, rows }) => {
+const TableSentimen = ({ columns, rows }) => {
     const [activePage, setActivePage] = useState(1)
     const [filters, setFilters] = useState({})
     const [sort, setSort] = useState({ order: 'asc', orderBy: 'id' })
@@ -91,25 +91,6 @@ const TableTweet = ({ columns, rows }) => {
 
                 </Table.Head>
                 <Table.Body>
-                    <Table.Row>
-                        {columns.map((column) => {
-                            return (
-                                <Table.Cell>
-                                    <div className='flex '>
-                                        <input
-                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                            // size='4'
-                                            key={`${column.accessor}-search`}
-                                            type="search"
-                                            placeholder={`Cari ${column.label}`}
-                                            value={filters[column.accessor]}
-                                            onChange={(event) => handleSearch(event.target.value, column.accessor)}
-                                        />
-                                    </div>
-                                </Table.Cell>
-                            )
-                        })}
-                    </Table.Row>
                     {calculatedRows.map((row) => {
                         return (
 
@@ -139,7 +120,6 @@ const TableTweet = ({ columns, rows }) => {
                         <p className='flex'>Tidak ada data yang ditemukan</p>
                     </div>
                 )}
-
                 {/* <div className='flex flex-col justify-center items-center'>
                     <button onClick={clearAll}>Clear all</button>
                 </div> */}
@@ -148,4 +128,4 @@ const TableTweet = ({ columns, rows }) => {
     )
 }
 
-export default TableTweet
+export default TableSentimen

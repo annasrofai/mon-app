@@ -154,10 +154,10 @@ const BelajarPacketLoss = () => {
                             .
                         </div>
                         <h6 id='nilai-packetloss-standar' className='text-base font-bold mb-4'>Standar</h6>
-                        <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
+                        <p className='text-base font-regular mb-8 leading-relaxed text-gray-700'>
                             Berdasarkan penelitian Mister X et.al standar nilai
-                            <span className='italic'> Packet Loss </span>
-                            adalah sebagai berikut.
+                            <span className='italic'> Jitter </span>
+                            yang mengacu pada standar TIPHON (<i>Telecommunications and Internet Protocol Harmonization Over Networks </i>) adalah sebagai berikut<span className='text-xs'><sup >[1]</sup></span>.
                         </p>
 
                         <div className='flex mt-8 mb-10 justify-center'>
@@ -167,17 +167,17 @@ const BelajarPacketLoss = () => {
                                         Nilai
                                     </Table.HeadCell>
                                     <Table.HeadCell>
-                                        Index
+                                        Indeks
                                     </Table.HeadCell>
                                     <Table.HeadCell>
-                                        Category
+                                        Kategori
                                     </Table.HeadCell>
 
                                 </Table.Head>
                                 <Table.Body className="divide-y">
                                     <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                         <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            0%
+                                            0% &le; x &#60; 3%
                                         </Table.Cell>
                                         <Table.Cell>
                                             4
@@ -188,7 +188,7 @@ const BelajarPacketLoss = () => {
                                     </Table.Row>
                                     <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                         <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            0% &#60; x &le; 3%
+                                            3% &le; x &#60; 15%
                                         </Table.Cell>
                                         <Table.Cell>
                                             3
@@ -199,7 +199,7 @@ const BelajarPacketLoss = () => {
                                     </Table.Row>
                                     <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                         <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            3% &#60; x &le; 15%
+                                            15% &le; x &#60; 25%
                                         </Table.Cell>
                                         <Table.Cell>
                                             2
@@ -210,7 +210,7 @@ const BelajarPacketLoss = () => {
                                     </Table.Row>
                                     <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                         <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                            15% &#60; x &le; 25%
+                                            &gt; 25%
                                         </Table.Cell>
                                         {/* <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                                             &#60;25%&#62; &ge; &le;
@@ -219,7 +219,7 @@ const BelajarPacketLoss = () => {
                                             1
                                         </Table.Cell>
                                         <Table.Cell>
-                                            Jelek
+                                            Buruk
                                         </Table.Cell>
                                     </Table.Row>
                                 </Table.Body>
@@ -236,7 +236,7 @@ const BelajarPacketLoss = () => {
                         </p>
 
                         <p className='text-base font-regular mb-4 leading-relaxed text-gray-700'>
-                            Jika nilai <i>Packet Loss</i> tinggi, maka Anda akan meraskan Gejala-gejala sebagai berikut.
+                            Jika nilai <i>Packet Loss</i> tinggi, maka Anda akan merasakan gejala-gejala seperti berikut.
                         </p>
                         <ul className="list-disc mx-7 mb-6 text-gray-700">
                             <li className='mb-2'>
@@ -256,6 +256,16 @@ const BelajarPacketLoss = () => {
                             </li>
                         </ul>
                     </div>
+                    {/* dafpus */}
+                    <div className='my-4'>
+                        <h5 id='' className='text-xl font-bold mt-2 mb-5'>Daftar Pustaka</h5>
+
+                        <p className='text-sm font-regular mb-2 leading-relaxed text-gray-700'>
+                            [1] xxx. <i>Bad is Stronger than Good</i>. Review of General Psychology, 5(4), 323–370. (2001).
+                        </p>
+
+                    </div>
+
                     {/* footer */}
                     <footer
                         className="container mt-8 p-4 bg-white rounded-lg md:px-6 md:py-8 dark:bg-gray-900"
